@@ -905,12 +905,12 @@ def api_chatbot_mensaje():
 respuesta_texto = responder(mensaje_usuario)
 
 # Comentario para forzar actualización
-    entrada_asistente = {
-            "rol":       "asistente",
-            "contenido": respuesta_texto,
-            "timestamp": datetime.now().isoformat(),
-    }
-    historial.append(entrada_asistente)
+entrada_asistente = {
+    "rol": "asistente",
+    "contenido": respuesta_texto,
+    "timestamp": datetime.now().isoformat()
+}
+historial.append(entrada_asistente)
 
     # - Limitar historial y guardar en sesión ------------------------------
     max_hist = app.config["CHATBOT_MAX_HISTORY"]
