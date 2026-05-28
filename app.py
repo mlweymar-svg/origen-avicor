@@ -912,7 +912,7 @@ entrada_asistente = {
 }
 historial.append(entrada_asistente)
 
-    # - Limitar historial y guardar en sesión ------------------------------
+    # - Limitar historial y guardar en sesión ----------------------------
 max_hist = app.config["CHATBOT_MAX_HISTORY"]
     if len(historial) > max_hist:
         historial = historial[-max_hist:]
