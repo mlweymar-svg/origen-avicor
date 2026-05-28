@@ -904,6 +904,7 @@ def api_chatbot_mensaje():
     from chatbot import responder
 respuesta_texto = responder(mensaje_usuario)
 
+# Comentario para forzar actualización
     entrada_asistente = {
         "rol":       "asistente",
         "contenido": respuesta_texto,
