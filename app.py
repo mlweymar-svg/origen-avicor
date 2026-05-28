@@ -906,9 +906,9 @@ respuesta_texto = responder(mensaje_usuario)
 
 # Comentario para forzar actualización
     entrada_asistente = {
-        "rol":       "asistente",
-        "contenido": respuesta_texto,
-        "timestamp": datetime.now().isoformat(),
+            "rol":       "asistente",
+            "contenido": respuesta_texto,
+            "timestamp": datetime.now().isoformat(),
     }
     historial.append(entrada_asistente)
 
