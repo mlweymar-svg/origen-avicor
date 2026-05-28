@@ -901,7 +901,8 @@ def api_chatbot_mensaje():
     # ---- Construir respuesta (placeholder — conectar con Ollama/LLM) -------
     #  En producción este bloque llama a Ollama o a la API de Claude.
     #  Por ahora devuelve una respuesta de demostración basada en palabras clave.
-    respuesta_texto = _respuesta_demo_chatbot(mensaje_usuario)
+    from chatbot import responder
+respuesta_texto = responder(mensaje_usuario)
 
     entrada_asistente = {
         "rol":       "asistente",
@@ -1328,14 +1329,3 @@ def _respuesta_demo_chatbot(mensaje: str) -> str:
 #  12. PUNTO DE ENTRADA
 # ==============================================================================
 
-if __name__ == "__main__":
-    logger.info("=" * 60)
-    logger.info("  Origen Avicor — Flask dev server")
-    logger.info("  http://127.0.0.1:5000")
-    logger.info("=" * 60)
-    app.run(
-        host="0.0.0.0",
-        port=int(os.environ.get("PORT", 5000)),
-        debug=app.config["DEBUG"],
-        use_reloader=True,
-    )
