@@ -1,0 +1,3373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- ============================================================
+       ORIGEN AVICOR — index.html
+       "Crecimiento natural, sabor de verdad"
+       Productores artesanales desde Coroico
+       ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Origen Avicor — Pollo fresco, criado de forma natural en Coroico. Directo del productor a tu mesa." />
+  <meta name="keywords" content="pollo natural, avícola, Coroico, orgánico, fresco, Bolivia" />
+  <meta name="author" content="Origen Avicor" />
+  <meta property="og:title" content="Origen Avicor — Crecimiento natural, sabor de verdad" />
+  <meta property="og:description" content="Pollo artesanal criado en libertad. Sin hormonas, sin jaulas, sin artificios." />
+  <meta property="og:type" content="website" />
+  <title>Origen Avicor — Crecimiento natural, sabor de verdad</title>
+
+  <!-- Google Fonts — Playfair Display + DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       0. CSS CUSTOM PROPERTIES (Design Tokens)
+       ============================================================ */
+    :root {
+      /* Brand palette */
+      --verde-oliva:      #556B2F;
+      --verde-oscuro:     #3d4f21;
+      --verde-claro:      #7a9640;
+      --verde-palido:     #e8eedb;
+      --naranja:          #D68A5E;
+      --naranja-oscuro:   #b96d3e;
+      --naranja-claro:    #f0b08a;
+      --naranja-palido:   #fdf0e6;
+      --marron:           #8B7355;
+      --marron-oscuro:    #5c4a33;
+      --marron-claro:     #b09a7a;
+      --marron-palido:    #f5f0e8;
+
+      /* Neutrales */
+      --crema:            #FAF7F2;
+      --crema-oscura:     #f0ebe0;
+      --blanco:           #ffffff;
+      --gris-suave:       #f4f1ec;
+      --gris-texto:       #6b6055;
+      --texto-oscuro:     #2c2416;
+      --texto-medio:      #4a3f30;
+
+      /* Tipografía */
+      --font-display:     'Playfair Display', Georgia, serif;
+      --font-body:        'DM Sans', system-ui, sans-serif;
+
+      /* Espaciado base */
+      --espacio-xs:       0.5rem;
+      --espacio-sm:       1rem;
+      --espacio-md:       2rem;
+      --espacio-lg:       4rem;
+      --espacio-xl:       7rem;
+      --espacio-2xl:      10rem;
+
+      /* Radios */
+      --radio-sm:         4px;
+      --radio-md:         12px;
+      --radio-lg:         24px;
+      --radio-pill:       999px;
+
+      /* Sombras */
+      --sombra-sm:        0 2px 8px rgba(44,36,22,0.08);
+      --sombra-md:        0 8px 32px rgba(44,36,22,0.12);
+      --sombra-lg:        0 20px 60px rgba(44,36,22,0.18);
+      --sombra-naranja:   0 8px 32px rgba(214,138,94,0.28);
+      --sombra-verde:     0 8px 32px rgba(85,107,47,0.28);
+
+      /* Transiciones */
+      --trans-rapida:     0.15s ease;
+      --trans-normal:     0.3s ease;
+      --trans-lenta:      0.6s cubic-bezier(0.23, 1, 0.32, 1);
+
+      /* Z-index layers */
+      --z-base:           1;
+      --z-overlay:        10;
+      --z-nav:            100;
+      --z-modal:          200;
+    }
+
+    /* ============================================================
+       1. RESET & BASE
+       ============================================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--crema);
+      color: var(--texto-oscuro);
+      line-height: 1.65;
+      overflow-x: hidden;
+      cursor: default;
+    }
+
+    /* Scrollbar personalizado */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--crema-oscura); }
+    ::-webkit-scrollbar-thumb { background: var(--marron-claro); border-radius: var(--radio-pill); }
+    ::-webkit-scrollbar-thumb:hover { background: var(--marron); }
+
+    /* Selección de texto */
+    ::selection {
+      background: var(--naranja-claro);
+      color: var(--texto-oscuro);
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul, ol { list-style: none; }
+    button { cursor: pointer; font-family: var(--font-body); }
+
+    /* ============================================================
+       2. TIPOGRAFÍA GLOBAL
+       ============================================================ */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-display);
+      line-height: 1.15;
+      color: var(--texto-oscuro);
+    }
+
+    h1 { font-size: clamp(2.8rem, 6vw, 5.5rem); font-weight: 700; }
+    h2 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 600; }
+    h3 { font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 600; }
+    h4 { font-size: 1.2rem; font-weight: 600; }
+
+    p {
+      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+      color: var(--gris-texto);
+      line-height: 1.75;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--naranja);
+      margin-bottom: 1rem;
+    }
+
+    .section-tag::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--naranja);
+      border-radius: 2px;
+    }
+
+    /* ============================================================
+       3. BOTONES
+       ============================================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.85rem 2rem;
+      border-radius: var(--radio-pill);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      border: 2px solid transparent;
+      transition: all var(--trans-normal);
+      white-space: nowrap;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Ripple effect en hover */
+    .btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.15);
+      opacity: 0;
+      transition: opacity var(--trans-rapida);
+    }
+
+    .btn:hover::after { opacity: 1; }
+
+    /* Primario — naranja vibrante */
+    .btn-primario {
+      background: var(--naranja);
+      color: var(--blanco);
+      border-color: var(--naranja);
+      box-shadow: var(--sombra-naranja);
+    }
+
+    .btn-primario:hover {
+      background: var(--naranja-oscuro);
+      border-color: var(--naranja-oscuro);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(214,138,94,0.38);
+    }
+
+    .btn-primario:active { transform: translateY(0); }
+
+    /* Secundario — contorno verde */
+    .btn-secundario {
+      background: transparent;
+      color: var(--verde-oliva);
+      border-color: var(--verde-oliva);
+    }
+
+    .btn-secundario:hover {
+      background: var(--verde-oliva);
+      color: var(--blanco);
+      transform: translateY(-2px);
+      box-shadow: var(--sombra-verde);
+    }
+
+    /* Blanco (para hero oscuro) */
+    .btn-blanco {
+      background: var(--blanco);
+      color: var(--verde-oscuro);
+      border-color: var(--blanco);
+    }
+
+    .btn-blanco:hover {
+      background: transparent;
+      color: var(--blanco);
+      transform: translateY(-2px);
+    }
+
+    /* Grande */
+    .btn-lg {
+      padding: 1.1rem 2.6rem;
+      font-size: 1.05rem;
+    }
+
+    /* Icono flecha dentro del botón */
+    .btn-arrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      background: rgba(255,255,255,0.25);
+      border-radius: 50%;
+      flex-shrink: 0;
+      transition: transform var(--trans-normal);
+    }
+
+    .btn:hover .btn-arrow { transform: translateX(3px); }
+
+    /* ============================================================
+       4. HEADER / NAVEGACIÓN
+       ============================================================ */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: var(--z-nav);
+      transition: all var(--trans-normal);
+      padding: 0 5%;
+    }
+
+    /* Estado transparente (sobre hero) */
+    .header--transparent {
+      background: transparent;
+    }
+
+    /* Estado con fondo (al hacer scroll) */
+    .header--scrolled {
+      background: rgba(250, 247, 242, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 2px 20px rgba(44,36,22,0.08);
+      border-bottom: 1px solid rgba(139,115,85,0.12);
+    }
+
+    .header__inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+
+    /* Logo */
+    .logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+      gap: 1px;
+    }
+
+    .logo__nombre {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--blanco);
+      letter-spacing: -0.02em;
+      transition: color var(--trans-normal);
+    }
+
+    .logo__tagline {
+      font-size: 0.62rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      transition: color var(--trans-normal);
+    }
+
+    .header--scrolled .logo__nombre { color: var(--texto-oscuro); }
+    .header--scrolled .logo__tagline { color: var(--gris-texto); }
+
+    /* Nav links */
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+
+    .nav__link {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.88);
+      position: relative;
+      padding-bottom: 2px;
+      transition: color var(--trans-normal);
+    }
+
+    .nav__link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1.5px;
+      background: var(--naranja);
+      border-radius: 2px;
+      transition: width var(--trans-normal);
+    }
+
+    .nav__link:hover { color: var(--blanco); }
+    .nav__link:hover::after { width: 100%; }
+
+    /* Link activo — página actual */
+    .nav__link--activo {
+      color: var(--blanco) !important;
+      font-weight: 600;
+    }
+    .nav__link--activo::after { width: 100% !important; }
+
+    .header--scrolled .nav__link { color: var(--gris-texto); }
+    .header--scrolled .nav__link:hover { color: var(--verde-oliva); }
+    .header--scrolled .nav__link--activo { color: var(--verde-oliva) !important; }
+
+    /* Botón CTA en nav */
+    .nav__cta {
+      background: var(--naranja);
+      color: var(--blanco);
+      padding: 0.6rem 1.4rem;
+      border-radius: var(--radio-pill);
+      font-size: 0.88rem;
+      font-weight: 600;
+      border: 2px solid var(--naranja);
+      transition: all var(--trans-normal);
+    }
+
+    .nav__cta:hover {
+      background: var(--naranja-oscuro);
+      border-color: var(--naranja-oscuro);
+      transform: translateY(-1px);
+    }
+
+    /* Hamburger (mobile) */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      padding: 4px;
+      cursor: pointer;
+    }
+
+    .nav-toggle__bar {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--blanco);
+      border-radius: 2px;
+      transition: all var(--trans-normal);
+    }
+
+    .header--scrolled .nav-toggle__bar { background: var(--texto-oscuro); }
+
+    /* Mobile menu */
+    .nav-mobile {
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      padding: 1rem 0 1.5rem;
+      border-top: 1px solid rgba(139,115,85,0.15);
+      background: rgba(250, 247, 242, 0.98);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-mobile.is-open { display: flex; }
+
+    .nav-mobile__link {
+      padding: 0.85rem 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--gris-texto);
+      border-bottom: 1px solid rgba(139,115,85,0.08);
+      transition: color var(--trans-rapida);
+    }
+
+    .nav-mobile__link:last-child { border: none; }
+    .nav-mobile__link:hover { color: var(--verde-oliva); }
+
+    /* ============================================================
+       5. HERO SECTION
+       ============================================================ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* Imagen de fondo — landscape verde elegante de granja */
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        url('https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=1920&q=80');
+      background-size: cover;
+      background-position: center 40%;
+      background-repeat: no-repeat;
+      z-index: 0;
+      transform: scale(1.05);
+      animation: hero-zoom 18s ease-in-out infinite alternate;
+    }
+
+    @keyframes hero-zoom {
+      from { transform: scale(1.05); background-position: center 40%; }
+      to   { transform: scale(1.12); background-position: center 45%; }
+    }
+
+    /* Overlay gradiente dramático */
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(30, 42, 14, 0.82) 0%,
+          rgba(44, 36, 22, 0.65) 50%,
+          rgba(85, 107, 47, 0.40) 100%
+        );
+    }
+
+    /* Overlay textura grain sutil */
+    .hero__grain {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    }
+
+    /* Contenido del hero */
+    .hero__content {
+      position: relative;
+      z-index: 3;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 5%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      width: 100%;
+    }
+
+    .hero__text {
+      animation: fade-up 1s ease both;
+    }
+
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(32px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(214,138,94,0.2);
+      border: 1px solid rgba(214,138,94,0.4);
+      border-radius: var(--radio-pill);
+      padding: 0.35rem 0.9rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--naranja-claro);
+      margin-bottom: 1.5rem;
+      backdrop-filter: blur(4px);
+      animation: fade-up 1s 0.2s ease both;
+    }
+
+    .hero__badge-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--naranja-claro);
+      border-radius: 50%;
+      animation: pulse-dot 2s infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.5; transform: scale(0.7); }
+    }
+
+    .hero__titulo {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 6vw, 5.8rem);
+      font-weight: 700;
+      line-height: 1.05;
+      color: var(--blanco);
+      margin-bottom: 1.5rem;
+      animation: fade-up 1s 0.35s ease both;
+    }
+
+    .hero__titulo em {
+      font-style: italic;
+      color: var(--naranja-claro);
+    }
+
+    .hero__subtitulo {
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      color: rgba(255,255,255,0.78);
+      max-width: 480px;
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+      animation: fade-up 1s 0.5s ease both;
+    }
+
+    .hero__acciones {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      animation: fade-up 1s 0.65s ease both;
+    }
+
+    .hero__link-video {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: rgba(255,255,255,0.8);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color var(--trans-normal);
+    }
+
+    .hero__link-video:hover { color: var(--blanco); }
+
+    .hero__link-video:hover .video-icon { transform: scale(1.1); }
+
+    .video-icon {
+      width: 42px;
+      height: 42px;
+      background: rgba(255,255,255,0.15);
+      border: 2px solid rgba(255,255,255,0.4);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--trans-normal);
+      backdrop-filter: blur(4px);
+      flex-shrink: 0;
+    }
+
+    .video-icon svg { margin-left: 2px; }
+
+    /* Panel stats del hero */
+    .hero__stats {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      animation: fade-up 1s 0.8s ease both;
+    }
+
+    .stat-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: var(--radio-lg);
+      padding: 1.4rem 1.6rem;
+      backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      transition: background var(--trans-normal), border-color var(--trans-normal);
+    }
+
+    .stat-card:hover {
+      background: rgba(255,255,255,0.13);
+      border-color: rgba(255,255,255,0.22);
+    }
+
+    .stat-card__icono {
+      width: 52px;
+      height: 52px;
+      background: rgba(214,138,94,0.25);
+      border-radius: var(--radio-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .stat-card__numero {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--blanco);
+      line-height: 1;
+    }
+
+    .stat-card__label {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.65);
+      margin-top: 0.15rem;
+    }
+
+    /* Scroll indicator */
+    .hero__scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      color: rgba(255,255,255,0.55);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      animation: fade-up 1s 1.2s ease both;
+    }
+
+    .hero__scroll-line {
+      width: 1.5px;
+      height: 40px;
+      background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.5));
+      animation: scroll-line 2s ease-in-out infinite;
+    }
+
+    @keyframes scroll-line {
+      0%   { transform: scaleY(0); transform-origin: top; }
+      50%  { transform: scaleY(1); transform-origin: top; }
+      51%  { transform: scaleY(1); transform-origin: bottom; }
+      100% { transform: scaleY(0); transform-origin: bottom; }
+    }
+
+    /* ============================================================
+       6. BARRA DE CONFIANZA (Trust bar)
+       ============================================================ */
+    .trust-bar {
+      background: var(--verde-oliva);
+      padding: 1.2rem 5%;
+      overflow: hidden;
+    }
+
+    .trust-bar__inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: rgba(255,255,255,0.9);
+      font-size: 0.88rem;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .trust-item__icono {
+      font-size: 1.1rem;
+    }
+
+    /* ============================================================
+       7. SECCIÓN DE BENEFICIOS
+       ============================================================ */
+    .beneficios {
+      padding: var(--espacio-xl) 5%;
+      background: var(--crema);
+    }
+
+    .beneficios__inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .beneficios__cabecera {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+      margin-bottom: 5rem;
+    }
+
+    .beneficios__titulo {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      line-height: 1.15;
+      color: var(--texto-oscuro);
+    }
+
+    .beneficios__titulo span {
+      color: var(--verde-oliva);
+      font-style: italic;
+    }
+
+    .beneficios__descripcion {
+      color: var(--gris-texto);
+      line-height: 1.8;
+      font-size: 1.05rem;
+      max-width: 440px;
+    }
+
+    /* Grid de tarjetas de beneficios */
+    .beneficios__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .beneficio-card {
+      background: var(--blanco);
+      border-radius: var(--radio-lg);
+      padding: 2.5rem 2rem;
+      border: 1px solid rgba(139,115,85,0.12);
+      box-shadow: var(--sombra-sm);
+      transition: all var(--trans-lenta);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Acento decorativo */
+    .beneficio-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--verde-oliva), var(--naranja));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--trans-lenta);
+    }
+
+    .beneficio-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--sombra-lg);
+      border-color: transparent;
+    }
+
+    .beneficio-card:hover::before { transform: scaleX(1); }
+
+    .beneficio-card__icono-wrap {
+      width: 64px;
+      height: 64px;
+      background: var(--verde-palido);
+      border-radius: var(--radio-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      transition: background var(--trans-normal);
+    }
+
+    .beneficio-card:hover .beneficio-card__icono-wrap {
+      background: var(--naranja-palido);
+    }
+
+    .beneficio-card__titulo {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--texto-oscuro);
+      margin-bottom: 0.75rem;
+    }
+
+    .beneficio-card__texto {
+      font-size: 0.95rem;
+      color: var(--gris-texto);
+      line-height: 1.75;
+    }
+
+    /* Tarjeta destacada (grande) */
+    .beneficio-card--destacada {
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      padding: 3rem;
+      background: linear-gradient(135deg, var(--verde-oscuro) 0%, var(--verde-oliva) 100%);
+      border: none;
+      color: var(--blanco);
+    }
+
+    .beneficio-card--destacada .beneficio-card__titulo { color: var(--blanco); }
+    .beneficio-card--destacada .beneficio-card__texto { color: rgba(255,255,255,0.78); }
+
+    .beneficio-card--destacada .beneficio-card__icono-wrap {
+      background: rgba(255,255,255,0.12);
+      width: 80px;
+      height: 80px;
+      font-size: 2.2rem;
+    }
+
+    .beneficio-card--destacada:hover {
+      background: linear-gradient(135deg, var(--verde-oscuro) 0%, #5e7835 100%);
+    }
+
+    .beneficio-card--destacada::before {
+      background: linear-gradient(90deg, var(--naranja), var(--naranja-claro));
+    }
+
+    .beneficio-card__visual {
+      border-radius: var(--radio-md);
+      overflow: hidden;
+      height: 200px;
+    }
+
+    .beneficio-card__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--trans-lenta);
+    }
+
+    .beneficio-card--destacada:hover .beneficio-card__img {
+      transform: scale(1.06);
+    }
+
+    /* ============================================================
+       8. SECCIÓN "CÓMO FUNCIONA"
+       ============================================================ */
+    .proceso {
+      padding: var(--espacio-xl) 5%;
+      background: var(--marron-palido);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Decoración de fondo */
+    .proceso::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(85,107,47,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .proceso__inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .proceso__cabecera {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 5rem;
+    }
+
+    .proceso__steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+
+    /* Línea conectora */
+    .proceso__steps::before {
+      content: '';
+      position: absolute;
+      top: 48px;
+      left: calc(12.5% + 24px);
+      right: calc(12.5% + 24px);
+      height: 2px;
+      background: linear-gradient(90deg, var(--verde-oliva), var(--naranja));
+      z-index: 0;
+    }
+
+    .step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step__numero {
+      width: 96px;
+      height: 96px;
+      background: var(--blanco);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--sombra-md);
+      border: 3px solid var(--verde-palido);
+      font-size: 2rem;
+      transition: all var(--trans-normal);
+    }
+
+    .step:hover .step__numero {
+      background: var(--verde-oliva);
+      border-color: var(--verde-oliva);
+      transform: scale(1.08);
+    }
+
+    .step__titulo {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--texto-oscuro);
+      margin-bottom: 0.6rem;
+    }
+
+    .step__texto {
+      font-size: 0.9rem;
+      color: var(--gris-texto);
+      line-height: 1.7;
+    }
+
+    /* ============================================================
+       9. SECCIÓN DE PRODUCTOS / COMPRAR AHORA
+       ============================================================ */
+    .productos {
+      padding: var(--espacio-xl) 5%;
+      background: var(--crema);
+    }
+
+    .productos__inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .productos__cabecera {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 4rem;
+      gap: 2rem;
+    }
+
+    .productos__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .producto-card {
+      background: var(--blanco);
+      border-radius: var(--radio-lg);
+      overflow: hidden;
+      border: 1px solid rgba(139,115,85,0.10);
+      box-shadow: var(--sombra-sm);
+      transition: all var(--trans-lenta);
+    }
+
+    .producto-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--sombra-lg);
+    }
+
+    .producto-card__imagen-wrap {
+      position: relative;
+      height: 240px;
+      overflow: hidden;
+    }
+
+    .producto-card__imagen {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--trans-lenta);
+    }
+
+    .producto-card:hover .producto-card__imagen {
+      transform: scale(1.07);
+    }
+
+    .producto-card__tag {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: var(--verde-oliva);
+      color: var(--blanco);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.7rem;
+      border-radius: var(--radio-pill);
+    }
+
+    .producto-card__cuerpo {
+      padding: 1.5rem 1.6rem 2rem;
+    }
+
+    .producto-card__nombre {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--texto-oscuro);
+      margin-bottom: 0.5rem;
+    }
+
+    .producto-card__descripcion {
+      font-size: 0.9rem;
+      color: var(--gris-texto);
+      line-height: 1.65;
+      margin-bottom: 1.2rem;
+    }
+
+    .producto-card__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .producto-card__precio {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--verde-oliva);
+    }
+
+    .producto-card__precio span {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--gris-texto);
+      font-family: var(--font-body);
+    }
+
+    .producto-card__btn {
+      background: var(--naranja);
+      color: var(--blanco);
+      border: none;
+      padding: 0.65rem 1.3rem;
+      border-radius: var(--radio-pill);
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--trans-normal);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .producto-card__btn:hover {
+      background: var(--naranja-oscuro);
+      transform: translateY(-2px);
+      box-shadow: var(--sombra-naranja);
+    }
+
+    /* ============================================================
+       10. SECCIÓN ORIGEN / HISTORIA
+       ============================================================ */
+    .origen {
+      padding: var(--espacio-xl) 5%;
+      background: var(--blanco);
+    }
+
+    .origen__inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .origen__media {
+      position: relative;
+    }
+
+    .origen__img-principal {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      border-radius: var(--radio-lg);
+      box-shadow: var(--sombra-lg);
+    }
+
+    .origen__img-secundaria {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: var(--radio-md);
+      border: 4px solid var(--blanco);
+      box-shadow: var(--sombra-md);
+      bottom: -2rem;
+      right: -2rem;
+    }
+
+    .origen__badge-coroico {
+      position: absolute;
+      top: 2rem;
+      left: -2rem;
+      background: var(--naranja);
+      color: var(--blanco);
+      border-radius: var(--radio-md);
+      padding: 1rem 1.2rem;
+      box-shadow: var(--sombra-naranja);
+      text-align: center;
+    }
+
+    .origen__badge-coroico strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      line-height: 1;
+    }
+
+    .origen__badge-coroico small {
+      font-size: 0.78rem;
+      opacity: 0.85;
+      font-weight: 500;
+    }
+
+    .origen__texto { }
+
+    .origen__titulo {
+      margin-bottom: 1.5rem;
+    }
+
+    .origen__parrafo {
+      color: var(--gris-texto);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+    }
+
+    .origen__certificaciones {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .cert-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--verde-palido);
+      border-radius: var(--radio-pill);
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--verde-oscuro);
+    }
+
+    .cert-item__icono { font-size: 1rem; }
+
+    /* ============================================================
+       11. SECCIÓN TESTIMONIOS
+       ============================================================ */
+    .testimonios {
+      padding: var(--espacio-xl) 5%;
+      background: var(--crema-oscura);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Decoración SVG orgánica */
+    .testimonios__deco {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 120px;
+      background: var(--blanco);
+      clip-path: ellipse(60% 100% at 50% 0%);
+    }
+
+    .testimonios__inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .testimonios__cabecera {
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto 4rem;
+    }
+
+    .testimonios__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+    }
+
+    .testimonio-card {
+      background: var(--blanco);
+      border-radius: var(--radio-lg);
+      padding: 2rem 1.8rem;
+      border: 1px solid rgba(139,115,85,0.10);
+      box-shadow: var(--sombra-sm);
+      transition: all var(--trans-lenta);
+      position: relative;
+    }
+
+    .testimonio-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--sombra-md);
+    }
+
+    /* Comilla decorativa */
+    .testimonio-card::before {
+      content: '\201C';
+      position: absolute;
+      top: 1.2rem;
+      right: 1.5rem;
+      font-family: var(--font-display);
+      font-size: 5rem;
+      line-height: 1;
+      color: var(--verde-palido);
+      font-style: italic;
+    }
+
+    .testimonio-card--destacado {
+      background: linear-gradient(135deg, var(--verde-oliva), var(--verde-oscuro));
+      border: none;
+      color: var(--blanco);
+    }
+
+    .testimonio-card--destacado::before {
+      color: rgba(255,255,255,0.1);
+    }
+
+    /* Estrellas */
+    .estrellas {
+      display: flex;
+      gap: 2px;
+      margin-bottom: 1.2rem;
+    }
+
+    .estrella {
+      color: #f5c842;
+      font-size: 1rem;
+    }
+
+    .estrella--vacia { color: rgba(139,115,85,0.25); }
+
+    .testimonio-card--destacado .estrella--vacia { color: rgba(255,255,255,0.2); }
+
+    .testimonio-card__texto {
+      font-size: 0.97rem;
+      line-height: 1.78;
+      color: var(--gris-texto);
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonio-card--destacado .testimonio-card__texto {
+      color: rgba(255,255,255,0.85);
+    }
+
+    .testimonio-card__autor {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .testimonio-card__avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--verde-palido);
+      flex-shrink: 0;
+    }
+
+    .testimonio-card--destacado .testimonio-card__avatar {
+      border-color: rgba(255,255,255,0.3);
+    }
+
+    .testimonio-card__nombre {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--texto-oscuro);
+    }
+
+    .testimonio-card--destacado .testimonio-card__nombre {
+      color: var(--blanco);
+    }
+
+    .testimonio-card__lugar {
+      font-size: 0.8rem;
+      color: var(--gris-texto);
+    }
+
+    .testimonio-card--destacado .testimonio-card__lugar {
+      color: rgba(255,255,255,0.65);
+    }
+
+    /* ============================================================
+       12. SECCIÓN CTA PRINCIPAL — COMPRAR AHORA
+       ============================================================ */
+    .cta-comprar {
+      padding: var(--espacio-xl) 5%;
+      background: linear-gradient(135deg, var(--marron-oscuro) 0%, var(--marron) 50%, var(--naranja-oscuro) 100%);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    /* Elementos decorativos abstractos */
+    .cta-comprar__deco {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.06;
+      background: var(--blanco);
+    }
+
+    .cta-comprar__deco--1 {
+      width: 400px;
+      height: 400px;
+      top: -150px;
+      left: -100px;
+    }
+
+    .cta-comprar__deco--2 {
+      width: 300px;
+      height: 300px;
+      bottom: -100px;
+      right: -50px;
+    }
+
+    .cta-comprar__inner {
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-comprar__tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--naranja-claro);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+
+    .cta-comprar__tag::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--naranja-claro);
+    }
+
+    .cta-comprar__titulo {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      font-weight: 700;
+      color: var(--blanco);
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+    }
+
+    .cta-comprar__titulo em {
+      font-style: italic;
+      color: var(--naranja-claro);
+    }
+
+    .cta-comprar__descripcion {
+      color: rgba(255,255,255,0.75);
+      font-size: 1.08rem;
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+    }
+
+    .cta-comprar__acciones {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .cta-comprar__garantia {
+      margin-top: 1.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.82rem;
+    }
+
+    .cta-comprar__garantia svg { flex-shrink: 0; }
+
+    /* ============================================================
+       13. NEWSLETTER / SUSCRIPCIÓN
+       ============================================================ */
+    .newsletter {
+      padding: 5rem 5%;
+      background: var(--verde-palido);
+    }
+
+    .newsletter__inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .newsletter__texto { }
+
+    .newsletter__titulo {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--verde-oscuro);
+      margin-bottom: 0.8rem;
+    }
+
+    .newsletter__descripcion {
+      color: var(--marron);
+      font-size: 0.97rem;
+    }
+
+    .newsletter__form {
+      display: flex;
+      gap: 0.8rem;
+    }
+
+    .newsletter__input {
+      flex: 1;
+      padding: 0.9rem 1.4rem;
+      border: 2px solid rgba(85,107,47,0.25);
+      border-radius: var(--radio-pill);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      background: var(--blanco);
+      color: var(--texto-oscuro);
+      transition: border-color var(--trans-normal);
+      outline: none;
+    }
+
+    .newsletter__input::placeholder { color: var(--marron-claro); }
+
+    .newsletter__input:focus {
+      border-color: var(--verde-oliva);
+      box-shadow: 0 0 0 3px rgba(85,107,47,0.12);
+    }
+
+    .newsletter__submit {
+      background: var(--verde-oliva);
+      color: var(--blanco);
+      border: none;
+      padding: 0.9rem 1.8rem;
+      border-radius: var(--radio-pill);
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--trans-normal);
+      white-space: nowrap;
+    }
+
+    .newsletter__submit:hover {
+      background: var(--verde-oscuro);
+      transform: translateY(-2px);
+      box-shadow: var(--sombra-verde);
+    }
+
+    /* ============================================================
+       14. FOOTER
+       ============================================================ */
+    .footer {
+      background: var(--texto-oscuro);
+      color: rgba(255,255,255,0.75);
+      padding: 5rem 5% 2.5rem;
+    }
+
+    .footer__grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.2fr;
+      gap: 4rem;
+      padding-bottom: 4rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer__logo-nombre {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--blanco);
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer__logo-tagline {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 1.2rem;
+    }
+
+    .footer__descripcion {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer__redes {
+      display: flex;
+      gap: 0.8rem;
+    }
+
+    .footer__red {
+      width: 38px;
+      height: 38px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.65);
+      font-size: 0.9rem;
+      transition: all var(--trans-normal);
+    }
+
+    .footer__red:hover {
+      background: var(--naranja);
+      border-color: var(--naranja);
+      color: var(--blanco);
+      transform: translateY(-3px);
+    }
+
+    .footer__col-titulo {
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 1.4rem;
+    }
+
+    .footer__links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .footer__link {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.65);
+      transition: color var(--trans-rapida);
+    }
+
+    .footer__link:hover {
+      color: var(--naranja-claro);
+    }
+
+    .footer__contacto-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+      margin-bottom: 0.8rem;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .footer__contacto-icono {
+      margin-top: 2px;
+      flex-shrink: 0;
+      font-size: 0.9rem;
+      color: var(--naranja);
+    }
+
+    /* Barra final del footer */
+    .footer__bottom {
+      max-width: 1280px;
+      margin: 2rem auto 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer__copy {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.38);
+    }
+
+    .footer__copy span {
+      color: rgba(255,255,255,0.55);
+    }
+
+    .footer__legal {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer__legal-link {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.38);
+      transition: color var(--trans-rapida);
+    }
+
+    .footer__legal-link:hover { color: rgba(255,255,255,0.65); }
+
+    /* ============================================================
+       15. REVEAL ON SCROLL — Intersection Observer
+       ============================================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal--delay-1 { transition-delay: 0.1s; }
+    .reveal--delay-2 { transition-delay: 0.2s; }
+    .reveal--delay-3 { transition-delay: 0.3s; }
+    .reveal--delay-4 { transition-delay: 0.4s; }
+    .reveal--delay-5 { transition-delay: 0.5s; }
+
+    /* ============================================================
+       16. CARRITO FLOTANTE (mini)
+       ============================================================ */
+    .carrito-flotante {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: var(--z-modal);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.8rem;
+    }
+
+    .carrito-btn {
+      width: 58px;
+      height: 58px;
+      background: var(--naranja);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--sombra-naranja);
+      border: none;
+      color: var(--blanco);
+      font-size: 1.4rem;
+      cursor: pointer;
+      transition: all var(--trans-normal);
+      position: relative;
+    }
+
+    .carrito-btn:hover {
+      background: var(--naranja-oscuro);
+      transform: scale(1.08);
+    }
+
+    .carrito-badge {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      width: 22px;
+      height: 22px;
+      background: var(--verde-oliva);
+      border-radius: 50%;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--blanco);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--crema);
+      opacity: 0;
+      transition: opacity var(--trans-normal);
+    }
+
+    .carrito-badge.is-visible { opacity: 1; }
+
+    /* Tooltip carrito */
+    .carrito-tooltip {
+      background: var(--texto-oscuro);
+      color: var(--blanco);
+      padding: 0.5rem 0.9rem;
+      border-radius: var(--radio-md);
+      font-size: 0.8rem;
+      font-weight: 500;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(8px);
+      transition: all var(--trans-normal);
+      white-space: nowrap;
+    }
+
+    .carrito-flotante:hover .carrito-tooltip {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* ============================================================
+       17. MODAL — COMPRAR (simplificado)
+       ============================================================ */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(44,36,22,0.7);
+      z-index: var(--z-modal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--trans-normal);
+      backdrop-filter: blur(4px);
+    }
+
+    .modal-overlay.is-open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal {
+      background: var(--blanco);
+      border-radius: var(--radio-lg);
+      padding: 2.5rem;
+      max-width: 480px;
+      width: 100%;
+      box-shadow: var(--sombra-lg);
+      transform: translateY(20px) scale(0.97);
+      transition: transform var(--trans-lenta);
+      position: relative;
+    }
+
+    .modal-overlay.is-open .modal {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal__cerrar {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      background: var(--gris-suave);
+      border: none;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--gris-texto);
+      font-size: 1rem;
+      transition: background var(--trans-rapida);
+    }
+
+    .modal__cerrar:hover { background: var(--crema-oscura); }
+
+    .modal__titulo {
+      font-family: var(--font-display);
+      font-size: 1.7rem;
+      color: var(--texto-oscuro);
+      margin-bottom: 0.5rem;
+    }
+
+    .modal__descripcion {
+      color: var(--gris-texto);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    .modal__campo {
+      margin-bottom: 1.2rem;
+    }
+
+    .modal__label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--marron);
+      margin-bottom: 0.4rem;
+    }
+
+    .modal__input {
+      width: 100%;
+      padding: 0.85rem 1.1rem;
+      border: 2px solid rgba(139,115,85,0.2);
+      border-radius: var(--radio-md);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--texto-oscuro);
+      background: var(--crema);
+      outline: none;
+      transition: border-color var(--trans-normal);
+    }
+
+    .modal__input:focus {
+      border-color: var(--verde-oliva);
+      box-shadow: 0 0 0 3px rgba(85,107,47,0.1);
+    }
+
+    .modal__submit {
+      width: 100%;
+      padding: 1rem;
+      background: var(--naranja);
+      color: var(--blanco);
+      border: none;
+      border-radius: var(--radio-md);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--trans-normal);
+      margin-top: 0.5rem;
+    }
+
+    .modal__submit:hover {
+      background: var(--naranja-oscuro);
+      transform: translateY(-2px);
+      box-shadow: var(--sombra-naranja);
+    }
+
+    /* ============================================================
+       18. BREAKPOINTS RESPONSIVOS
+       ============================================================ */
+
+    /* Tablet grande / desktop pequeño */
+    @media (max-width: 1100px) {
+      .beneficios__grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .beneficio-card--destacada {
+        grid-column: span 2;
+      }
+
+      .proceso__steps {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+      }
+
+      .proceso__steps::before { display: none; }
+
+      .footer__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+      }
+    }
+
+    /* Tablet */
+    @media (max-width: 900px) {
+      :root {
+        --espacio-xl: 5rem;
+      }
+
+      .nav { display: none; }
+      .nav-toggle { display: flex; }
+
+      .hero__content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero__acciones { justify-content: center; }
+      .hero__subtitulo { margin: 0 auto 2.5rem; }
+      .hero__stats { display: none; }
+
+      .beneficios__cabecera {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+      }
+
+      .origen__inner {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .origen__badge-coroico { left: 1rem; }
+      .origen__img-secundaria { display: none; }
+
+      .testimonios__grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .productos__grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .productos__cabecera {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .newsletter__inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .newsletter__form {
+        flex-direction: column;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      :root {
+        --espacio-xl: 4rem;
+        --espacio-lg: 2.5rem;
+      }
+
+      .beneficios__grid,
+      .productos__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .beneficio-card--destacada {
+        grid-column: span 1;
+        grid-template-columns: 1fr;
+      }
+
+      .beneficio-card__visual { height: 160px; }
+
+      .proceso__steps { grid-template-columns: 1fr; }
+
+      .trust-bar__inner {
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: flex-start;
+      }
+
+      .footer__grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .footer__bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+
+      .cta-comprar__acciones {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .cta-comprar__acciones .btn {
+        justify-content: center;
+      }
+
+      .hero__titulo { font-size: 2.8rem; }
+
+      .carrito-flotante { bottom: 1.5rem; right: 1.5rem; }
+    }
+/* --- ESTILO SENSORIAL AVICOR --- */
+button, .nav__carrito, .btn {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 50px;
+}
+button:hover, .nav__carrito:hover, .btn:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================================
+       HEADER / NAVEGACIÓN PRINCIPAL
+       ============================================================ -->
+  <header class="header header--transparent" id="header" role="banner">
+    <div class="header__inner">
+
+      <!-- Logotipo -->
+      <a href="/" class="logo" aria-label="Origen Avicor — Inicio">
+        <span class="logo__nombre">Origen Avicor</span>
+        <span class="logo__tagline">Coroico · Bolivia</span>
+      </a>
+
+      <!-- Navegación desktop — global entre todas las páginas -->
+    <nav class="nav" role="navigation" aria-label="Menú principal" style="display: flex; align-items: center; gap: 20px;">
+  <a href="/"          class="nav__link nav__link--activo" style="color: #3d2b1f; text-decoration: none;" aria-current="page">Inicio</a>
+  <a href="/productos" class="nav__link" style="color: #3d2b1f; text-decoration: none;">Productos</a>
+  <a href="/nosotros"  class="nav__link" style="color: #3d2b1f; text-decoration: none;">Nosotros</a>
+  <a href="/chatbot"   class="nav__link" style="color: #3d2b1f; text-decoration: none;">💬 Asistente</a>
+  <a href="/productos" class="nav__cta"  style="margin-left: 10px;">Comprar ahora</a>
+</nav>
+
+      <!-- Botón hamburger (mobile) -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-mobile">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+
+    </div>
+
+    <!-- Menú mobile -->
+    <nav class="nav-mobile" id="nav-mobile" aria-label="Menú móvil">
+      <a href="/"          class="nav-mobile__link" style="color:var(--verde-oliva);font-weight:600;">Inicio</a>
+      <a href="/productos"  class="nav-mobile__link">Productos</a>
+      <a href="/nosotros"   class="nav-mobile__link">Nosotros</a>
+      <a href="/chatbot"    class="nav-mobile__link">💬 Asistente virtual</a>
+      <a href="/productos"  class="nav-mobile__link nav__cta" style="margin: 0.5rem 1.5rem; display: inline-flex; align-items: center; justify-content: center;">Comprar ahora</a>
+    </nav>
+  </header>
+
+  <!-- ============================================================
+       MAIN CONTENT
+       ============================================================ -->
+  <main role="main">
+
+    <!-- ========================================================
+         SECCIÓN 1 — HERO
+         ======================================================== -->
+    <section class="hero" id="inicio" aria-label="Bienvenidos a Origen Avicor">
+
+      <!-- Imagen de fondo estilo granja elegante -->
+      <div class="hero__bg" role="img" aria-label="Granja natural de Origen Avicor en Coroico"></div>
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="hero__grain"  aria-hidden="true"></div>
+
+      <!-- Contenido principal del hero -->
+      <div class="hero__content">
+
+        <!-- Texto lado izquierdo -->
+        <div class="hero__text">
+
+          <div class="hero__badge">
+            <span class="hero__badge-dot" aria-hidden="true"></span>
+            Producción natural · Coroico, Bolivia
+          </div>
+
+          <h1 class="hero__titulo">
+            Crecimiento<br />
+            <em>natural</em>,<br />
+            sabor de verdad
+          </h1>
+
+          <p class="hero__subtitulo">
+            Pollo criollo criado en libertad, sin hormonas ni jaulas.
+            Directo de nuestras granjas en los Yungas bolivianos
+            hasta tu mesa familiar.
+          </p>
+
+          <div class="hero__acciones">
+            <a href="/productos" class="btn btn-primario btn-lg" aria-label="Ver catálogo de productos">
+              🛒 Ver productos
+              <span class="btn-arrow" aria-hidden="true">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                  <path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+
+            <a href="/chatbot" class="hero__link-video" aria-label="Hablar con el asistente virtual">
+              <span class="video-icon" aria-hidden="true">
+                <svg width="12" height="14" viewBox="0 0 12 14" fill="white">
+                  <path d="M1 1.5l10 5.5-10 5.5V1.5z"/>
+                </svg>
+              </span>
+              💬 Hablar con Avi
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Tarjetas de estadísticas lado derecho -->
+        <div class="hero__stats" aria-label="Estadísticas de Origen Avicor">
+
+          <div class="stat-card">
+            <div class="stat-card__icono" aria-hidden="true">🐔</div>
+            <div>
+              <div class="stat-card__numero">5,000+</div>
+              <div class="stat-card__label">Aves criadas naturalmente por mes</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-card__icono" aria-hidden="true">🌿</div>
+            <div>
+              <div class="stat-card__numero">100%</div>
+              <div class="stat-card__label">Sin hormonas ni aditivos artificiales</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-card__icono" aria-hidden="true">🏔️</div>
+            <div>
+              <div class="stat-card__numero">Coroico</div>
+              <div class="stat-card__label">Yungas de La Paz — producción local</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-card__icono" aria-hidden="true">⭐</div>
+            <div>
+              <div class="stat-card__numero">4.9/5</div>
+              <div class="stat-card__label">Valoración de más de 300 familias</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div><!-- /hero__content -->
+
+      <!-- Scroll indicator -->
+      <div class="hero__scroll" aria-hidden="true">
+        <div class="hero__scroll-line"></div>
+        <span>scroll</span>
+      </div>
+
+    </section>
+
+    <!-- ========================================================
+         BARRA DE CONFIANZA
+         ======================================================== -->
+    <div class="trust-bar" role="complementary" aria-label="Compromisos de Origen Avicor">
+      <div class="trust-bar__inner">
+        <div class="trust-item">
+          <span class="trust-item__icono" aria-hidden="true">🚚</span>
+          Entrega a domicilio en La Paz
+        </div>
+        <div class="trust-item">
+          <span class="trust-item__icono" aria-hidden="true">🌱</span>
+          Crianza 100% natural
+        </div>
+        <div class="trust-item">
+          <span class="trust-item__icono" aria-hidden="true">🧊</span>
+          Cadena de frío garantizada
+        </div>
+        <div class="trust-item">
+          <span class="trust-item__icono" aria-hidden="true">🤝</span>
+          Directo del productor
+        </div>
+        <div class="trust-item">
+          <span class="trust-item__icono" aria-hidden="true">♻️</span>
+          Empaque biodegradable
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================
+         SECCIÓN 2 — BENEFICIOS
+         ======================================================== -->
+    <section class="beneficios" id="beneficios" aria-labelledby="beneficios-titulo">
+      <div class="beneficios__inner">
+
+        <div class="beneficios__cabecera">
+          <div class="reveal">
+            <span class="section-tag">Por qué elegirnos</span>
+            <h2 class="beneficios__titulo" id="beneficios-titulo">
+              El pollo que tu familia<br />
+              <span>merece comer</span>
+            </h2>
+          </div>
+          <p class="beneficios__descripcion reveal reveal--delay-2">
+            Cada ave de Origen Avicor crece con espacio, sol y alimentación
+            natural. Sin atajos industriales. Solo el camino correcto: lento,
+            honesto y delicioso.
+          </p>
+        </div>
+
+        <div class="beneficios__grid">
+
+          <!-- Tarjeta destacada (ancha) -->
+          <div class="beneficio-card beneficio-card--destacada reveal">
+            <div>
+              <div class="beneficio-card__icono-wrap" aria-hidden="true">🌿</div>
+              <h3 class="beneficio-card__titulo">Alimentación 100% natural</h3>
+              <p class="beneficio-card__texto">
+                Nuestras aves se alimentan exclusivamente de maíz criollo,
+                quinua y hierbas del campo. Sin soya transgénica, sin
+                farinas de desecho, sin aditivos de aceleración.
+                El resultado: carne más firme, más sabrosa y más nutritiva.
+              </p>
+            </div>
+            <div class="beneficio-card__visual">
+              <img
+                class="beneficio-card__img"
+                src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80"
+                alt="Campo verde con granos naturales usados para la alimentación de las aves"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <!-- Tarjeta 1 -->
+          <div class="beneficio-card reveal reveal--delay-1">
+            <div class="beneficio-card__icono-wrap" aria-hidden="true">🏡</div>
+            <h3 class="beneficio-card__titulo">Crianza en libertad</h3>
+            <p class="beneficio-card__texto">
+              Nuestras aves tienen espacio para caminar, explorar y
+              comportarse como la naturaleza manda. Sin jaulas,
+              sin hacinamiento. Solo campos abiertos bajo el sol de Coroico.
+            </p>
+          </div>
+
+          <!-- Tarjeta 2 -->
+          <div class="beneficio-card reveal reveal--delay-2">
+            <div class="beneficio-card__icono-wrap" aria-hidden="true">🧬</div>
+            <h3 class="beneficio-card__titulo">Sin hormonas ni antibióticos</h3>
+            <p class="beneficio-card__texto">
+              Cero hormonas de crecimiento. Cero antibióticos preventivos.
+              Nuestro protocolo sanitario se basa en medicina natural y
+              bienestar animal desde el primer día de vida.
+            </p>
+          </div>
+
+          <!-- Tarjeta 3 -->
+          <div class="beneficio-card reveal reveal--delay-1">
+            <div class="beneficio-card__icono-wrap" aria-hidden="true">📍</div>
+            <h3 class="beneficio-card__titulo">Trazabilidad total</h3>
+            <p class="beneficio-card__texto">
+              Conoce de qué granja viene tu pollo, qué comió y cuándo fue
+              procesado. Escaneá el código QR de tu pedido y accedé a toda
+              la información de origen.
+            </p>
+          </div>
+
+          <!-- Tarjeta 4 -->
+          <div class="beneficio-card reveal reveal--delay-2">
+            <div class="beneficio-card__icono-wrap" aria-hidden="true">❄️</div>
+            <h3 class="beneficio-card__titulo">Frescura garantizada</h3>
+            <p class="beneficio-card__texto">
+              Procesado y empacado el mismo día de la entrega.
+              Nuestra cadena de frío nunca se interrumpe,
+              desde las granjas de Coroico hasta tu puerta en La Paz.
+            </p>
+          </div>
+
+          <!-- Tarjeta 5 -->
+          <div class="beneficio-card reveal reveal--delay-3">
+            <div class="beneficio-card__icono-wrap" aria-hidden="true">🌍</div>
+            <h3 class="beneficio-card__titulo">Apoyo a productores locales</h3>
+            <p class="beneficio-card__texto">
+              Trabajamos directamente con familias productoras de Coroico.
+              Al comprar Avicor, invertís en la economía local y en un
+              modelo agrícola sostenible para Bolivia.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECCIÓN 3 — CÓMO FUNCIONA
+         ======================================================== -->
+    <section class="proceso" id="como-funciona" aria-labelledby="proceso-titulo">
+      <div class="proceso__inner">
+
+        <div class="proceso__cabecera reveal">
+          <span class="section-tag">Del campo a tu mesa</span>
+          <h2 id="proceso-titulo">
+            Un camino corto,<br />
+            <span style="color:var(--verde-oliva); font-style:italic;">un sabor extraordinario</span>
+          </h2>
+          <p style="margin-top:1rem; color:var(--gris-texto);">
+            Sin intermediarios innecesarios. Sin cadenas de distribución opacas.
+            Solo cuatro pasos que garantizan el producto más fresco y honesto.
+          </p>
+        </div>
+
+        <div class="proceso__steps">
+
+          <div class="step reveal reveal--delay-1">
+            <div class="step__numero" aria-hidden="true">🌱</div>
+            <h3 class="step__titulo">Crianza natural</h3>
+            <p class="step__texto">
+              Las aves crecen en campos abiertos de Coroico,
+              alimentadas con granos naturales y al ritmo del sol.
+            </p>
+          </div>
+
+          <div class="step reveal reveal--delay-2">
+            <div class="step__numero" aria-hidden="true">✂️</div>
+            <h3 class="step__titulo">Proceso artesanal</h3>
+            <p class="step__texto">
+              Faena sanitaria y cuidadosa. Sin químicos agresivos.
+              Con protocolos que respetan el producto y al consumidor.
+            </p>
+          </div>
+
+          <div class="step reveal reveal--delay-3">
+            <div class="step__numero" aria-hidden="true">📦</div>
+            <h3 class="step__titulo">Empaque biodegradable</h3>
+            <p class="step__texto">
+              Envasado al vacío en empaques libres de plástico contaminante.
+              Etiqueta con código QR de trazabilidad completa.
+            </p>
+          </div>
+
+          <div class="step reveal reveal--delay-4">
+            <div class="step__numero" aria-hidden="true">🏠</div>
+            <h3 class="step__titulo">Entrega a domicilio</h3>
+            <p class="step__texto">
+              Llegamos a tu puerta en La Paz con cadena de frío
+              ininterrumpida. Fresco como si lo recogés tú mismo.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECCIÓN 4 — PRODUCTOS / COMPRAR
+         ======================================================== -->
+    <section class="productos" id="productos" aria-labelledby="productos-titulo">
+      <div class="productos__inner">
+
+        <div class="productos__cabecera">
+          <div class="reveal">
+            <span class="section-tag">Nuestros cortes</span>
+            <h2 id="productos-titulo">Elige tu corte favorito</h2>
+          </div>
+          <a href="/productos" class="btn btn-primario reveal reveal--delay-2">
+            Ver todos los productos
+            <span class="btn-arrow" aria-hidden="true">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                <path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+
+        <div class="productos__grid">
+
+          <!-- Producto 1 -->
+          <article class="producto-card reveal reveal--delay-1" aria-label="Pollo entero Avicor">
+            <div class="producto-card__imagen-wrap">
+              <img
+                class="producto-card__imagen"
+                src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=600&q=80"
+                alt="Pollo entero fresco de Origen Avicor"
+                loading="lazy"
+              />
+              <span class="producto-card__tag">Más popular</span>
+            </div>
+            <div class="producto-card__cuerpo">
+              <h3 class="producto-card__nombre">Pollo entero Avicor</h3>
+              <p class="producto-card__descripcion">
+                Pollo criollo completo, criado en libertad. Peso promedio 2.2 kg.
+                Ideal para el horno, a la parrilla o al vapor con hierbas.
+              </p>
+              <div class="producto-card__footer">
+                <div class="producto-card__precio">
+                  Bs. 65 <span>/ unidad</span>
+                </div>
+                <button class="producto-card__btn" onclick="abrirModal('Pollo entero Avicor', 'Bs. 65')" aria-label="Pedir Pollo entero Avicor">
+                  🛒 Pedir
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Producto 2 -->
+          <article class="producto-card reveal reveal--delay-2" aria-label="Pechuga fresca Avicor">
+            <div class="producto-card__imagen-wrap">
+              <img
+                class="producto-card__imagen"
+                src="https://images.unsplash.com/photo-1587593810167-a84920ea0781?w=600&q=80"
+                alt="Pechuga de pollo fresca"
+                loading="lazy"
+              />
+              <span class="producto-card__tag" style="background:var(--naranja);">Premium</span>
+            </div>
+            <div class="producto-card__cuerpo">
+              <h3 class="producto-card__nombre">Pechuga fresca fileteada</h3>
+              <p class="producto-card__descripcion">
+                Filetes de pechuga sin hueso y sin piel. Proteína pura,
+                sabor natural. Presentación de 500 g o 1 kg en empaque al vacío.
+              </p>
+              <div class="producto-card__footer">
+                <div class="producto-card__precio">
+                  Bs. 48 <span>/ 500 g</span>
+                </div>
+                <button class="producto-card__btn" onclick="abrirModal('Pechuga fresca fileteada', 'Bs. 48')" aria-label="Pedir Pechuga fresca fileteada">
+                  🛒 Pedir
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Producto 3 -->
+          <article class="producto-card reveal reveal--delay-3" aria-label="Pack familiar Avicor">
+            <div class="producto-card__imagen-wrap">
+              <img
+                class="producto-card__imagen"
+                src="https://images.unsplash.com/photo-1621852004158-f3bc188ace2d?w=600&q=80"
+                alt="Pack familiar de pollo Avicor"
+                loading="lazy"
+              />
+              <span class="producto-card__tag" style="background:var(--marron);">Ahorro familiar</span>
+            </div>
+            <div class="producto-card__cuerpo">
+              <h3 class="producto-card__nombre">Pack familiar completo</h3>
+              <p class="producto-card__descripcion">
+                1 pollo entero + 1 kg de pechugas + ½ kg de muslos.
+                La solución perfecta para la semana. Ahorrás 15% vs. unidades.
+              </p>
+              <div class="producto-card__footer">
+                <div class="producto-card__precio">
+                  Bs. 145 <span>/ pack</span>
+                </div>
+                <button class="producto-card__btn" onclick="abrirModal('Pack familiar completo', 'Bs. 145')" aria-label="Pedir Pack familiar completo">
+                  🛒 Pedir
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECCIÓN 5 — ORIGEN / HISTORIA
+         ======================================================== -->
+    <section class="origen" id="origen" aria-labelledby="origen-titulo">
+      <div class="origen__inner">
+
+        <!-- Media / Imágenes -->
+        <div class="origen__media reveal">
+          <img
+            class="origen__img-principal"
+            src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80"
+            alt="Campos verdes de Coroico, Bolivia, donde nacen las aves de Origen Avicor"
+            loading="lazy"
+          />
+          <div class="origen__badge-coroico" aria-label="Coroico, Yungas de La Paz">
+            <strong>Coroico</strong>
+            <small>Yungas · La Paz</small>
+          </div>
+          <img
+            class="origen__img-secundaria"
+            src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=400&q=80"
+            alt="Productores de Avicor trabajando en la granja"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Texto -->
+        <div class="origen__texto reveal reveal--delay-2">
+          <span class="section-tag">Nuestra historia</span>
+          <h2 class="origen__titulo" id="origen-titulo">
+            Nacimos del campo,<br />
+            <span style="color:var(--verde-oliva); font-style:italic;">crecemos con él</span>
+          </h2>
+
+          <p class="origen__parrafo">
+            Origen Avicor nació de una convicción simple: las familias bolivianas
+            merecen comer pollo de verdad. No esa carne pálida y sin sabor que
+            fabrican las industrias masivas, sino la que criaron con cuidado
+            manos que conocen su tierra.
+          </p>
+
+          <p class="origen__parrafo">
+            Trabajamos con productores de Coroico que llevan generaciones
+            conociendo el arte de criar aves de manera natural. Les brindamos
+            capacitación, tecnología limpia y un precio justo a cambio del
+            producto más honesto del mercado.
+          </p>
+
+          <p class="origen__parrafo">
+            Hoy conectamos esas granjas directamente con tu hogar en La Paz,
+            eliminando intermediarios y devolviéndole al pollo lo que nunca
+            debió perder: sabor, textura y dignidad.
+          </p>
+
+          <div class="origen__certificaciones">
+            <div class="cert-item">
+              <span class="cert-item__icono" aria-hidden="true">🌿</span>
+              Sin pesticidas
+            </div>
+            <div class="cert-item">
+              <span class="cert-item__icono" aria-hidden="true">🐔</span>
+              Bienestar animal
+            </div>
+            <div class="cert-item">
+              <span class="cert-item__icono" aria-hidden="true">🤝</span>
+              Comercio justo
+            </div>
+            <div class="cert-item">
+              <span class="cert-item__icono" aria-hidden="true">🇧🇴</span>
+              100% boliviano
+            </div>
+          </div>
+
+          <div style="margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="#comprar" class="btn btn-primario">
+              Quiero probar Avicor
+              <span class="btn-arrow" aria-hidden="true">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                  <path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+            <a href="#como-funciona" class="btn btn-secundario">Conocer el proceso</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECCIÓN 6 — TESTIMONIOS
+         ======================================================== -->
+    <section class="testimonios" id="testimonios" aria-labelledby="testimonios-titulo">
+      <div class="testimonios__deco" aria-hidden="true"></div>
+      <div class="testimonios__inner">
+
+        <div class="testimonios__cabecera reveal">
+          <span class="section-tag">Lo que dicen nuestros clientes</span>
+          <h2 id="testimonios-titulo">Familias que ya<br />cambiaron su pollo</h2>
+          <p style="margin-top:1rem; color:var(--gris-texto);">
+            Más de 300 familias en La Paz ya disfrutan de la diferencia.
+            Estas son sus palabras.
+          </p>
+        </div>
+
+        <div class="testimonios__grid">
+
+          <!-- Testimonio 1 -->
+          <article class="testimonio-card reveal reveal--delay-1" aria-label="Testimonio de María L.">
+            <div class="estrellas" aria-label="5 estrellas de 5">
+              <span class="estrella" aria-hidden="true">★</span>
+              <span class="estrella" aria-hidden="true">★</span>
+              <span class="estrella" aria-hidden="true">★</span>
+              <span class="estrella" aria-hidden="true">★</span>
+              <span class="estrella" aria-hidden="true">★</span>
+            </div>
+            <p class="testimonio-card__texto">
+              "La diferencia de sabor es brutal. Mi familia entera notó
+              el cambio desde el primer plato. El caldo que sale de este
+              pollo es completamente diferente a lo que compraba antes
+              en el supermercado. No volvemos."
+            </p>
+            <div class="testimonio-card__autor">
+              <img
+                class="testimonio-card__avatar"
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80"
+                alt="Foto de María Laura, cliente de Origen Avicor"
+                loading="lazy"
+              />
+              <div>
+                <div class="testimonio-card__nombre">María Laura C.</div>
+                <div class="testimonio-card__lugar">📍 Miraflores, La Paz</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Testimonio 2 — DESTACADO -->
+          <article class="testimonio-card testimonio-card--destacado reveal reveal--delay-2" aria-label="Testimonio destacado de Roberto M.">
+            <div class="estrellas" aria-label="5 estrellas de 5">
+              <span class="estrella" aria-hidden="true">★</span>
+              <span class="estrella" aria-hidden="true">★</span>
+              <span class="estrella" aria-hidden="true">★</span>
+              <span class="estrella" aria-hidden="true">★</span>
+              <span class="estrella" aria-hidden="true">★</span>
+            </div>
+            <p class="testimonio-card__texto">
+              "Soy cocinero y sé cuando un ingrediente es de calidad real.
+              Este pollo tiene textura, tiene sabor, tiene personalidad.
+              Lo uso en el restaurante y mis clientes lo notan. Origen
+              Avicor es lo que Bolivia necesitaba hace mucho tiempo."
+            </p>
+            <div class="testimonio-card__autor">
+              <img
+                class="testimonio-card__avatar"
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80"
+                alt="Foto de Roberto Mamani, chef cliente de Origen Avicor"
+                loading="lazy"
+              />
+              <div>
+                <div class="testimonio-card__nombre">Roberto Mamani</div>
+                <div class="testimonio-card__lugar">👨‍🍳 Chef · Sopocachi, La Paz</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Testimonio 3 -->
+          <article class="testimonio-card reveal reveal--delay-3" aria-label="Testimonio de Ana S.">
+            <div class="estrellas" aria-label="5 estrellas de 5">
+              <span class="estrella" aria-hidden="true">★</span>
+              <span class="estrella" aria-hidden="true">★</span>
+              <span class="estrella" aria-hidden="true">★</span>
+              <span class="estrella" aria-hidden="true">★</span>
+              <span class="estrella" aria-hidden="true">★</span>
+            </div>
+            <p class="testimonio-card__texto">
+              "El servicio de entrega es impecable. Llega frío, bien empacado
+              y con toda la información de trazabilidad. El QR es un detalle
+              genial. Saber exactamente de dónde viene mi comida me genera
+              mucha confianza."
+            </p>
+            <div class="testimonio-card__autor">
+              <img
+                class="testimonio-card__avatar"
+                src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&q=80"
+                alt="Foto de Ana Solís, cliente de Origen Avicor"
+                loading="lazy"
+              />
+              <div>
+                <div class="testimonio-card__nombre">Ana Solís</div>
+                <div class="testimonio-card__lugar">📍 Calacoto, La Paz</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Testimonio 4 -->
+          <article class="testimonio-card reveal reveal--delay-1" aria-label="Testimonio de Juan E.">
+            <div class="estrellas" aria-label="4 estrellas de 5">
+              <span class="estrella" aria-hidden="true">★</span>
+              <span class="estrella" aria-hidden="true">★</span>
+              <span class="estrella" aria-hidden="true">★</span>
+              <span class="estrella" aria-hidden="true">★</span>
+              <span class="estrella estrella--vacia" aria-hidden="true">★</span>
+            </div>
+            <p class="testimonio-card__texto">
+              "Excelente producto. Pedí el pack familiar y alcanzó para toda
+              la semana. El precio me parece justo considerando la calidad.
+              Lo recomiendo a mis vecinos sin dudarlo."
+            </p>
+            <div class="testimonio-card__autor">
+              <img
+                class="testimonio-card__avatar"
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80"
+                alt="Foto de Juan Eduardo, cliente de Origen Avicor"
+                loading="lazy"
+              />
+              <div>
+                <div class="testimonio-card__nombre">Juan Eduardo V.</div>
+                <div class="testimonio-card__lugar">📍 Alto Obrajes, La Paz</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Testimonio 5 -->
+          <article class="testimonio-card reveal reveal--delay-2" aria-label="Testimonio de Patricia R.">
+            <div class="estrellas" aria-label="5 estrellas de 5">
+              <span class="estrella" aria-hidden="true">★</span>
+              <span class="estrella" aria-hidden="true">★</span>
+              <span class="estrella" aria-hidden="true">★</span>
+              <span class="estrella" aria-hidden="true">★</span>
+              <span class="estrella" aria-hidden="true">★</span>
+            </div>
+            <p class="testimonio-card__texto">
+              "Mis hijos son muy exigentes con la comida. Cuando hice pollo
+              a la parrilla con el Avicor, les encantó tanto que me preguntaron
+              qué había hecho diferente. Solo cambié el pollo. Eso lo dice todo."
+            </p>
+            <div class="testimonio-card__autor">
+              <img
+                class="testimonio-card__avatar"
+                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80"
+                alt="Foto de Patricia Ríos, cliente de Origen Avicor"
+                loading="lazy"
+              />
+              <div>
+                <div class="testimonio-card__nombre">Patricia Ríos</div>
+                <div class="testimonio-card__lugar">📍 San Miguel, La Paz</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Testimonio 6 -->
+          <article class="testimonio-card reveal reveal--delay-3" aria-label="Testimonio de Carlos T.">
+            <div class="estrellas" aria-label="5 estrellas de 5">
+              <span class="estrella" aria-hidden="true">★</span>
+              <span class="estrella" aria-hidden="true">★</span>
+              <span class="estrella" aria-hidden="true">★</span>
+              <span class="estrella" aria-hidden="true">★</span>
+              <span class="estrella" aria-hidden="true">★</span>
+            </div>
+            <p class="testimonio-card__texto">
+              "Me alegra poder apoyar a productores locales y al mismo tiempo
+              darle lo mejor a mi familia. Origen Avicor es el modelo que debería
+              seguir toda la industria alimentaria en Bolivia."
+            </p>
+            <div class="testimonio-card__autor">
+              <img
+                class="testimonio-card__avatar"
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80"
+                alt="Foto de Carlos Tarqui, cliente de Origen Avicor"
+                loading="lazy"
+              />
+              <div>
+                <div class="testimonio-card__nombre">Carlos Tarqui</div>
+                <div class="testimonio-card__lugar">📍 Achumani, La Paz</div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECCIÓN 7 — CTA COMPRAR AHORA
+         ======================================================== -->
+    <section class="cta-comprar" id="comprar" aria-labelledby="cta-titulo">
+      <div class="cta-comprar__deco cta-comprar__deco--1" aria-hidden="true"></div>
+      <div class="cta-comprar__deco cta-comprar__deco--2" aria-hidden="true"></div>
+
+      <div class="cta-comprar__inner">
+        <div class="cta-comprar__tag" aria-hidden="true">Pedí ahora</div>
+
+        <h2 class="cta-comprar__titulo reveal" id="cta-titulo">
+          El sabor que recordás<br />
+          <em>está esperándote</em>
+        </h2>
+
+        <p class="cta-comprar__descripcion reveal reveal--delay-1">
+          Hacé tu primer pedido hoy y descubrí la diferencia entre comer pollo
+          y comer <strong style="color:var(--naranja-claro);">buen</strong> pollo.
+          Entrega a domicilio en La Paz. Sin compromisos. Con garantía total.
+        </p>
+
+        <div class="cta-comprar__acciones reveal reveal--delay-2">
+          <a
+            href="/productos"
+            class="btn btn-primario btn-lg"
+            aria-label="Ver catálogo y hacer mi pedido"
+          >
+            🛒 Ver productos y pedir
+            <span class="btn-arrow" aria-hidden="true">
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                <path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+          <a href="https://wa.me/59179000000" class="btn btn-blanco btn-lg" target="_blank" rel="noopener" aria-label="Consultar por WhatsApp">
+            💬 Consultar por WhatsApp
+          </a>
+        </div>
+
+        <p class="cta-comprar__garantia reveal reveal--delay-3">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          Garantía de devolución si no estás conforme. Sin preguntas.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECCIÓN 8 — NEWSLETTER
+         ======================================================== -->
+    <section class="newsletter" aria-labelledby="newsletter-titulo">
+      <div class="newsletter__inner">
+        <div class="newsletter__texto reveal">
+          <span class="section-tag" style="color: var(--verde-oliva);">Mantente informado</span>
+          <h3 class="newsletter__titulo" id="newsletter-titulo">
+            Recibí recetas, ofertas<br />y novedades de temporada
+          </h3>
+          <p class="newsletter__descripcion">
+            Nos toca informarte antes que a nadie. Sin spam, sin correos molestos.
+            Solo lo bueno, una vez por mes.
+          </p>
+        </div>
+
+        <div class="reveal reveal--delay-2">
+          <form class="newsletter__form" id="newsletter-form" novalidate aria-label="Formulario de suscripción al boletín">
+            <label for="newsletter-email" class="sr-only">Tu correo electrónico</label>
+            <input
+              type="email"
+              id="newsletter-email"
+              name="email"
+              class="newsletter__input"
+              placeholder="tu@correo.com"
+              required
+              autocomplete="email"
+            />
+            <button type="submit" class="newsletter__submit">
+              Suscribirme
+            </button>
+          </form>
+          <p id="newsletter-msg" style="margin-top: 0.7rem; font-size: 0.85rem; color: var(--verde-oscuro); min-height: 1.2rem;" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+<section style="padding: 50px; background-color: #f4f4f4; text-align: center;">
+    <h3>¡Únete a la familia Avicor!</h3>
+    <p>Recibe ofertas exclusivas y noticias de nuestras granjas en Coroico.</p>
+    
+    <form id="form-newsletter">
+        <input type="email" id="email-input" placeholder="Tu correo electrónico" required 
+               style="padding: 10px; border-radius: 5px; border: 1px solid #ccc; width: 250px;">
+        <button type="submit" 
+                style="padding: 10px 20px; background-color: #e67e22; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            Suscribirme
+        </button>
+    </form>
+    <div id="mensaje-respuesta" style="margin-top: 15px;"></div>
+</section>
+
+<script>
+document.getElementById('form-newsletter').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('email-input').value;
+    const mensajeDiv = document.getElementById('mensaje-respuesta');
+
+    fetch('/api/v1/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.ok) {
+            mensajeDiv.innerHTML = `<p style="color: green;">${data.mensaje}</p>`;
+            document.getElementById('email-input').value = '';
+        } else {
+            mensajeDiv.innerHTML = `<p style="color: red;">Error: ${data.error}</p>`;
+        }
+    });
+});
+</script>
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__grid">
+
+      <!-- Columna 1 — Marca -->
+      <div>
+        <span class="footer__logo-nombre">Origen Avicor</span>
+        <div class="footer__logo-tagline">Crecimiento natural, sabor de verdad</div>
+        <p class="footer__descripcion">
+          Productores artesanales de pollo criollo desde Coroico, Yungas de La Paz.
+          Comprometidos con la calidad, el bienestar animal y el desarrollo de las
+          comunidades locales bolivianas.
+        </p>
+        <div class="footer__redes" aria-label="Redes sociales de Origen Avicor" style="display: flex; gap: 15px; justify-content: flex-start; padding-top: 10px;">
+    
+    <a href="https://www.facebook.com/share/14aUSp4zJ44/" target="_blank" 
+       style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background-color: #e67e22; color: white; border-radius: 50%; text-decoration: none; font-size: 20px;">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+
+    <a href="https://wa.me/591XXXXXXXX" target="_blank" 
+       style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background-color: #e67e22; color: white; border-radius: 50%; text-decoration: none; font-size: 20px;">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <a href="https://www.tiktok.com/@urbanfmtku9?_r=1&_t=ZS-95sEVNlD8pb" target="_blank" 
+       style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background-color: #e67e22; color: white; border-radius: 50%; text-decoration: none; font-size: 20px;">
+        <i class="fab fa-tiktok"></i>
+    </a>
+
+</div>
+      </div>
+
+      <!-- Columna 2 — Páginas -->
+      <div>
+        <h4 class="footer__col-titulo">Navegación</h4>
+        <ul class="footer__links">
+          <li><a href="/"            class="footer__link">Inicio</a></li>
+          <li><a href="/productos"   class="footer__link">Catálogo de productos</a></li>
+          <li><a href="/nosotros"    class="footer__link">Nuestra historia</a></li>
+          <li><a href="/chatbot"     class="footer__link">Asistente virtual Avi</a></li>
+          <li><a href="/productos"   class="footer__link">Packs y combos</a></li>
+          <li><a href="/nosotros#valores" class="footer__link">Nuestros valores</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3 — Empresa -->
+      <div>
+        <h4 class="footer__col-titulo">Empresa</h4>
+        <ul class="footer__links">
+          <li><a href="/nosotros#historia"  class="footer__link">Nuestra historia</a></li>
+          <li><a href="/nosotros#coroico"   class="footer__link">Origen en Coroico</a></li>
+          <li><a href="/nosotros#mision"    class="footer__link">Misión y visión</a></li>
+          <li><a href="/nosotros#valores"   class="footer__link">Valores</a></li>
+          <li><a href="#"                  class="footer__link">Trabaja con nosotros</a></li>
+          <li><a href="#"                  class="footer__link">Prensa y medios</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 4 — Contacto -->
+      <div>
+        <h4 class="footer__col-titulo">Contacto</h4>
+        <address style="font-style: normal;">
+          <div class="footer__contacto-item">
+            <span class="footer__contacto-icono" aria-hidden="true">📍</span>
+            <span>Av. Arce 2345, Sopocachi<br />La Paz, Bolivia</span>
+          </div>
+          <div class="footer__contacto-item">
+            <span class="footer__contacto-icono" aria-hidden="true">📞</span>
+            <span>+591 79 000 000</span>
+          </div>
+          <div class="footer__contacto-item">
+            <span class="footer__contacto-icono" aria-hidden="true">✉️</span>
+            <span>hola@origenavicor.bo</span>
+          </div>
+          <div class="footer__contacto-item">
+            <span class="footer__contacto-icono" aria-hidden="true">🕐</span>
+            <span>Lun–Sáb: 7:00 am – 6:00 pm<br />Dom: 8:00 am – 2:00 pm</span>
+          </div>
+        </address>
+      </div>
+
+    </div>
+
+    <!-- Footer bottom bar -->
+    <div class="footer__bottom">
+      <p class="footer__copy">
+        © 2024 <span>Origen Avicor</span>. Todos los derechos reservados.
+        Hecho con ❤️ en Bolivia.
+      </p>
+      <nav class="footer__legal" aria-label="Legal">
+        <a href="#" class="footer__legal-link">Política de privacidad</a>
+        <a href="#" class="footer__legal-link">Términos de servicio</a>
+        <a href="#" class="footer__legal-link">Política de devoluciones</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       CARRITO FLOTANTE
+       ============================================================ -->
+  <div class="carrito-flotante" aria-label="Carrito de compras">
+    <span class="carrito-tooltip" aria-hidden="true">Ver mi pedido</span>
+    <button
+      class="carrito-btn"
+      onclick="abrirModal('Tu pedido', '')"
+      aria-label="Ver carrito de compras"
+    >
+      🛒
+      <span class="carrito-badge" id="carrito-badge" aria-live="polite" aria-label="Items en el carrito">0</span>
+    </button>
+  </div>
+
+  <!-- ============================================================
+       MODAL — HACER PEDIDO
+       ============================================================ -->
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-titulo" aria-hidden="true">
+    <div class="modal">
+      <button class="modal__cerrar" onclick="cerrarModal()" aria-label="Cerrar modal">✕</button>
+
+      <h2 class="modal__titulo" id="modal-titulo">Hacer mi pedido</h2>
+      <p class="modal__descripcion" id="modal-descripcion">
+        Completa tus datos y nos contactamos en menos de 2 horas.
+      </p>
+
+      <form id="modal-form" novalidate aria-label="Formulario de pedido">
+
+        <div class="modal__campo">
+          <label class="modal__label" for="pedido-nombre">Nombre completo *</label>
+          <input type="text" id="pedido-nombre" class="modal__input" placeholder="Tu nombre" required autocomplete="name" />
+        </div>
+
+        <div class="modal__campo">
+          <label class="modal__label" for="pedido-tel">Teléfono / WhatsApp *</label>
+          <input type="tel" id="pedido-tel" class="modal__input" placeholder="+591 7X XXX XXX" required autocomplete="tel" />
+        </div>
+
+        <div class="modal__campo">
+          <label class="modal__label" for="pedido-zona">Zona de entrega *</label>
+          <input type="text" id="pedido-zona" class="modal__input" placeholder="Ej: Miraflores, Sopocachi..." required />
+        </div>
+
+        <div class="modal__campo">
+          <label class="modal__label" for="pedido-producto">Producto seleccionado</label>
+          <input type="text" id="pedido-producto" class="modal__input" readonly style="background: var(--gris-suave); cursor: default;" />
+        </div>
+
+        <div class="modal__campo">
+          <label class="modal__label" for="pedido-notas">Notas adicionales</label>
+          <input type="text" id="pedido-notas" class="modal__input" placeholder="Alguna preferencia o detalle del pedido..." />
+        </div>
+
+        <button type="submit" class="modal__submit" id="modal-submit">
+          ✅ Confirmar pedido
+        </button>
+
+        <p id="modal-msg" style="text-align:center; margin-top:0.8rem; font-size:0.85rem; color: var(--verde-oliva); min-height:1.2rem;" aria-live="polite"></p>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       JAVASCRIPT
+       ============================================================ -->
+  <script>
+    // ============================================================
+    // 1. HEADER — Scroll state
+    // ============================================================
+    (function () {
+      var header   = document.getElementById('header');
+      var lastScrollY = 0;
+
+      function actualizarHeader () {
+        var scrollY = window.scrollY || window.pageYOffset;
+
+        if (scrollY > 60) {
+          header.classList.add('header--scrolled');
+          header.classList.remove('header--transparent');
+        } else {
+          header.classList.remove('header--scrolled');
+          header.classList.add('header--transparent');
+        }
+
+        lastScrollY = scrollY;
+      }
+
+      window.addEventListener('scroll', actualizarHeader, { passive: true });
+      actualizarHeader(); // Ejecutar al cargar
+    })();
+
+    // ============================================================
+    // 2. NAV TOGGLE — Mobile menu
+    // ============================================================
+    (function () {
+      var toggle  = document.getElementById('nav-toggle');
+      var navMob  = document.getElementById('nav-mobile');
+      var isOpen  = false;
+
+      function toggleMenu () {
+        isOpen = !isOpen;
+        navMob.classList.toggle('is-open', isOpen);
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      }
+
+      toggle.addEventListener('click', toggleMenu);
+
+      // Cerrar al hacer click en cualquier link del mobile menu
+      var mobileLinks = navMob.querySelectorAll('.nav-mobile__link');
+      mobileLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (isOpen) toggleMenu();
+        });
+      });
+    })();
+
+    // ============================================================
+    // 3. REVEAL ON SCROLL — Intersection Observer
+    // ============================================================
+    (function () {
+      var elementos = document.querySelectorAll('.reveal');
+
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.12,
+          rootMargin: '0px 0px -40px 0px'
+        });
+
+        elementos.forEach(function (el) {
+          observer.observe(el);
+        });
+      } else {
+        // Fallback para navegadores sin IntersectionObserver
+        elementos.forEach(function (el) {
+          el.classList.add('is-visible');
+        });
+      }
+    })();
+
+    // ============================================================
+    // 4. MODAL — Pedido
+    // ============================================================
+    var carritoCount = 0;
+
+    function abrirModal (producto, precio) {
+      var overlay    = document.getElementById('modal-overlay');
+      var inputProd  = document.getElementById('pedido-producto');
+      var desc       = document.getElementById('modal-descripcion');
+
+      // Autocompletar producto en el formulario
+      if (producto && producto !== 'Tu pedido') {
+        inputProd.value = precio ? (producto + ' — ' + precio) : producto;
+        desc.textContent = 'Completa tus datos y te contactamos en menos de 2 horas.';
+      } else {
+        inputProd.value = 'A definir con el asesor';
+        desc.textContent = 'Hablá con uno de nuestros asesores y definí tu pedido ideal.';
+      }
+
+      // Limpiar mensaje anterior
+      document.getElementById('modal-msg').textContent = '';
+
+      overlay.classList.add('is-open');
+      overlay.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+
+      // Foco al primer campo
+      setTimeout(function () {
+        document.getElementById('pedido-nombre').focus();
+      }, 300);
+    }
+
+    function cerrarModal () {
+      var overlay = document.getElementById('modal-overlay');
+      overlay.classList.remove('is-open');
+      overlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    // Cerrar modal al hacer click en el overlay (fuera del modal)
+    document.getElementById('modal-overlay').addEventListener('click', function (e) {
+      if (e.target === this) cerrarModal();
+    });
+
+    // Cerrar modal con Escape
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') cerrarModal();
+    });
+
+    // ============================================================
+    // 5. MODAL FORM — Envío / Validación
+    // ============================================================
+    document.getElementById('modal-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var nombre  = document.getElementById('pedido-nombre').value.trim();
+      var tel     = document.getElementById('pedido-tel').value.trim();
+      var zona    = document.getElementById('pedido-zona').value.trim();
+      var msgEl   = document.getElementById('modal-msg');
+      var btn     = document.getElementById('modal-submit');
+
+      // Validación básica
+      if (!nombre) {
+        msgEl.style.color = '#c0392b';
+        msgEl.textContent = '⚠️ Por favor ingresá tu nombre completo.';
+        document.getElementById('pedido-nombre').focus();
+        return;
+      }
+
+      if (!tel || tel.length < 8) {
+        msgEl.style.color = '#c0392b';
+        msgEl.textContent = '⚠️ Por favor ingresá un número de teléfono válido.';
+        document.getElementById('pedido-tel').focus();
+        return;
+      }
+
+      if (!zona) {
+        msgEl.style.color = '#c0392b';
+        msgEl.textContent = '⚠️ Por favor indicá tu zona de entrega.';
+        document.getElementById('pedido-zona').focus();
+        return;
+      }
+
+      // Simular envío
+      btn.textContent = 'Enviando...';
+      btn.disabled = true;
+      btn.style.opacity = '0.7';
+
+      setTimeout(function () {
+        // Éxito simulado
+        btn.textContent = '✅ Confirmar pedido';
+        btn.disabled = false;
+        btn.style.opacity = '1';
+
+        msgEl.style.color = 'var(--verde-oliva)';
+        msgEl.textContent = '✅ ¡Pedido recibido! Te contactaremos en menos de 2 horas.';
+
+        // Actualizar carrito
+        carritoCount += 1;
+        var badge = document.getElementById('carrito-badge');
+        badge.textContent = carritoCount;
+        badge.classList.add('is-visible');
+
+        // Limpiar y cerrar modal después de 2.5 segundos
+        setTimeout(function () {
+          document.getElementById('modal-form').reset();
+          msgEl.textContent = '';
+          cerrarModal();
+        }, 2500);
+
+      }, 1200);
+    });
+
+    // ============================================================
+    // 6. NEWSLETTER FORM — Validación y envío simulado
+    // ============================================================
+    document.getElementById('newsletter-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var email  = document.getElementById('newsletter-email').value.trim();
+      var msgEl  = document.getElementById('newsletter-msg');
+      var btn    = this.querySelector('.newsletter__submit');
+
+      // Validación de email
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!email || !emailRegex.test(email)) {
+        msgEl.style.color = '#c0392b';
+        msgEl.textContent = '⚠️ Ingresá un correo electrónico válido.';
+        return;
+      }
+
+      // Simular envío
+      btn.textContent = 'Suscribiendo...';
+      btn.disabled = true;
+
+      setTimeout(function () {
+        btn.textContent = 'Suscribirme';
+        btn.disabled = false;
+
+        msgEl.style.color = 'var(--verde-oliva)';
+        msgEl.textContent = '✅ ¡Listo! Ya sos parte de la familia Avicor.';
+
+        document.getElementById('newsletter-form').reset();
+
+        setTimeout(function () {
+          msgEl.textContent = '';
+        }, 4000);
+      }, 1000);
+    });
+
+    // ============================================================
+    // 7. SMOOTH SCROLL para todos los anchors
+    // ============================================================
+    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+      anchor.addEventListener('click', function (e) {
+        var href = this.getAttribute('href');
+        if (href === '#') return;
+        var target = document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        var headerH = document.getElementById('header').offsetHeight;
+        var targetTop = target.getBoundingClientRect().top + window.scrollY - headerH - 16;
+        window.scrollTo({ top: targetTop, behavior: 'smooth' });
+      });
+    });
+
+    // ============================================================
+    // 8. TOOLTIP DINÁMICO en tarjetas de productos
+    // ============================================================
+    (function () {
+      var buttons = document.querySelectorAll('.producto-card__btn');
+      buttons.forEach(function (btn) {
+        btn.addEventListener('mouseenter', function () {
+          this.style.transform = 'translateY(-2px) scale(1.02)';
+        });
+        btn.addEventListener('mouseleave', function () {
+          this.style.transform = '';
+        });
+      });
+    })();
+
+    // ============================================================
+    // 9. PARALLAX SUTIL en hero (desktop only)
+    // ============================================================
+    (function () {
+      var heroBg = document.querySelector('.hero__bg');
+      if (!heroBg) return;
+
+      function onScroll () {
+        if (window.innerWidth < 768) return;
+        var scrollY = window.scrollY || window.pageYOffset;
+        var speed   = 0.35;
+        heroBg.style.transform = 'scale(1.07) translateY(' + (scrollY * speed) + 'px)';
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+    })();
+
+    // ============================================================
+    // 10. INDICADOR DE CARGA — página lista
+    // ============================================================
+    document.addEventListener('DOMContentLoaded', function () {
+      // Marcar elementos del hero como visibles inmediatamente
+      var heroReveal = document.querySelectorAll('.hero .reveal');
+      heroReveal.forEach(function (el) {
+        el.classList.add('is-visible');
+      });
+
+      // Log de inicialización (desarrollo)
+      console.log('%c🐔 Origen Avicor', 'color: #556B2F; font-size: 18px; font-weight: bold;');
+      console.log('%cCrecimiento natural, sabor de verdad — v1.0.0', 'color: #D68A5E;');
+    });
+
+  </script>
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/51403338.js"></script>
+<!-- End of HubSpot Embed Code -->
+</body>
+
+</html>

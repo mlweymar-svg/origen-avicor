@@ -1,0 +1,1878 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- ============================================================
+       ORIGEN AVICOR — nosotros.html
+       Historia · Origen en Coroico · Misión · Visión · Valores
+       ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Conoce la historia de Origen Avicor — nacimos en Coroico con la misión de llevar pollo natural y honesto a las familias bolivianas." />
+  <meta name="author" content="Origen Avicor" />
+  <title>Nosotros — Origen Avicor</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       0. TOKENS — idénticos a index.html y productos.html
+       ============================================================ */
+    :root {
+      --verde-oliva:    #556B2F;
+      --verde-oscuro:   #3d4f21;
+      --verde-claro:    #7a9640;
+      --verde-palido:   #e8eedb;
+      --naranja:        #D68A5E;
+      --naranja-oscuro: #b96d3e;
+      --naranja-claro:  #f0b08a;
+      --naranja-palido: #fdf0e6;
+      --marron:         #8B7355;
+      --marron-oscuro:  #5c4a33;
+      --marron-claro:   #b09a7a;
+      --marron-palido:  #f5f0e8;
+      --crema:          #FAF7F2;
+      --crema-oscura:   #f0ebe0;
+      --blanco:         #ffffff;
+      --gris-suave:     #f4f1ec;
+      --gris-texto:     #6b6055;
+      --texto-oscuro:   #2c2416;
+
+      --font-display:   'Playfair Display', Georgia, serif;
+      --font-body:      'DM Sans', system-ui, sans-serif;
+
+      --radio-md:       12px;
+      --radio-lg:       24px;
+      --radio-pill:     999px;
+
+      --sombra-sm:      0 2px 8px rgba(44,36,22,.08);
+      --sombra-md:      0 8px 32px rgba(44,36,22,.12);
+      --sombra-lg:      0 20px 60px rgba(44,36,22,.18);
+      --sombra-naranja: 0 8px 32px rgba(214,138,94,.28);
+      --sombra-verde:   0 8px 32px rgba(85,107,47,.28);
+
+      --trans-normal:   .3s ease;
+      --trans-lenta:    .6s cubic-bezier(.23,1,.32,1);
+
+      --z-nav:   100;
+      --z-modal: 200;
+    }
+
+    /* ============================================================
+       1. RESET
+       ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font-body);
+      background: var(--crema);
+      color: var(--texto-oscuro);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--crema-oscura); }
+    ::-webkit-scrollbar-thumb { background: var(--marron-claro); border-radius: var(--radio-pill); }
+    ::selection { background: var(--naranja-claro); color: var(--texto-oscuro); }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    button { cursor: pointer; font-family: var(--font-body); }
+
+    /* ============================================================
+       2. TIPOGRAFÍA
+       ============================================================ */
+    h1,h2,h3,h4 { font-family: var(--font-display); line-height: 1.12; color: var(--texto-oscuro); }
+    h1 { font-size: clamp(2.6rem,5.5vw,5rem); font-weight: 700; }
+    h2 { font-size: clamp(1.9rem,3.5vw,3rem); font-weight: 700; }
+    h3 { font-size: clamp(1.2rem,2.2vw,1.6rem); font-weight: 600; }
+    p  { font-size: clamp(.93rem,1.4vw,1.05rem); color: var(--gris-texto); line-height: 1.8; }
+
+    .section-tag {
+      display: inline-flex; align-items: center; gap: .5rem;
+      font-size: .75rem; font-weight: 700; letter-spacing: .15em;
+      text-transform: uppercase; color: var(--naranja); margin-bottom: .9rem;
+    }
+    .section-tag::before {
+      content: ''; display: block; width: 22px; height: 2px;
+      background: var(--naranja); border-radius: 2px;
+    }
+
+    /* ============================================================
+       3. BOTONES
+       ============================================================ */
+    .btn {
+      display: inline-flex; align-items: center; gap: .55rem;
+      padding: .85rem 1.9rem; border-radius: var(--radio-pill);
+      font-size: .92rem; font-weight: 600; letter-spacing: .02em;
+      border: 2px solid transparent; transition: all var(--trans-normal);
+      white-space: nowrap; position: relative; overflow: hidden;
+    }
+    .btn::after {
+      content: ''; position: absolute; inset: 0;
+      background: rgba(255,255,255,.15); opacity: 0;
+      transition: opacity .15s ease;
+    }
+    .btn:hover::after { opacity: 1; }
+
+    .btn-primario {
+      background: var(--naranja); color: var(--blanco);
+      border-color: var(--naranja); box-shadow: var(--sombra-naranja);
+    }
+    .btn-primario:hover {
+      background: var(--naranja-oscuro); border-color: var(--naranja-oscuro);
+      transform: translateY(-2px); box-shadow: 0 12px 40px rgba(214,138,94,.38);
+    }
+    .btn-secundario {
+      background: transparent; color: var(--verde-oliva);
+      border-color: var(--verde-oliva);
+    }
+    .btn-secundario:hover {
+      background: var(--verde-oliva); color: var(--blanco);
+      transform: translateY(-2px); box-shadow: var(--sombra-verde);
+    }
+    .btn-blanco {
+      background: var(--blanco); color: var(--verde-oscuro);
+      border-color: var(--blanco);
+    }
+    .btn-blanco:hover {
+      background: transparent; color: var(--blanco);
+      border-color: var(--blanco); transform: translateY(-2px);
+    }
+
+    /* ============================================================
+       4. HEADER
+       ============================================================ */
+    .header {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: var(--z-nav); padding: 0 5%;
+      background: rgba(250,247,242,.96);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 2px 20px rgba(44,36,22,.08);
+      border-bottom: 1px solid rgba(139,115,85,.12);
+      transition: all var(--trans-normal);
+    }
+    .header__inner {
+      max-width: 1280px; margin: 0 auto;
+      display: flex; align-items: center;
+      justify-content: space-between; height: 76px;
+    }
+    .logo { display: flex; flex-direction: column; line-height: 1; gap: 1px; }
+    .logo__nombre {
+      font-family: var(--font-display); font-size: 1.4rem; font-weight: 700;
+      color: var(--texto-oscuro); letter-spacing: -.02em;
+    }
+    .logo__tagline {
+      font-size: .62rem; font-weight: 400; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--gris-texto);
+    }
+    .nav { display: flex; align-items: center; gap: 2.5rem; }
+    .nav__link {
+      font-size: .9rem; font-weight: 500; color: var(--gris-texto);
+      position: relative; padding-bottom: 2px; transition: color var(--trans-normal);
+    }
+    .nav__link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1.5px; background: var(--naranja);
+      border-radius: 2px; transition: width var(--trans-normal);
+    }
+    .nav__link:hover { color: var(--verde-oliva); }
+    .nav__link:hover::after { width: 100%; }
+    .nav__link--activo { color: var(--verde-oliva); font-weight: 600; }
+    .nav__link--activo::after { width: 100%; }
+    .nav__cta {
+      background: var(--naranja); color: var(--blanco);
+      padding: .6rem 1.4rem; border-radius: var(--radio-pill);
+      font-size: .88rem; font-weight: 600;
+      border: 2px solid var(--naranja); transition: all var(--trans-normal);
+    }
+    .nav__cta:hover {
+      background: var(--naranja-oscuro); border-color: var(--naranja-oscuro);
+      transform: translateY(-1px);
+    }
+    .nav-toggle {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; padding: 4px; cursor: pointer;
+    }
+    .nav-toggle__bar {
+      display: block; width: 24px; height: 2px;
+      background: var(--texto-oscuro); border-radius: 2px;
+      transition: all var(--trans-normal);
+    }
+    .nav-mobile {
+      display: none; flex-direction: column; padding: 1rem 0 1.5rem;
+      border-top: 1px solid rgba(139,115,85,.15);
+      background: rgba(250,247,242,.98); backdrop-filter: blur(12px);
+    }
+    .nav-mobile.is-open { display: flex; }
+    .nav-mobile__link {
+      padding: .85rem 1.5rem; font-size: .95rem; font-weight: 500;
+      color: var(--gris-texto); border-bottom: 1px solid rgba(139,115,85,.08);
+      transition: color .15s;
+    }
+    .nav-mobile__link:hover { color: var(--verde-oliva); }
+
+    /* ============================================================
+       5. HERO — Inmersivo con imagen y overlay dramático
+       ============================================================ */
+    .hero {
+      position: relative; min-height: 92vh;
+      display: flex; align-items: flex-end;
+      overflow: hidden; margin-top: 76px;
+    }
+    .hero__bg {
+      position: absolute; inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&q=85');
+      background-size: cover; background-position: center 30%;
+      animation: hero-pan 20s ease-in-out infinite alternate;
+    }
+    @keyframes hero-pan {
+      from { transform: scale(1.06) translateX(0); }
+      to   { transform: scale(1.1)  translateX(-2%); }
+    }
+    .hero__overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(28,38,14,.92) 0%,
+        rgba(44,36,22,.55) 45%,
+        rgba(85,107,47,.18) 100%
+      );
+    }
+    .hero__grain {
+      position: absolute; inset: 0; opacity: .035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* Decoración vertical — línea + número */
+    .hero__lateral {
+      position: absolute; right: 4%; top: 50%;
+      transform: translateY(-50%);
+      display: flex; flex-direction: column;
+      align-items: center; gap: 1rem;
+      z-index: 3; opacity: .7;
+    }
+    .hero__lateral-linea {
+      width: 1.5px; height: 80px;
+      background: linear-gradient(to bottom, transparent, rgba(255,255,255,.6));
+    }
+    .hero__lateral-texto {
+      writing-mode: vertical-rl;
+      font-size: .68rem; letter-spacing: .18em;
+      text-transform: uppercase; color: rgba(255,255,255,.65);
+      font-weight: 500;
+    }
+
+    .hero__contenido {
+      position: relative; z-index: 3;
+      max-width: 1280px; margin: 0 auto;
+      padding: 0 5% 6rem;
+      width: 100%;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: flex-end;
+    }
+    .hero__texto { animation: fade-up 1s ease both; }
+
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero__eyebrow {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(214,138,94,.22);
+      border: 1px solid rgba(214,138,94,.38);
+      border-radius: var(--radio-pill);
+      padding: .32rem .9rem;
+      font-size: .75rem; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--naranja-claro); margin-bottom: 1.4rem;
+      backdrop-filter: blur(4px);
+      animation: fade-up 1s .2s ease both;
+    }
+    .hero__titulo {
+      color: var(--blanco); margin-bottom: 1.4rem;
+      animation: fade-up 1s .35s ease both;
+    }
+    .hero__titulo em { font-style: italic; color: var(--naranja-claro); }
+    .hero__bajada {
+      color: rgba(255,255,255,.75); font-size: 1.1rem;
+      line-height: 1.75; margin-bottom: 2.4rem;
+      max-width: 460px;
+      animation: fade-up 1s .5s ease both;
+    }
+    .hero__acciones {
+      display: flex; gap: 1.2rem; flex-wrap: wrap;
+      animation: fade-up 1s .65s ease both;
+    }
+
+    /* Panel de datos del lado derecho */
+    .hero__panel {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: var(--radio-lg); padding: 2rem 2rem;
+      backdrop-filter: blur(16px);
+      animation: fade-up 1s .5s ease both;
+      display: flex; flex-direction: column; gap: 0;
+    }
+    .hero__panel-titulo {
+      font-family: var(--font-display);
+      font-size: 1rem; font-weight: 600;
+      color: rgba(255,255,255,.55);
+      text-transform: uppercase; letter-spacing: .12em;
+      margin-bottom: 1.5rem; font-style: italic;
+    }
+    .hero__hito {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .hero__hito:last-child { border-bottom: none; padding-bottom: 0; }
+    .hero__hito:first-of-type { padding-top: 0; }
+    .hero__hito-anio {
+      font-family: var(--font-display); font-size: 1.6rem;
+      font-weight: 700; color: var(--naranja-claro);
+      line-height: 1; min-width: 56px;
+    }
+    .hero__hito-texto {
+      font-size: .88rem; color: rgba(255,255,255,.78); line-height: 1.5;
+    }
+    .hero__hito-icono {
+      width: 36px; height: 36px; flex-shrink: 0;
+      background: rgba(214,138,94,.2); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; margin-left: auto;
+    }
+
+    /* Scroll indicator */
+    .hero__scroll {
+      position: absolute; bottom: 2.5rem; left: 50%;
+      transform: translateX(-50%); z-index: 3;
+      display: flex; flex-direction: column; align-items: center;
+      gap: .4rem; color: rgba(255,255,255,.45);
+      font-size: .7rem; letter-spacing: .1em; text-transform: uppercase;
+      animation: fade-up 1s 1.1s ease both;
+    }
+    .hero__scroll-line {
+      width: 1.5px; height: 40px;
+      background: linear-gradient(to bottom, transparent, rgba(255,255,255,.5));
+      animation: scroll-line 2s ease-in-out infinite;
+    }
+    @keyframes scroll-line {
+      0%   { transform: scaleY(0); transform-origin: top; }
+      50%  { transform: scaleY(1); transform-origin: top; }
+      51%  { transform: scaleY(1); transform-origin: bottom; }
+      100% { transform: scaleY(0); transform-origin: bottom; }
+    }
+
+    /* ============================================================
+       6. TRUST BAR
+       ============================================================ */
+    .trust-bar {
+      background: var(--verde-oliva); padding: 1.1rem 5%;
+    }
+    .trust-bar__inner {
+      max-width: 1280px; margin: 0 auto;
+      display: flex; align-items: center;
+      justify-content: space-around; gap: 2rem; flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: .55rem;
+      color: rgba(255,255,255,.9); font-size: .86rem; font-weight: 500;
+      white-space: nowrap;
+    }
+
+    /* ============================================================
+       7. HISTORIA — Timeline narrativo
+       ============================================================ */
+    .historia {
+      padding: 8rem 5% 7rem;
+      background: var(--crema);
+      position: relative; overflow: hidden;
+    }
+    .historia::before {
+      content: 'Historia';
+      position: absolute; top: -2rem; left: -1rem;
+      font-family: var(--font-display); font-size: 14rem;
+      font-weight: 900; color: rgba(85,107,47,.04);
+      line-height: 1; pointer-events: none;
+      white-space: nowrap;
+    }
+    .historia__inner { max-width: 1280px; margin: 0 auto; }
+
+    .historia__cabecera {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: end; margin-bottom: 6rem;
+    }
+    .historia__subtitulo { margin-top: 1.2rem; max-width: 440px; }
+
+    /* Imagen editorial lado derecho */
+    .historia__imagen-wrap { position: relative; }
+    .historia__img-main {
+      width: 100%; height: 420px; object-fit: cover;
+      border-radius: var(--radio-lg); box-shadow: var(--sombra-lg);
+    }
+    .historia__img-flotante {
+      position: absolute; bottom: -2rem; left: -2.5rem;
+      width: 180px; height: 180px; object-fit: cover;
+      border-radius: var(--radio-md);
+      border: 4px solid var(--blanco); box-shadow: var(--sombra-md);
+    }
+    .historia__img-etiqueta {
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      background: var(--naranja); color: var(--blanco);
+      padding: .7rem 1rem; border-radius: var(--radio-md);
+      text-align: center; box-shadow: var(--sombra-naranja);
+    }
+    .historia__img-etiqueta strong {
+      display: block; font-family: var(--font-display);
+      font-size: 1.5rem; line-height: 1;
+    }
+    .historia__img-etiqueta small {
+      font-size: .72rem; opacity: .85; font-weight: 500; letter-spacing: .06em;
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      display: flex; flex-direction: column; gap: 0;
+    }
+    /* Línea central */
+    .timeline::before {
+      content: ''; position: absolute;
+      left: 50%; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--verde-palido), var(--naranja-claro), var(--verde-palido));
+      transform: translateX(-50%);
+    }
+
+    .tl-item {
+      display: grid; grid-template-columns: 1fr 64px 1fr;
+      align-items: start; gap: 0;
+      padding-bottom: 4rem;
+    }
+    .tl-item:last-child { padding-bottom: 0; }
+
+    /* Años pares a la izquierda, impares a la derecha */
+    .tl-item--izq .tl-contenido { grid-column: 1; text-align: right; padding-right: 3rem; }
+    .tl-item--izq .tl-nodo      { grid-column: 2; }
+    .tl-item--izq .tl-vacio     { grid-column: 3; }
+
+    .tl-item--der .tl-vacio     { grid-column: 1; }
+    .tl-item--der .tl-nodo      { grid-column: 2; }
+    .tl-item--der .tl-contenido { grid-column: 3; text-align: left; padding-left: 3rem; }
+
+    .tl-nodo {
+      display: flex; flex-direction: column;
+      align-items: center; gap: .4rem; position: relative; z-index: 1;
+    }
+    .tl-nodo__circulo {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: var(--blanco);
+      border: 3px solid var(--verde-palido);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; box-shadow: var(--sombra-md);
+      transition: all var(--trans-normal);
+      flex-shrink: 0;
+    }
+    .tl-nodo:hover .tl-nodo__circulo {
+      background: var(--verde-oliva); border-color: var(--verde-oliva);
+      transform: scale(1.1);
+    }
+    .tl-nodo__anio {
+      font-family: var(--font-display); font-size: .85rem;
+      font-weight: 700; color: var(--naranja);
+      letter-spacing: .05em;
+    }
+
+    .tl-contenido { }
+    .tl-titulo {
+      font-family: var(--font-display); font-size: 1.2rem;
+      font-weight: 700; color: var(--texto-oscuro);
+      margin-bottom: .55rem;
+    }
+    .tl-texto { font-size: .93rem; color: var(--gris-texto); line-height: 1.75; }
+
+    /* ============================================================
+       8. ORIGEN COROICO — Sección inmersiva
+       ============================================================ */
+    .coroico {
+      background: var(--marron-palido);
+      padding: 8rem 5%; position: relative; overflow: hidden;
+    }
+    .coroico::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 6px;
+      background: linear-gradient(90deg, var(--verde-oliva), var(--naranja), var(--marron));
+    }
+    .coroico__inner {
+      max-width: 1280px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 6rem; align-items: center;
+    }
+
+    /* Mosaico de imágenes */
+    .coroico__mosaico {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 280px 200px;
+      gap: 1rem;
+      position: relative;
+    }
+    .mosaico__img {
+      border-radius: var(--radio-md); overflow: hidden;
+      box-shadow: var(--sombra-sm);
+    }
+    .mosaico__img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform var(--trans-lenta);
+    }
+    .mosaico__img:hover img { transform: scale(1.06); }
+    .mosaico__img--grande { grid-row: 1 / 3; }
+
+    /* Badge flotante */
+    .coroico__badge {
+      position: absolute; bottom: -1.5rem; right: -1.5rem;
+      background: var(--verde-oliva); color: var(--blanco);
+      border-radius: var(--radio-lg); padding: 1.2rem 1.5rem;
+      box-shadow: var(--sombra-verde); text-align: center;
+      border: 3px solid var(--blanco);
+    }
+    .coroico__badge-num {
+      font-family: var(--font-display); font-size: 2.2rem;
+      font-weight: 700; line-height: 1;
+    }
+    .coroico__badge-label { font-size: .75rem; opacity: .85; margin-top: .15rem; }
+
+    .coroico__texto { }
+    .coroico__parrafo { margin-bottom: 1.2rem; }
+
+    /* Datos geográficos */
+    .coroico__datos {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1rem; margin-top: 2.5rem;
+    }
+    .dato-geo {
+      background: var(--blanco); border-radius: var(--radio-md);
+      padding: 1.1rem 1.2rem;
+      border: 1px solid rgba(139,115,85,.12);
+      box-shadow: var(--sombra-sm);
+      display: flex; align-items: center; gap: .8rem;
+    }
+    .dato-geo__icono {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--verde-palido);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .dato-geo__num {
+      font-family: var(--font-display); font-size: 1.25rem;
+      font-weight: 700; color: var(--verde-oliva); line-height: 1;
+    }
+    .dato-geo__label { font-size: .78rem; color: var(--gris-texto); margin-top: .1rem; }
+
+    /* ============================================================
+       9. MISIÓN, VISIÓN Y PROPÓSITO — Cards tridimensionales
+       ============================================================ */
+    .mvv {
+      padding: 8rem 5%;
+      background: var(--blanco);
+      position: relative; overflow: hidden;
+    }
+    /* Elemento decorativo de fondo */
+    .mvv::before {
+      content: '';
+      position: absolute; top: -120px; right: -120px;
+      width: 500px; height: 500px; border-radius: 50%;
+      background: radial-gradient(circle, var(--verde-palido) 0%, transparent 70%);
+      opacity: .5;
+    }
+    .mvv__inner { max-width: 1280px; margin: 0 auto; position: relative; z-index: 1; }
+
+    .mvv__cabecera { text-align: center; max-width: 580px; margin: 0 auto 5rem; }
+    .mvv__cabecera p { margin-top: 1rem; }
+
+    .mvv__grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+      margin-bottom: 5rem;
+    }
+
+    .mvv-card {
+      border-radius: var(--radio-lg); padding: 2.6rem 2.2rem;
+      position: relative; overflow: hidden;
+      transition: transform var(--trans-lenta), box-shadow var(--trans-lenta);
+    }
+    .mvv-card:hover { transform: translateY(-8px); box-shadow: var(--sombra-lg); }
+
+    /* Misión — verde profundo */
+    .mvv-card--mision {
+      background: linear-gradient(145deg, var(--verde-oscuro) 0%, var(--verde-oliva) 100%);
+      color: var(--blanco);
+    }
+    /* Visión — naranja cálido */
+    .mvv-card--vision {
+      background: linear-gradient(145deg, var(--naranja-oscuro) 0%, var(--naranja) 100%);
+      color: var(--blanco);
+    }
+    /* Propósito — marrón tierra */
+    .mvv-card--proposito {
+      background: linear-gradient(145deg, var(--marron-oscuro) 0%, var(--marron) 100%);
+      color: var(--blanco);
+    }
+
+    /* Círculo decorativo en la esquina */
+    .mvv-card::after {
+      content: ''; position: absolute;
+      bottom: -40px; right: -40px;
+      width: 140px; height: 140px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.06);
+    }
+
+    .mvv-card__icono-wrap {
+      width: 60px; height: 60px; border-radius: var(--radio-md);
+      background: rgba(255,255,255,.15);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.7rem; margin-bottom: 1.5rem;
+    }
+    .mvv-card__etiqueta {
+      font-size: .72rem; font-weight: 700; letter-spacing: .15em;
+      text-transform: uppercase; color: rgba(255,255,255,.6);
+      margin-bottom: .5rem;
+    }
+    .mvv-card__titulo {
+      font-family: var(--font-display); font-size: 1.5rem;
+      font-weight: 700; color: var(--blanco); margin-bottom: 1rem;
+    }
+    .mvv-card__texto { font-size: .92rem; color: rgba(255,255,255,.82); line-height: 1.75; }
+
+    /* Cita destacada */
+    .mvv__cita {
+      background: var(--crema);
+      border-radius: var(--radio-lg);
+      padding: 3rem 4rem;
+      position: relative; overflow: hidden;
+      border: 1px solid rgba(139,115,85,.12);
+      text-align: center;
+    }
+    .mvv__cita-comilla {
+      font-family: var(--font-display); font-size: 8rem;
+      color: var(--verde-palido); line-height: .7;
+      position: absolute; top: 1.5rem; left: 2.5rem;
+      font-style: italic; pointer-events: none;
+    }
+    .mvv__cita-texto {
+      font-family: var(--font-display); font-size: clamp(1.3rem,2.5vw,2rem);
+      font-weight: 600; font-style: italic;
+      color: var(--verde-oscuro); line-height: 1.45;
+      position: relative; z-index: 1; max-width: 700px; margin: 0 auto 1.5rem;
+    }
+    .mvv__cita-autor {
+      font-size: .88rem; font-weight: 600; color: var(--naranja);
+      letter-spacing: .08em; text-transform: uppercase;
+    }
+
+    /* ============================================================
+       10. VALORES — Grid de iconos
+       ============================================================ */
+    .valores {
+      padding: 8rem 5%;
+      background: linear-gradient(160deg, var(--verde-oscuro) 0%, var(--verde-oliva) 55%, var(--verde-claro) 100%);
+      position: relative; overflow: hidden;
+    }
+    /* Grain en verde */
+    .valores::before {
+      content: ''; position: absolute; inset: 0; opacity: .03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    .valores__inner { max-width: 1280px; margin: 0 auto; position: relative; z-index: 1; }
+
+    .valores__cabecera { text-align: center; max-width: 560px; margin: 0 auto 4.5rem; }
+    .valores__cabecera h2 { color: var(--blanco); }
+    .valores__cabecera p  { color: rgba(255,255,255,.72); margin-top: .9rem; }
+    .valores__cabecera .section-tag { color: var(--naranja-claro); }
+    .valores__cabecera .section-tag::before { background: var(--naranja-claro); }
+
+    .valores__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .valor-card {
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radio-lg);
+      padding: 2rem 1.6rem;
+      text-align: center;
+      transition: all var(--trans-lenta);
+      backdrop-filter: blur(8px);
+      position: relative; overflow: hidden;
+    }
+    .valor-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 2.5px;
+      background: linear-gradient(90deg, var(--naranja), var(--naranja-claro));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform var(--trans-lenta);
+    }
+    .valor-card:hover {
+      background: rgba(255,255,255,.13);
+      border-color: rgba(255,255,255,.2);
+      transform: translateY(-6px);
+    }
+    .valor-card:hover::before { transform: scaleX(1); }
+
+    .valor-card__icono {
+      font-size: 2.4rem; margin-bottom: 1.2rem;
+      display: block;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,.15));
+    }
+    .valor-card__titulo {
+      font-family: var(--font-display); font-size: 1.15rem;
+      font-weight: 700; color: var(--blanco); margin-bottom: .6rem;
+    }
+    .valor-card__texto { font-size: .88rem; color: rgba(255,255,255,.72); line-height: 1.7; }
+
+    /* ============================================================
+       11. EQUIPO — Productores de Coroico
+       ============================================================ */
+    .equipo {
+      padding: 8rem 5%;
+      background: var(--crema-oscura);
+    }
+    .equipo__inner { max-width: 1280px; margin: 0 auto; }
+    .equipo__cabecera { text-align: center; max-width: 560px; margin: 0 auto 4.5rem; }
+    .equipo__cabecera p { margin-top: 1rem; }
+
+    .equipo__grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1.8rem;
+    }
+
+    .persona-card {
+      background: var(--blanco);
+      border-radius: var(--radio-lg);
+      overflow: hidden;
+      border: 1px solid rgba(139,115,85,.1);
+      box-shadow: var(--sombra-sm);
+      transition: all var(--trans-lenta);
+      text-align: center;
+    }
+    .persona-card:hover { transform: translateY(-6px); box-shadow: var(--sombra-lg); }
+
+    .persona-card__img-wrap {
+      height: 220px; overflow: hidden; position: relative;
+      background: var(--verde-palido);
+    }
+    .persona-card__img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform var(--trans-lenta);
+    }
+    .persona-card:hover .persona-card__img { transform: scale(1.06); }
+
+    .persona-card__rol {
+      position: absolute; bottom: .8rem; left: 50%; transform: translateX(-50%);
+      background: var(--verde-oliva); color: var(--blanco);
+      padding: .25rem .75rem; border-radius: var(--radio-pill);
+      font-size: .7rem; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; white-space: nowrap;
+    }
+
+    .persona-card__cuerpo { padding: 1.4rem 1.2rem 1.6rem; }
+    .persona-card__nombre {
+      font-family: var(--font-display); font-size: 1.1rem;
+      font-weight: 700; color: var(--texto-oscuro); margin-bottom: .25rem;
+    }
+    .persona-card__lugar {
+      font-size: .8rem; color: var(--naranja); font-weight: 600;
+      margin-bottom: .6rem;
+    }
+    .persona-card__bio { font-size: .85rem; color: var(--gris-texto); line-height: 1.65; }
+
+    /* ============================================================
+       12. COMPROMISOS — Lista visual
+       ============================================================ */
+    .compromisos {
+      padding: 8rem 5%;
+      background: var(--blanco);
+    }
+    .compromisos__inner {
+      max-width: 1280px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 6rem; align-items: center;
+    }
+    .compromisos__texto { }
+    .compromisos__lista { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.2rem; }
+
+    .compromiso-item {
+      display: flex; align-items: flex-start; gap: 1rem;
+      padding: 1.2rem 1.4rem;
+      background: var(--crema);
+      border-radius: var(--radio-md);
+      border: 1px solid rgba(139,115,85,.1);
+      transition: all var(--trans-normal);
+    }
+    .compromiso-item:hover {
+      background: var(--verde-palido);
+      border-color: rgba(85,107,47,.2);
+      transform: translateX(4px);
+    }
+    .compromiso-item__icono {
+      width: 44px; height: 44px; flex-shrink: 0;
+      background: var(--verde-oliva);
+      border-radius: var(--radio-md);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+    }
+    .compromiso-item__titulo {
+      font-weight: 700; font-size: .95rem;
+      color: var(--texto-oscuro); margin-bottom: .25rem;
+    }
+    .compromiso-item__texto { font-size: .88rem; color: var(--gris-texto); line-height: 1.6; }
+
+    /* Visual lado derecho */
+    .compromisos__visual { position: relative; }
+    .compromisos__img-principal {
+      width: 100%; height: 500px; object-fit: cover;
+      border-radius: var(--radio-lg); box-shadow: var(--sombra-lg);
+    }
+    .compromisos__stat-flotante {
+      position: absolute;
+      background: var(--blanco);
+      border-radius: var(--radio-md);
+      padding: 1.2rem 1.4rem;
+      box-shadow: var(--sombra-md);
+      border: 1px solid rgba(139,115,85,.1);
+    }
+    .compromisos__stat-flotante--1 { top: 2rem; left: -2.5rem; }
+    .compromisos__stat-flotante--2 { bottom: 2.5rem; right: -2rem; }
+    .compromisos__stat-num {
+      font-family: var(--font-display); font-size: 1.8rem;
+      font-weight: 700; color: var(--verde-oliva); line-height: 1;
+    }
+    .compromisos__stat-label { font-size: .78rem; color: var(--gris-texto); margin-top: .15rem; }
+
+    /* ============================================================
+       13. CTA FINAL
+       ============================================================ */
+    .cta-final {
+      padding: 7rem 5%; text-align: center;
+      background: linear-gradient(135deg, var(--marron-oscuro) 0%, var(--marron) 50%, var(--naranja-oscuro) 100%);
+      position: relative; overflow: hidden;
+    }
+    .cta-final::before {
+      content: ''; position: absolute;
+      top: -80px; left: -80px; width: 300px; height: 300px;
+      border-radius: 50%; background: rgba(255,255,255,.04);
+    }
+    .cta-final::after {
+      content: ''; position: absolute;
+      bottom: -60px; right: -60px; width: 240px; height: 240px;
+      border-radius: 50%; background: rgba(214,138,94,.1);
+    }
+    .cta-final__inner { max-width: 680px; margin: 0 auto; position: relative; z-index: 1; }
+    .cta-final__icono { font-size: 3rem; margin-bottom: 1.2rem; }
+    .cta-final__titulo {
+      font-family: var(--font-display); font-size: clamp(2rem,4vw,3.2rem);
+      font-weight: 700; color: var(--blanco); line-height: 1.15;
+      margin-bottom: 1.2rem;
+    }
+    .cta-final__titulo em { font-style: italic; color: var(--naranja-claro); }
+    .cta-final__texto { color: rgba(255,255,255,.72); font-size: 1.05rem; line-height: 1.75; margin-bottom: 2.5rem; }
+    .cta-final__acciones { display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ============================================================
+       14. FOOTER
+       ============================================================ */
+    .footer {
+      background: var(--texto-oscuro); color: rgba(255,255,255,.75);
+      padding: 4.5rem 5% 2rem;
+    }
+    .footer__grid {
+      max-width: 1280px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1.2fr;
+      gap: 3.5rem; padding-bottom: 3.5rem;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .footer__logo-nombre {
+      font-family: var(--font-display); font-size: 1.5rem;
+      font-weight: 700; color: var(--blanco); display: block; margin-bottom: .3rem;
+    }
+    .footer__logo-tagline {
+      font-size: .72rem; letter-spacing: .15em; text-transform: uppercase;
+      color: rgba(255,255,255,.38); margin-bottom: 1rem;
+    }
+    .footer__descripcion { font-size: .88rem; line-height: 1.72; color: rgba(255,255,255,.55); margin-bottom: 1.4rem; }
+    .footer__redes { display: flex; gap: .7rem; }
+    .footer__red {
+      width: 36px; height: 36px; background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,.6); font-size: .85rem;
+      transition: all var(--trans-normal);
+    }
+    .footer__red:hover { background: var(--naranja); border-color: var(--naranja); color: var(--blanco); transform: translateY(-2px); }
+    .footer__col-titulo { font-size: .76rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.38); margin-bottom: 1.3rem; }
+    .footer__links { display: flex; flex-direction: column; gap: .6rem; }
+    .footer__link { font-size: .88rem; color: rgba(255,255,255,.6); transition: color .15s; }
+    .footer__link:hover { color: var(--naranja-claro); }
+    .footer__contacto-item { display: flex; align-items: flex-start; gap: .65rem; margin-bottom: .75rem; font-size: .88rem; color: rgba(255,255,255,.55); }
+    .footer__contacto-icono { margin-top: 1px; flex-shrink: 0; color: var(--naranja); }
+    .footer__bottom { max-width: 1280px; margin: 1.8rem auto 0; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .footer__copy { font-size: .8rem; color: rgba(255,255,255,.35); }
+    .footer__copy span { color: rgba(255,255,255,.52); }
+    .footer__legal { display: flex; gap: 1.4rem; }
+    .footer__legal-link { font-size: .8rem; color: rgba(255,255,255,.35); transition: color .15s; }
+    .footer__legal-link:hover { color: rgba(255,255,255,.62); }
+
+    /* ============================================================
+       15. REVEAL ON SCROLL
+       ============================================================ */
+    .reveal {
+      opacity: 0; transform: translateY(26px);
+      transition: opacity .7s ease, transform .7s cubic-bezier(.23,1,.32,1);
+    }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    .reveal--left  { transform: translateX(-28px); }
+    .reveal--right { transform: translateX(28px); }
+    .reveal--left.is-visible,
+    .reveal--right.is-visible { transform: translateX(0); }
+    .reveal--delay-1 { transition-delay: .1s; }
+    .reveal--delay-2 { transition-delay: .2s; }
+    .reveal--delay-3 { transition-delay: .3s; }
+    .reveal--delay-4 { transition-delay: .4s; }
+    .reveal--delay-5 { transition-delay: .5s; }
+    .reveal--delay-6 { transition-delay: .6s; }
+    .reveal--delay-7 { transition-delay: .7s; }
+    .reveal--delay-8 { transition-delay: .8s; }
+
+    /* ============================================================
+       16. RESPONSIVE
+       ============================================================ */
+    @media (max-width: 1100px) {
+      .hero__contenido { grid-template-columns: 1fr; }
+      .hero__panel { display: none; }
+      .historia__cabecera { grid-template-columns: 1fr; gap: 3rem; }
+      .coroico__inner { grid-template-columns: 1fr; gap: 3.5rem; }
+      .coroico__mosaico { grid-template-rows: 240px 180px; }
+      .compromisos__inner { grid-template-columns: 1fr; gap: 3.5rem; }
+      .compromisos__stat-flotante--1 { left: 1rem; }
+      .compromisos__stat-flotante--2 { right: 1rem; }
+      .valores__grid { grid-template-columns: repeat(2,1fr); }
+      .equipo__grid  { grid-template-columns: repeat(2,1fr); }
+      .footer__grid  { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    }
+
+    @media (max-width: 900px) {
+      .nav { display: none; }
+      .nav-toggle { display: flex; }
+      .mvv__grid { grid-template-columns: 1fr; }
+      .timeline::before { left: 32px; }
+      .tl-item { grid-template-columns: 64px 1fr; grid-template-rows: auto; }
+      .tl-item--izq .tl-contenido,
+      .tl-item--der .tl-contenido { grid-column: 2; text-align: left; padding: 0 0 0 2rem; }
+      .tl-item--izq .tl-nodo,
+      .tl-item--der .tl-nodo { grid-column: 1; grid-row: 1; }
+      .tl-item--izq .tl-vacio,
+      .tl-item--der .tl-vacio { display: none; }
+      .mvv__cita { padding: 2rem 1.5rem; }
+      .mvv__cita-comilla { font-size: 5rem; }
+    }
+
+    @media (max-width: 600px) {
+      .historia::before { font-size: 7rem; }
+      .coroico__mosaico { grid-template-columns: 1fr; grid-template-rows: auto; }
+      .mosaico__img--grande { grid-row: auto; height: 220px; }
+      .mosaico__img { height: 180px; }
+      .coroico__badge { right: 1rem; bottom: 1rem; }
+      .valores__grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .equipo__grid  { grid-template-columns: 1fr 1fr; }
+      .footer__grid  { grid-template-columns: 1fr; gap: 2rem; }
+      .footer__bottom { flex-direction: column; align-items: flex-start; }
+      .cta-final__acciones { flex-direction: column; }
+      .cta-final__acciones .btn { justify-content: center; }
+      .historia__img-flotante { display: none; }
+    }
+    /* --- ESTILO SENSORIAL AVICOR --- */
+button, .nav__carrito, .btn {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 50px;
+}
+button:hover, .nav__carrito:hover, .btn:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a href="/" class="logo" aria-label="Origen Avicor — Inicio">
+        <span class="logo__nombre">Origen Avicor</span>
+        <span class="logo__tagline">Coroico · Bolivia</span>
+      </a>
+
+    <nav class="nav" style="display: flex; align-items: center; gap: 20px;">
+  <a href="/" style="color: #3d2b1f; text-decoration: none;">Inicio</a>
+  <a href="/productos" style="color: #3d2b1f; text-decoration: none;">Productos</a>
+  <a href="/nosotros" style="color: #3d2b1f; text-decoration: none; border-bottom: 2px solid #d38b5d;">Nosotros</a>
+  <a href="/chatbot" style="color: #3d2b1f; text-decoration: none;">💬 Asistente</a>
+  <a href="/productos" class="nav__cta" style="margin-left: 10px;">Comprar ahora</a>
+</nav>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-mobile">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+    </div>
+
+    <nav class="nav-mobile" id="nav-mobile" aria-label="Menú móvil">
+      <a href="/"          class="nav-mobile__link">Inicio</a>
+      <a href="/productos"  class="nav-mobile__link">Productos</a>
+      <a href="/nosotros"   class="nav-mobile__link" style="color:var(--verde-oliva);font-weight:600;">Nosotros</a>
+      <a href="/chatbot"    class="nav-mobile__link">💬 Asistente virtual</a>
+      <a href="/productos"  class="nav-mobile__link" style="color:var(--naranja);font-weight:600;">Comprar ahora</a>
+    </nav>
+  </header>
+
+  <main role="main">
+
+    <!-- ========================================================
+         HERO
+         ======================================================== -->
+    <section class="hero" aria-label="Bienvenidos a la historia de Origen Avicor">
+      <div class="hero__bg" role="img" aria-label="Paisaje verde de los Yungas de Coroico, Bolivia"></div>
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="hero__grain"   aria-hidden="true"></div>
+
+      <div class="hero__lateral" aria-hidden="true">
+        <div class="hero__lateral-linea"></div>
+        <span class="hero__lateral-texto">Coroico · Yungas · Bolivia</span>
+        <div class="hero__lateral-linea"></div>
+      </div>
+
+      <div class="hero__contenido">
+        <div class="hero__texto">
+          <div class="hero__eyebrow">🐔 Nuestra historia</div>
+
+          <h1 class="hero__titulo">
+            Del campo<br />
+            boliviano<br />
+            con <em>orgullo</em>
+          </h1>
+
+          <p class="hero__bajada">
+            Somos una empresa familiar nacida en Coroico con una sola
+            convicción: que el pollo boliviano puede ser el mejor del mundo
+            si se cría con respeto, paciencia y amor por la tierra.
+          </p>
+
+          <div class="hero__acciones">
+            <a href="#historia"    class="btn btn-primario">Conoce nuestra historia</a>
+            <a href="/productos" class="btn btn-blanco">Ver productos</a>
+          </div>
+        </div>
+
+        <!-- Panel de hitos cronológicos -->
+        <div class="hero__panel" aria-label="Hitos de Origen Avicor">
+          <div class="hero__panel-titulo">Nuestros hitos</div>
+
+          <div class="hero__hito">
+            <div class="hero__hito-anio">2015</div>
+            <div class="hero__hito-texto">Primera granja en Coroico con 200 aves</div>
+            <div class="hero__hito-icono" aria-hidden="true">🌱</div>
+          </div>
+          <div class="hero__hito">
+            <div class="hero__hito-anio">2018</div>
+            <div class="hero__hito-texto">Primeras entregas regulares en La Paz</div>
+            <div class="hero__hito-icono" aria-hidden="true">🚚</div>
+          </div>
+          <div class="hero__hito">
+            <div class="hero__hito-anio">2021</div>
+            <div class="hero__hito-texto">Red de 12 familias productoras asociadas</div>
+            <div class="hero__hito-icono" aria-hidden="true">🤝</div>
+          </div>
+          <div class="hero__hito">
+            <div class="hero__hito-anio">2024</div>
+            <div class="hero__hito-texto">+300 familias bolivianas confían en nosotros</div>
+            <div class="hero__hito-icono" aria-hidden="true">⭐</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true">
+        <div class="hero__scroll-line"></div>
+        <span>scroll</span>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         TRUST BAR
+         ======================================================== -->
+    <div class="trust-bar" role="complementary">
+      <div class="trust-bar__inner">
+        <div class="trust-item"><span aria-hidden="true">📍</span> Coroico, Yungas de La Paz</div>
+        <div class="trust-item"><span aria-hidden="true">🐔</span> +5.000 aves / mes</div>
+        <div class="trust-item"><span aria-hidden="true">👨‍👩‍👧‍👦</span> 12 familias productoras</div>
+        <div class="trust-item"><span aria-hidden="true">📅</span> Fundada en 2015</div>
+        <div class="trust-item"><span aria-hidden="true">🇧🇴</span> 100% boliviano</div>
+      </div>
+    </div>
+
+    <!-- ========================================================
+         HISTORIA — Timeline
+         ======================================================== -->
+    <section class="historia" id="historia" aria-labelledby="historia-titulo">
+      <div class="historia__inner">
+
+        <!-- Cabecera con imagen -->
+        <div class="historia__cabecera">
+          <div class="reveal reveal--left">
+            <span class="section-tag">Nuestro origen</span>
+            <h2 id="historia-titulo">
+              Una historia que<br />
+              <span style="color:var(--verde-oliva);font-style:italic;">comenzó en el campo</span>
+            </h2>
+            <p class="historia__subtitulo">
+              Origen Avicor no nació en una oficina ni en un laboratorio.
+              Nació en las laderas verdes de Coroico, donde la familia
+              Quispe llevaba décadas criando pollos como lo hacían sus
+              abuelos: con paciencia, con tierra y con orgullo.
+            </p>
+            <p class="historia__subtitulo" style="margin-top:.9rem;">
+              En 2015, Don Efraín Quispe y su hijo Marco decidieron
+              que ese conocimiento ancestral merecía llegar a las mesas
+              de La Paz. Así nació Origen Avicor: no como empresa
+              industrial, sino como puente entre el campo y la ciudad.
+            </p>
+            <div style="margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap;">
+              <a href="#coroico" class="btn btn-primario">Conocer Coroico</a>
+              <a href="#valores" class="btn btn-secundario">Nuestros valores</a>
+            </div>
+          </div>
+
+          <div class="historia__imagen-wrap reveal reveal--right">
+            <img
+              class="historia__img-main"
+              src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80"
+              alt="Campos naturales donde se alimentan las aves de Origen Avicor"
+              loading="lazy"
+            />
+            <img
+              class="historia__img-flotante"
+              src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=400&q=80"
+              alt="Don Efraín trabajando en la granja de Coroico"
+              loading="lazy"
+            />
+            <div class="historia__img-etiqueta" aria-label="Fundada en 2015 en Coroico">
+              <strong>2015</strong>
+              <small>Fundación · Coroico</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="timeline" role="list" aria-label="Historia cronológica de Origen Avicor">
+
+          <div class="tl-item tl-item--izq reveal" role="listitem">
+            <div class="tl-contenido">
+              <div class="tl-titulo">El primer gallinero</div>
+              <p class="tl-texto">Don Efraín amplía el gallinero familiar a 200 aves con técnicas
+              heredadas de su padre. Sin hormonas, sin jaulas. Solo tierra, sol y maíz criollo.
+              El primer paso hacia algo más grande.</p>
+            </div>
+            <div class="tl-nodo">
+              <div class="tl-nodo__circulo" aria-hidden="true">🌱</div>
+              <span class="tl-nodo__anio">2015</span>
+            </div>
+            <div class="tl-vacio"></div>
+          </div>
+
+          <div class="tl-item tl-item--der reveal" role="listitem">
+            <div class="tl-vacio"></div>
+            <div class="tl-nodo">
+              <div class="tl-nodo__circulo" aria-hidden="true">🤝</div>
+              <span class="tl-nodo__anio">2017</span>
+            </div>
+            <div class="tl-contenido">
+              <div class="tl-titulo">La alianza familiar</div>
+              <p class="tl-texto">Marco Quispe regresa de La Paz con una visión clara: conectar
+              la granja familiar con clientes urbanos que buscan calidad real.
+              Se suman tres familias vecinas de Coroico. La red crece.</p>
+            </div>
+          </div>
+
+          <div class="tl-item tl-item--izq reveal" role="listitem">
+            <div class="tl-contenido">
+              <div class="tl-titulo">Primeras entregas en La Paz</div>
+              <p class="tl-texto">Con una camioneta y un cuaderno de pedidos, Origen Avicor
+              comienza sus primeras entregas regulares en los barrios de
+              Sopocachi y Miraflores. La respuesta de las familias es inmediata:
+              este pollo sabe diferente.</p>
+            </div>
+            <div class="tl-nodo">
+              <div class="tl-nodo__circulo" aria-hidden="true">🚚</div>
+              <span class="tl-nodo__anio">2018</span>
+            </div>
+            <div class="tl-vacio"></div>
+          </div>
+
+          <div class="tl-item tl-item--der reveal" role="listitem">
+            <div class="tl-vacio"></div>
+            <div class="tl-nodo">
+              <div class="tl-nodo__circulo" aria-hidden="true">📦</div>
+              <span class="tl-nodo__anio">2020</span>
+            </div>
+            <div class="tl-contenido">
+              <div class="tl-titulo">Empaque sustentable y trazabilidad</div>
+              <p class="tl-texto">Se implementa el sistema de empaque biodegradable al vacío
+              con código QR de trazabilidad. Por primera vez, los clientes
+              pueden conocer exactamente de qué granja y qué fecha
+              proviene su pollo.</p>
+            </div>
+          </div>
+
+          <div class="tl-item tl-item--izq reveal" role="listitem">
+            <div class="tl-contenido">
+              <div class="tl-titulo">Red de 12 familias productoras</div>
+              <p class="tl-texto">Origen Avicor formaliza su red de productores: 12 familias
+              de Coroico y los Yungas trabajan bajo el protocolo Avicor.
+              Cada una recibe capacitación, equipos y un precio justo
+              garantizado por contrato.</p>
+            </div>
+            <div class="tl-nodo">
+              <div class="tl-nodo__circulo" aria-hidden="true">🌐</div>
+              <span class="tl-nodo__anio">2021</span>
+            </div>
+            <div class="tl-vacio"></div>
+          </div>
+
+          <div class="tl-item tl-item--der reveal" role="listitem">
+            <div class="tl-vacio"></div>
+            <div class="tl-nodo">
+              <div class="tl-nodo__circulo" aria-hidden="true">⭐</div>
+              <span class="tl-nodo__anio">2024</span>
+            </div>
+            <div class="tl-contenido">
+              <div class="tl-titulo">300+ familias, una sola convicción</div>
+              <p class="tl-texto">Más de 300 familias bolivianas reciben Avicor regularmente.
+              La valoración promedio es 4.9 sobre 5. El sueño de Efraín
+              y Marco se convirtió en el referente de pollo natural en
+              La Paz. Y apenas estamos comenzando.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         ORIGEN COROICO
+         ======================================================== -->
+    <section class="coroico" id="coroico" aria-labelledby="coroico-titulo">
+      <div class="coroico__inner">
+
+        <!-- Mosaico visual -->
+        <div class="coroico__mosaico reveal reveal--left">
+          <div class="mosaico__img mosaico__img--grande">
+            <img
+              src="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=700&q=80"
+              alt="Paisaje de los Yungas de Coroico con vegetación exuberante"
+              loading="lazy"
+            />
+          </div>
+          <div class="mosaico__img">
+            <img
+              src="https://images.unsplash.com/photo-1500076656116-558758c991c1?w=400&q=80"
+              alt="Campos de cultivo naturales en Coroico"
+              loading="lazy"
+            />
+          </div>
+          <div class="mosaico__img">
+            <img
+              src="https://images.unsplash.com/photo-1475483768296-6163e08872a1?w=400&q=80"
+              alt="Aves criadas en libertad en las granjas de Coroico"
+              loading="lazy"
+            />
+          </div>
+          <div class="coroico__badge" aria-label="600 metros sobre el nivel del mar">
+            <div class="coroico__badge-num">1.700</div>
+            <div class="coroico__badge-label">msnm · Coroico</div>
+          </div>
+        </div>
+
+        <!-- Texto -->
+        <div class="coroico__texto reveal reveal--right">
+          <span class="section-tag">Nuestra tierra</span>
+          <h2 id="coroico-titulo">
+            Coroico:<br />
+            <span style="color:var(--verde-oliva);font-style:italic;">donde todo nace</span>
+          </h2>
+
+          <p class="coroico__parrafo" style="margin-top:1.2rem;">
+            Coroico es una pequeña ciudad enclavada en los Yungas de La Paz, a
+            1.700 metros sobre el nivel del mar. Su clima subtropical único —
+            ni demasiado frío ni demasiado caliente — crea condiciones perfectas
+            para la crianza de aves de calidad excepcional.
+          </p>
+          <p class="coroico__parrafo">
+            La biodiversidad de los Yungas provee una fuente natural de
+            alimentación complementaria para nuestras aves: insectos, hierbas
+            silvestres y granos locales que enriquecen su dieta y se reflejan
+            directamente en el sabor de la carne.
+          </p>
+          <p class="coroico__parrafo">
+            Nuestras granjas se ubican en laderas con acceso a agua de vertiente,
+            sombra natural y espacio abierto. No hay fórmula industrial que
+            replique lo que la naturaleza de Coroico ofrece de manera gratuita.
+          </p>
+
+          <div class="coroico__datos" role="list" aria-label="Datos geográficos de Coroico">
+            <div class="dato-geo reveal reveal--delay-1" role="listitem">
+              <div class="dato-geo__icono" aria-hidden="true">🌡️</div>
+              <div>
+                <div class="dato-geo__num">18–24°C</div>
+                <div class="dato-geo__label">Temperatura ideal todo el año</div>
+              </div>
+            </div>
+            <div class="dato-geo reveal reveal--delay-2" role="listitem">
+              <div class="dato-geo__icono" aria-hidden="true">💧</div>
+              <div>
+                <div class="dato-geo__num">1.800 mm</div>
+                <div class="dato-geo__label">Precipitación anual natural</div>
+              </div>
+            </div>
+            <div class="dato-geo reveal reveal--delay-3" role="listitem">
+              <div class="dato-geo__icono" aria-hidden="true">🏔️</div>
+              <div>
+                <div class="dato-geo__num">1.700 m</div>
+                <div class="dato-geo__label">Altitud sobre el nivel del mar</div>
+              </div>
+            </div>
+            <div class="dato-geo reveal reveal--delay-4" role="listitem">
+              <div class="dato-geo__icono" aria-hidden="true">🌿</div>
+              <div>
+                <div class="dato-geo__num">+200</div>
+                <div class="dato-geo__label">Especies vegetales nativas</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         MISIÓN, VISIÓN Y PROPÓSITO
+         ======================================================== -->
+    <section class="mvv" id="mision" aria-labelledby="mvv-titulo">
+      <div class="mvv__inner">
+
+        <div class="mvv__cabecera reveal">
+          <span class="section-tag">Quiénes somos</span>
+          <h2 id="mvv-titulo">Misión, visión<br />y propósito</h2>
+          <p>Tres pilares que guían cada decisión que tomamos,
+          desde la granja hasta tu puerta.</p>
+        </div>
+
+        <div class="mvv__grid">
+
+          <!-- Misión -->
+          <div class="mvv-card mvv-card--mision reveal reveal--delay-1" aria-label="Misión de Origen Avicor">
+            <div class="mvv-card__icono-wrap" aria-hidden="true">🎯</div>
+            <div class="mvv-card__etiqueta">Misión</div>
+            <div class="mvv-card__titulo">Nutrir con honestidad</div>
+            <p class="mvv-card__texto">
+              Producir y distribuir pollo criollo de alta calidad,
+              criado de forma natural y sostenible en Coroico, conectando
+              directamente a productores locales con familias bolivianas
+              que merecen comer bien y saber de dónde viene su comida.
+            </p>
+          </div>
+
+          <!-- Visión -->
+          <div class="mvv-card mvv-card--vision reveal reveal--delay-2" aria-label="Visión de Origen Avicor">
+            <div class="mvv-card__icono-wrap" aria-hidden="true">🔭</div>
+            <div class="mvv-card__etiqueta">Visión</div>
+            <div class="mvv-card__titulo">Bolivia natural en cada mesa</div>
+            <p class="mvv-card__texto">
+              Ser la empresa de alimentos naturales más confiable de Bolivia,
+              expandiendo el modelo de producción artesanal a otras regiones
+              del país y demostrando que la agricultura familiar sostenible
+              puede competir y ganar frente a la industria masiva.
+            </p>
+          </div>
+
+          <!-- Propósito -->
+          <div class="mvv-card mvv-card--proposito reveal reveal--delay-3" aria-label="Propósito de Origen Avicor">
+            <div class="mvv-card__icono-wrap" aria-hidden="true">💚</div>
+            <div class="mvv-card__etiqueta">Propósito</div>
+            <div class="mvv-card__titulo">Dignidad en la cadena</div>
+            <p class="mvv-card__texto">
+              Demostrar que es posible construir una cadena alimentaria
+              donde el productor gane bien, el animal viva dignamente
+              y el consumidor reciba lo mejor. Un modelo donde la ética
+              y el sabor no están en contradicción sino que se potencian.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Cita fundacional -->
+        <blockquote class="mvv__cita reveal">
+          <div class="mvv__cita-comilla" aria-hidden="true">"</div>
+          <p class="mvv__cita-texto">
+            "Cuando mi padre me enseñó a criar pollos, me dijo: trátalos bien
+            y ellos te darán lo mejor. Ese principio nunca cambió."
+          </p>
+          <footer class="mvv__cita-autor">— Marco Quispe, Co-fundador de Origen Avicor</footer>
+        </blockquote>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         VALORES
+         ======================================================== -->
+    <section class="valores" id="valores" aria-labelledby="valores-titulo">
+      <div class="valores__inner">
+
+        <div class="valores__cabecera reveal">
+          <span class="section-tag">Lo que nos define</span>
+          <h2 id="valores-titulo">Nuestros valores</h2>
+          <p>No son palabras en una pared. Son el criterio con el que tomamos
+          cada decisión, grande o pequeña.</p>
+        </div>
+
+        <div class="valores__grid" role="list" aria-label="Valores de Origen Avicor">
+
+          <div class="valor-card reveal reveal--delay-1" role="listitem">
+            <span class="valor-card__icono" aria-hidden="true">🌿</span>
+            <div class="valor-card__titulo">Naturalidad</div>
+            <p class="valor-card__texto">
+              Nunca comprometemos la crianza natural por conveniencia
+              económica. Si no es natural, no es Avicor.
+            </p>
+          </div>
+
+          <div class="valor-card reveal reveal--delay-2" role="listitem">
+            <span class="valor-card__icono" aria-hidden="true">🤝</span>
+            <div class="valor-card__titulo">Comercio justo</div>
+            <p class="valor-card__texto">
+              Pagamos a nuestros productores el precio que merecen,
+              no el mínimo que aceptan. La justicia empieza en la granja.
+            </p>
+          </div>
+
+          <div class="valor-card reveal reveal--delay-3" role="listitem">
+            <span class="valor-card__icono" aria-hidden="true">🔍</span>
+            <div class="valor-card__titulo">Transparencia</div>
+            <p class="valor-card__texto">
+              Cada producto tiene trazabilidad completa. No escondemos
+              nada porque no tenemos nada que esconder.
+            </p>
+          </div>
+
+          <div class="valor-card reveal reveal--delay-4" role="listitem">
+            <span class="valor-card__icono" aria-hidden="true">🐔</span>
+            <div class="valor-card__titulo">Bienestar animal</div>
+            <p class="valor-card__texto">
+              Las aves tienen espacio, sol y dignidad. El bienestar animal
+              no es un lujo — es una obligación moral.
+            </p>
+          </div>
+
+          <div class="valor-card reveal reveal--delay-5" role="listitem">
+            <span class="valor-card__icono" aria-hidden="true">🌍</span>
+            <div class="valor-card__titulo">Sostenibilidad</div>
+            <p class="valor-card__texto">
+              Empaques biodegradables, agua de vertiente, alimentación
+              local. El planeta también forma parte del negocio.
+            </p>
+          </div>
+
+          <div class="valor-card reveal reveal--delay-6" role="listitem">
+            <span class="valor-card__icono" aria-hidden="true">🏠</span>
+            <div class="valor-card__titulo">Comunidad local</div>
+            <p class="valor-card__texto">
+              El 100% de nuestra producción involucra familias de Coroico.
+              Crecer para nosotros significa que ellos crezcan también.
+            </p>
+          </div>
+
+          <div class="valor-card reveal reveal--delay-7" role="listitem">
+            <span class="valor-card__icono" aria-hidden="true">🎯</span>
+            <div class="valor-card__titulo">Excelencia</div>
+            <p class="valor-card__texto">
+              Rechazamos la mediocridad. Cada ave, cada empaque,
+              cada entrega debe ser la mejor versión posible.
+            </p>
+          </div>
+
+          <div class="valor-card reveal reveal--delay-8" role="listitem">
+            <span class="valor-card__icono" aria-hidden="true">💪</span>
+            <div class="valor-card__titulo">Orgullo boliviano</div>
+            <p class="valor-card__texto">
+              Bolivia tiene una riqueza natural incomparable.
+              Nuestro trabajo es hacerla visible en cada plato.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         EQUIPO — Productores de Coroico
+         ======================================================== -->
+    <section class="equipo" aria-labelledby="equipo-titulo">
+      <div class="equipo__inner">
+
+        <div class="equipo__cabecera reveal">
+          <span class="section-tag">Las personas detrás</span>
+          <h2 id="equipo-titulo">Las familias que<br />hacen posible Avicor</h2>
+          <p>Conócelos. Ellos son la razón por la que cada pollo sabe diferente.</p>
+        </div>
+
+        <div class="equipo__grid">
+
+          <article class="persona-card reveal reveal--delay-1" aria-label="Efraín Quispe, fundador">
+            <div class="persona-card__img-wrap">
+              <img
+                class="persona-card__img"
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
+                alt="Retrato de Efraín Quispe, fundador de Origen Avicor"
+                loading="lazy"
+              />
+              <span class="persona-card__rol">Fundador</span>
+            </div>
+            <div class="persona-card__cuerpo">
+              <div class="persona-card__nombre">Efraín Quispe</div>
+              <div class="persona-card__lugar">📍 Coroico, La Paz</div>
+              <p class="persona-card__bio">
+                40 años criando pollos en los Yungas. La sabiduría y el corazón de Avicor.
+                Su frase: "Un animal tratado bien nunca miente en el sabor."
+              </p>
+            </div>
+          </article>
+
+          <article class="persona-card reveal reveal--delay-2" aria-label="Marco Quispe, co-fundador">
+            <div class="persona-card__img-wrap">
+              <img
+                class="persona-card__img"
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80"
+                alt="Retrato de Marco Quispe, co-fundador de Origen Avicor"
+                loading="lazy"
+              />
+              <span class="persona-card__rol">Co-fundador</span>
+            </div>
+            <div class="persona-card__cuerpo">
+              <div class="persona-card__nombre">Marco Quispe</div>
+              <div class="persona-card__lugar">📍 La Paz / Coroico</div>
+              <p class="persona-card__bio">
+                Hijo de Efraín, la mente operativa de Avicor. Conecta el campo con
+                la ciudad y asegura que la cadena de frío nunca falle.
+              </p>
+            </div>
+          </article>
+
+          <article class="persona-card reveal reveal--delay-3" aria-label="Rosario Mamani, productora">
+            <div class="persona-card__img-wrap">
+              <img
+                class="persona-card__img"
+                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=80"
+                alt="Rosario Mamani, productora asociada de Origen Avicor"
+                loading="lazy"
+              />
+              <span class="persona-card__rol">Productora asociada</span>
+            </div>
+            <div class="persona-card__cuerpo">
+              <div class="persona-card__nombre">Rosario Mamani</div>
+              <div class="persona-card__lugar">📍 Coroico, La Paz</div>
+              <p class="persona-card__bio">
+                Granjera de la familia Mamani desde 2017. Especializada en
+                el manejo de gallinas de raza criolla. Madre de tres hijos.
+              </p>
+            </div>
+          </article>
+
+          <article class="persona-card reveal reveal--delay-4" aria-label="Luis Condori, logística">
+            <div class="persona-card__img-wrap">
+              <img
+                class="persona-card__img"
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80"
+                alt="Luis Condori, responsable de logística de Origen Avicor"
+                loading="lazy"
+              />
+              <span class="persona-card__rol">Logística</span>
+            </div>
+            <div class="persona-card__cuerpo">
+              <div class="persona-card__nombre">Luis Condori</div>
+              <div class="persona-card__lugar">📍 La Paz</div>
+              <p class="persona-card__bio">
+                Responsable de que cada pedido llegue frío, puntual y perfecto.
+                Ex transportista de alimentos, apasionado por la cadena de frío.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         COMPROMISOS
+         ======================================================== -->
+    <section class="compromisos" aria-labelledby="compromisos-titulo">
+      <div class="compromisos__inner">
+
+        <div>
+          <div class="reveal">
+            <span class="section-tag">Lo que prometemos</span>
+            <h2 id="compromisos-titulo">Nuestros<br />compromisos</h2>
+            <p style="margin-top:1rem;">
+              No son marketing. Son obligaciones que asumimos cada día
+              con nuestros productores, nuestras aves y nuestros clientes.
+            </p>
+          </div>
+
+          <div class="compromisos__lista" role="list" aria-label="Lista de compromisos de Origen Avicor">
+
+            <div class="compromiso-item reveal reveal--delay-1" role="listitem">
+              <div class="compromiso-item__icono" aria-hidden="true">🌿</div>
+              <div>
+                <div class="compromiso-item__titulo">Cero hormonas para siempre</div>
+                <p class="compromiso-item__texto">Ninguna de nuestras aves recibe hormonas de crecimiento.
+                Nunca lo hicimos, nunca lo haremos. Es innegociable.</p>
+              </div>
+            </div>
+
+            <div class="compromiso-item reveal reveal--delay-2" role="listitem">
+              <div class="compromiso-item__icono" aria-hidden="true">💰</div>
+              <div>
+                <div class="compromiso-item__titulo">Precio justo a los productores</div>
+                <p class="compromiso-item__texto">Pagamos entre 25% y 40% más que el precio de mercado
+                convencional a cada familia productora asociada.</p>
+              </div>
+            </div>
+
+            <div class="compromiso-item reveal reveal--delay-3" role="listitem">
+              <div class="compromiso-item__icono" aria-hidden="true">❄️</div>
+              <div>
+                <div class="compromiso-item__titulo">Cadena de frío ininterrumpida</div>
+                <p class="compromiso-item__texto">Desde el procesado hasta tu puerta: temperatura
+                controlada, sin excepciones. Garantizamos la frescura o devolvemos tu dinero.</p>
+              </div>
+            </div>
+
+            <div class="compromiso-item reveal reveal--delay-4" role="listitem">
+              <div class="compromiso-item__icono" aria-hidden="true">🔍</div>
+              <div>
+                <div class="compromiso-item__titulo">Trazabilidad 100% verificable</div>
+                <p class="compromiso-item__texto">Cada producto lleva un código QR que te permite ver
+                la granja de origen, la fecha de procesado y el protocolo seguido.</p>
+              </div>
+            </div>
+
+            <div class="compromiso-item reveal reveal--delay-5" role="listitem">
+              <div class="compromiso-item__icono" aria-hidden="true">♻️</div>
+              <div>
+                <div class="compromiso-item__titulo">Empaques biodegradables</div>
+                <p class="compromiso-item__texto">Eliminamos el plástico de un solo uso en 2020.
+                Todos nuestros materiales de empaque son 100% biodegradables.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Visual -->
+        <div class="compromisos__visual reveal reveal--right">
+          <img
+            class="compromisos__img-principal"
+            src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80"
+            alt="Vista panorámica de los Yungas de Coroico, tierra de Origen Avicor"
+            loading="lazy"
+          />
+          <div class="compromisos__stat-flotante compromisos__stat-flotante--1" aria-label="+40% precio justo a productores">
+            <div class="compromisos__stat-num">+40%</div>
+            <div class="compromisos__stat-label">Precio extra a productores</div>
+          </div>
+          <div class="compromisos__stat-flotante compromisos__stat-flotante--2" aria-label="100% sin hormonas">
+            <div class="compromisos__stat-num">100%</div>
+            <div class="compromisos__stat-label">Sin hormonas · Sin aditivos</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         CTA FINAL
+         ======================================================== -->
+    <section class="cta-final" aria-labelledby="cta-titulo">
+      <div class="cta-final__inner">
+        <div class="cta-final__icono" aria-hidden="true">🐔</div>
+        <h2 class="cta-final__titulo reveal" id="cta-titulo">
+          Ahora que nos conocés,<br />
+          <em>probá la diferencia</em>
+        </h2>
+        <p class="cta-final__texto reveal reveal--delay-1">
+          Detrás de cada pollo hay una familia de Coroico, un campo verde
+          y una promesa cumplida. Todo eso llega a tu mesa con cada pedido.
+        </p>
+        <div class="cta-final__acciones reveal reveal--delay-2">
+          <a href="/productos" class="btn btn-primario">
+            🛒 Ver productos
+          </a>
+          <a href="https://wa.me/59179000000" class="btn btn-blanco" target="_blank" rel="noopener">
+            💬 Escribinos al WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__grid">
+      <div>
+        <span class="footer__logo-nombre">Origen Avicor</span>
+        <div class="footer__logo-tagline">Crecimiento natural, sabor de verdad</div>
+        <p class="footer__descripcion">
+          Productores artesanales de pollo criollo desde Coroico, Yungas de La Paz.
+          Comprometidos con la calidad, el bienestar animal y el desarrollo local boliviano.
+        </p>
+        <div class="footer__redes" aria-label="Redes sociales">
+          <a href="#" class="footer__red" aria-label="Facebook">f</a>
+          <a href="#" class="footer__red" aria-label="Instagram">ig</a>
+          <a href="#" class="footer__red" aria-label="WhatsApp">wa</a>
+          <a href="#" class="footer__red" aria-label="TikTok">tt</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer__col-titulo">Páginas</h4>
+        <ul class="footer__links">
+          <li><a href="/"           class="footer__link">Inicio</a></li>
+          <li><a href="/productos"  class="footer__link">Productos</a></li>
+          <li><a href="/nosotros"   class="footer__link">Nosotros</a></li>
+          <li><a href="/chatbot"    class="footer__link">Asistente virtual Avi</a></li>
+          <li><a href="/#testimonios" class="footer__link">Testimonios</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__col-titulo">Empresa</h4>
+        <ul class="footer__links">
+          <li><a href="#historia"  class="footer__link">Historia</a></li>
+          <li><a href="#coroico"   class="footer__link">Origen Coroico</a></li>
+          <li><a href="#mision"    class="footer__link">Misión y visión</a></li>
+          <li><a href="#valores"   class="footer__link">Valores</a></li>
+          <li><a href="#"          class="footer__link">Trabaja con nosotros</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__col-titulo">Contacto</h4>
+        <address style="font-style:normal;">
+          <div class="footer__contacto-item">
+            <span class="footer__contacto-icono" aria-hidden="true">📍</span>
+            <span>Av. Arce 2345, Sopocachi<br />La Paz, Bolivia</span>
+          </div>
+          <div class="footer__contacto-item">
+            <span class="footer__contacto-icono" aria-hidden="true">📞</span>
+            <span>+591 79 000 000</span>
+          </div>
+          <div class="footer__contacto-item">
+            <span class="footer__contacto-icono" aria-hidden="true">✉️</span>
+            <span>hola@origenavicor.bo</span>
+          </div>
+          <div class="footer__contacto-item">
+            <span class="footer__contacto-icono" aria-hidden="true">🕐</span>
+            <span>Lun–Sáb: 7 am – 6 pm<br />Dom: 8 am – 2 pm</span>
+          </div>
+        </address>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2024 <span>Origen Avicor</span>. Todos los derechos reservados. Hecho con ❤️ en Bolivia.</p>
+      <nav class="footer__legal" aria-label="Legal">
+        <a href="#" class="footer__legal-link">Privacidad</a>
+        <a href="#" class="footer__legal-link">Términos</a>
+        <a href="#" class="footer__legal-link">Devoluciones</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       JAVASCRIPT
+       ============================================================ -->
+  <script>
+    // Nav mobile toggle
+    (function () {
+      var toggle = document.getElementById('nav-toggle');
+      var nav    = document.getElementById('nav-mobile');
+      var open   = false;
+      toggle.addEventListener('click', function () {
+        open = !open;
+        nav.classList.toggle('is-open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      // Cerrar al hacer clic en un link
+      nav.querySelectorAll('.nav-mobile__link').forEach(function (l) {
+        l.addEventListener('click', function () {
+          open = false;
+          nav.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+
+    // Reveal on scroll — IntersectionObserver
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(function (el) { el.classList.add('is-visible'); });
+        return;
+      }
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-visible');
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -36px 0px' });
+      els.forEach(function (el) { obs.observe(el); });
+    })();
+
+    // Smooth scroll anchors
+    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var href = this.getAttribute('href');
+        if (href === '#') return;
+        var target = document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        var top = target.getBoundingClientRect().top + window.scrollY - 92;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      });
+    });
+
+    // Revelar elementos del hero de inmediato
+    document.addEventListener('DOMContentLoaded', function () {
+      console.log('%c🐔 Origen Avicor — Nosotros', 'color:#556B2F;font-size:16px;font-weight:bold;');
+    });
+  </script>
+
+</body>
+</html>

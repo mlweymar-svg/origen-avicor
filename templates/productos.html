@@ -1,0 +1,4152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- ============================================================
+       ORIGEN AVICOR — productos.html
+       Catálogo de productos / Tienda online
+       "Crecimiento natural, sabor de verdad"
+       ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Catálogo de productos Origen Avicor — Pollo criollo natural de Coroico. Elige tu corte favorito y recíbelo fresco en La Paz." />
+  <meta name="keywords" content="comprar pollo natural, pollo criollo Bolivia, catálogo avícola, Coroico, pollo orgánico" />
+  <meta name="author" content="Origen Avicor" />
+  <meta property="og:title" content="Productos — Origen Avicor" />
+  <meta property="og:description" content="Catálogo completo de cortes artesanales. Fresco, natural y directo del productor." />
+  <meta property="og:type" content="website" />
+  <title>Productos — Origen Avicor</title>
+
+  <!-- Google Fonts — Playfair Display + DM Sans (coherente con index.html) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       0. CSS CUSTOM PROPERTIES — idénticas a index.html
+       ============================================================ */
+    :root {
+      --verde-oliva:      #556B2F;
+      --verde-oscuro:     #3d4f21;
+      --verde-claro:      #7a9640;
+      --verde-palido:     #e8eedb;
+      --naranja:          #D68A5E;
+      --naranja-oscuro:   #b96d3e;
+      --naranja-claro:    #f0b08a;
+      --naranja-palido:   #fdf0e6;
+      --marron:           #8B7355;
+      --marron-oscuro:    #5c4a33;
+      --marron-claro:     #b09a7a;
+      --marron-palido:    #f5f0e8;
+
+      --crema:            #FAF7F2;
+      --crema-oscura:     #f0ebe0;
+      --blanco:           #ffffff;
+      --gris-suave:       #f4f1ec;
+      --gris-texto:       #6b6055;
+      --texto-oscuro:     #2c2416;
+      --texto-medio:      #4a3f30;
+
+      --font-display:     'Playfair Display', Georgia, serif;
+      --font-body:        'DM Sans', system-ui, sans-serif;
+
+      --espacio-xs:       0.5rem;
+      --espacio-sm:       1rem;
+      --espacio-md:       2rem;
+      --espacio-lg:       4rem;
+      --espacio-xl:       7rem;
+
+      --radio-sm:         4px;
+      --radio-md:         12px;
+      --radio-lg:         24px;
+      --radio-pill:       999px;
+
+      --sombra-sm:        0 2px 8px rgba(44,36,22,0.08);
+      --sombra-md:        0 8px 32px rgba(44,36,22,0.12);
+      --sombra-lg:        0 20px 60px rgba(44,36,22,0.18);
+      --sombra-naranja:   0 8px 32px rgba(214,138,94,0.28);
+      --sombra-verde:     0 8px 32px rgba(85,107,47,0.28);
+
+      --trans-rapida:     0.15s ease;
+      --trans-normal:     0.3s ease;
+      --trans-lenta:      0.6s cubic-bezier(0.23, 1, 0.32, 1);
+
+      --z-base:           1;
+      --z-overlay:        10;
+      --z-nav:            100;
+      --z-modal:          200;
+      --z-toast:          300;
+    }
+
+    /* ============================================================
+       1. RESET & BASE
+       ============================================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--crema);
+      color: var(--texto-oscuro);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--crema-oscura); }
+    ::-webkit-scrollbar-thumb { background: var(--marron-claro); border-radius: var(--radio-pill); }
+    ::-webkit-scrollbar-thumb:hover { background: var(--marron); }
+
+    ::selection { background: var(--naranja-claro); color: var(--texto-oscuro); }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul, ol { list-style: none; }
+    button { cursor: pointer; font-family: var(--font-body); }
+
+    /* Accesibilidad: visually hidden */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* ============================================================
+       2. TIPOGRAFÍA
+       ============================================================ */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-display);
+      line-height: 1.15;
+      color: var(--texto-oscuro);
+    }
+
+    h1 { font-size: clamp(2.2rem, 4vw, 3.6rem); font-weight: 700; }
+    h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 600; }
+    h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 600; }
+
+    p {
+      font-size: clamp(0.92rem, 1.4vw, 1rem);
+      color: var(--gris-texto);
+      line-height: 1.72;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--naranja);
+      margin-bottom: 0.8rem;
+    }
+
+    .section-tag::before {
+      content: '';
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--naranja);
+      border-radius: 2px;
+    }
+
+    /* ============================================================
+       3. BOTONES — coherentes con index.html
+       ============================================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.8rem 1.8rem;
+      border-radius: var(--radio-pill);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      border: 2px solid transparent;
+      transition: all var(--trans-normal);
+      white-space: nowrap;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.15);
+      opacity: 0;
+      transition: opacity var(--trans-rapida);
+    }
+
+    .btn:hover::after { opacity: 1; }
+
+    .btn-primario {
+      background: var(--naranja);
+      color: var(--blanco);
+      border-color: var(--naranja);
+      box-shadow: var(--sombra-naranja);
+    }
+
+    .btn-primario:hover {
+      background: var(--naranja-oscuro);
+      border-color: var(--naranja-oscuro);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(214,138,94,0.38);
+    }
+
+    .btn-primario:active { transform: translateY(0); }
+
+    .btn-secundario {
+      background: transparent;
+      color: var(--verde-oliva);
+      border-color: var(--verde-oliva);
+    }
+
+    .btn-secundario:hover {
+      background: var(--verde-oliva);
+      color: var(--blanco);
+      transform: translateY(-2px);
+      box-shadow: var(--sombra-verde);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--gris-texto);
+      border-color: rgba(139,115,85,0.3);
+    }
+
+    .btn-ghost:hover {
+      background: var(--crema-oscura);
+      color: var(--texto-oscuro);
+      border-color: rgba(139,115,85,0.5);
+    }
+
+    /* ============================================================
+       4. HEADER — idéntico al de index.html
+       ============================================================ */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: var(--z-nav);
+      transition: all var(--trans-normal);
+      padding: 0 5%;
+      background: rgba(250, 247, 242, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 2px 20px rgba(44,36,22,0.08);
+      border-bottom: 1px solid rgba(139,115,85,0.12);
+    }
+
+    .header__inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+      gap: 1px;
+    }
+
+    .logo__nombre {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--texto-oscuro);
+      letter-spacing: -0.02em;
+    }
+
+    .logo__tagline {
+      font-size: 0.62rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gris-texto);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+
+    .nav__link {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--gris-texto);
+      position: relative;
+      padding-bottom: 2px;
+      transition: color var(--trans-normal);
+    }
+
+    .nav__link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1.5px;
+      background: var(--naranja);
+      border-radius: 2px;
+      transition: width var(--trans-normal);
+    }
+
+    .nav__link:hover { color: var(--verde-oliva); }
+    .nav__link:hover::after { width: 100%; }
+
+    /* Link activo para la página actual */
+    .nav__link--activo {
+      color: var(--verde-oliva);
+      font-weight: 600;
+    }
+
+    .nav__link--activo::after { width: 100%; }
+
+    .nav__cta {
+      background: var(--naranja);
+      color: var(--blanco);
+      padding: 0.6rem 1.4rem;
+      border-radius: var(--radio-pill);
+      font-size: 0.88rem;
+      font-weight: 600;
+      border: 2px solid var(--naranja);
+      transition: all var(--trans-normal);
+    }
+
+    .nav__cta:hover {
+      background: var(--naranja-oscuro);
+      border-color: var(--naranja-oscuro);
+      transform: translateY(-1px);
+    }
+
+    /* Carrito en nav */
+    .nav__carrito {
+      position: relative;
+      background: var(--verde-palido);
+      border: none;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: all var(--trans-normal);
+      cursor: pointer;
+    }
+
+    .nav__carrito:hover {
+      background: var(--verde-oliva);
+      transform: scale(1.08);
+    }
+
+    .nav__carrito-badge {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      width: 18px;
+      height: 18px;
+      background: var(--naranja);
+      color: var(--blanco);
+      font-size: 0.65rem;
+      font-weight: 700;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--crema);
+      opacity: 0;
+      transition: opacity var(--trans-normal), transform var(--trans-normal);
+      transform: scale(0.5);
+    }
+
+    .nav__carrito-badge.is-visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Hamburger */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      padding: 4px;
+      cursor: pointer;
+    }
+
+    .nav-toggle__bar {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--texto-oscuro);
+      border-radius: 2px;
+      transition: all var(--trans-normal);
+    }
+
+    .nav-mobile {
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      padding: 1rem 0 1.5rem;
+      border-top: 1px solid rgba(139,115,85,0.15);
+      background: rgba(250, 247, 242, 0.98);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-mobile.is-open { display: flex; }
+
+    .nav-mobile__link {
+      padding: 0.85rem 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--gris-texto);
+      border-bottom: 1px solid rgba(139,115,85,0.08);
+      transition: color var(--trans-rapida);
+    }
+
+    .nav-mobile__link:hover { color: var(--verde-oliva); }
+    .nav-mobile__link:last-child { border: none; }
+
+    /* ============================================================
+       5. HERO DE PÁGINA — Banner de catálogo
+       ============================================================ */
+    .page-hero {
+      margin-top: 76px;
+      background: linear-gradient(135deg, var(--verde-oscuro) 0%, var(--verde-oliva) 60%, var(--verde-claro) 100%);
+      padding: 4.5rem 5% 3.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Patrón geométrico orgánico de fondo */
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 50%, rgba(255,255,255,0.04) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(214,138,94,0.12) 0%, transparent 40%),
+        radial-gradient(circle at 60% 80%, rgba(255,255,255,0.03) 0%, transparent 30%);
+    }
+
+    /* Textura grain */
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    }
+
+    .page-hero__inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .breadcrumb__link {
+      color: rgba(255,255,255,0.6);
+      transition: color var(--trans-rapida);
+    }
+
+    .breadcrumb__link:hover { color: var(--naranja-claro); }
+
+    .breadcrumb__sep { color: rgba(255,255,255,0.3); }
+
+    .breadcrumb__actual { color: rgba(255,255,255,0.9); font-weight: 500; }
+
+    .page-hero__titulo {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      color: var(--blanco);
+      line-height: 1.1;
+      margin-bottom: 0.6rem;
+    }
+
+    .page-hero__titulo em {
+      font-style: italic;
+      color: var(--naranja-claro);
+    }
+
+    .page-hero__subtitulo {
+      color: rgba(255,255,255,0.72);
+      font-size: 1rem;
+      max-width: 480px;
+    }
+
+    /* Stats del hero de página */
+    .page-hero__stats {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .page-hero__stat {
+      text-align: center;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radio-md);
+      padding: 0.9rem 1.4rem;
+      backdrop-filter: blur(8px);
+      min-width: 110px;
+    }
+
+    .page-hero__stat-num {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--blanco);
+      line-height: 1;
+    }
+
+    .page-hero__stat-label {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 0.2rem;
+    }
+
+    /* ============================================================
+       6. BARRA DE FILTROS Y BÚSQUEDA
+       ============================================================ */
+    .filtros-bar {
+      background: var(--blanco);
+      border-bottom: 1px solid rgba(139,115,85,0.12);
+      padding: 0 5%;
+      position: sticky;
+      top: 76px;
+      z-index: 50;
+      box-shadow: 0 2px 12px rgba(44,36,22,0.06);
+    }
+
+    .filtros-bar__inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 0.9rem 0;
+      flex-wrap: wrap;
+    }
+
+    /* Buscador */
+    .buscador {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--gris-suave);
+      border: 2px solid transparent;
+      border-radius: var(--radio-pill);
+      padding: 0.55rem 1rem;
+      flex: 1;
+      min-width: 200px;
+      max-width: 320px;
+      transition: all var(--trans-normal);
+    }
+
+    .buscador:focus-within {
+      border-color: var(--verde-oliva);
+      background: var(--blanco);
+      box-shadow: 0 0 0 3px rgba(85,107,47,0.1);
+    }
+
+    .buscador__icono {
+      color: var(--marron-claro);
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .buscador__input {
+      border: none;
+      background: transparent;
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      color: var(--texto-oscuro);
+      outline: none;
+      width: 100%;
+    }
+
+    .buscador__input::placeholder { color: var(--marron-claro); }
+
+    /* Categorías / Filtros tabs */
+    .filtros-tabs {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+      flex: 1;
+    }
+
+    .filtros-tabs::-webkit-scrollbar { display: none; }
+
+    .filtro-tab {
+      padding: 0.5rem 1.1rem;
+      border-radius: var(--radio-pill);
+      font-size: 0.84rem;
+      font-weight: 500;
+      background: transparent;
+      border: 2px solid rgba(139,115,85,0.2);
+      color: var(--gris-texto);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all var(--trans-normal);
+    }
+
+    .filtro-tab:hover {
+      border-color: var(--verde-oliva);
+      color: var(--verde-oliva);
+      background: var(--verde-palido);
+    }
+
+    .filtro-tab.is-activo {
+      background: var(--verde-oliva);
+      border-color: var(--verde-oliva);
+      color: var(--blanco);
+    }
+
+    /* Select de orden */
+    .orden-select {
+      padding: 0.55rem 2rem 0.55rem 0.9rem;
+      border: 2px solid rgba(139,115,85,0.2);
+      border-radius: var(--radio-pill);
+      font-family: var(--font-body);
+      font-size: 0.84rem;
+      color: var(--gris-texto);
+      background: var(--blanco);
+      appearance: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%238B7355' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.75rem center;
+      transition: border-color var(--trans-normal);
+      outline: none;
+    }
+
+    .orden-select:focus {
+      border-color: var(--verde-oliva);
+      box-shadow: 0 0 0 3px rgba(85,107,47,0.1);
+    }
+
+    /* Contador de resultados */
+    .resultados-count {
+      font-size: 0.84rem;
+      color: var(--gris-texto);
+      white-space: nowrap;
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .resultados-count strong {
+      color: var(--texto-oscuro);
+      font-weight: 600;
+    }
+
+    /* Selector de vista (grid / lista) */
+    .vista-toggle {
+      display: flex;
+      gap: 0.3rem;
+      background: var(--gris-suave);
+      border-radius: var(--radio-md);
+      padding: 3px;
+    }
+
+    .vista-btn {
+      width: 32px;
+      height: 32px;
+      border: none;
+      background: transparent;
+      border-radius: var(--radio-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--marron-claro);
+      cursor: pointer;
+      transition: all var(--trans-normal);
+      font-size: 0.85rem;
+    }
+
+    .vista-btn.is-activo {
+      background: var(--blanco);
+      color: var(--verde-oliva);
+      box-shadow: var(--sombra-sm);
+    }
+
+    .vista-btn:hover:not(.is-activo) { color: var(--gris-texto); }
+
+    /* ============================================================
+       7. LAYOUT PRINCIPAL — Sidebar + Catálogo
+       ============================================================ */
+    .catalogo-layout {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 3rem 5% 5rem;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    /* ============================================================
+       8. SIDEBAR DE FILTROS
+       ============================================================ */
+    .sidebar {
+      position: sticky;
+      top: calc(76px + 60px + 1rem);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .sidebar-widget {
+      background: var(--blanco);
+      border-radius: var(--radio-lg);
+      border: 1px solid rgba(139,115,85,0.10);
+      overflow: hidden;
+    }
+
+    .sidebar-widget__header {
+      padding: 1.1rem 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      user-select: none;
+      border-bottom: 1px solid rgba(139,115,85,0.08);
+      transition: background var(--trans-rapida);
+    }
+
+    .sidebar-widget__header:hover { background: var(--gris-suave); }
+
+    .sidebar-widget__titulo {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--marron);
+    }
+
+    .sidebar-widget__chevron {
+      color: var(--marron-claro);
+      font-size: 0.75rem;
+      transition: transform var(--trans-normal);
+    }
+
+    .sidebar-widget.is-collapsed .sidebar-widget__chevron {
+      transform: rotate(-90deg);
+    }
+
+    .sidebar-widget__body {
+      padding: 1.2rem 1.4rem;
+      transition: max-height var(--trans-normal), padding var(--trans-normal);
+      max-height: 500px;
+      overflow: hidden;
+    }
+
+    .sidebar-widget.is-collapsed .sidebar-widget__body {
+      max-height: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    /* Opciones de filtro checkboxes */
+    .filtro-opcion {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      padding: 0.45rem 0;
+      cursor: pointer;
+      font-size: 0.9rem;
+      color: var(--gris-texto);
+      transition: color var(--trans-rapida);
+    }
+
+    .filtro-opcion:hover { color: var(--texto-oscuro); }
+
+    .filtro-opcion input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(139,115,85,0.3);
+      border-radius: var(--radio-sm);
+      flex-shrink: 0;
+      cursor: pointer;
+      position: relative;
+      transition: all var(--trans-normal);
+    }
+
+    .filtro-opcion input[type="checkbox"]:checked {
+      background: var(--verde-oliva);
+      border-color: var(--verde-oliva);
+    }
+
+    .filtro-opcion input[type="checkbox"]:checked::after {
+      content: '✓';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: var(--blanco);
+      font-size: 0.65rem;
+      font-weight: 700;
+    }
+
+    .filtro-opcion__count {
+      margin-left: auto;
+      font-size: 0.76rem;
+      color: var(--marron-claro);
+      background: var(--gris-suave);
+      padding: 0.1rem 0.45rem;
+      border-radius: var(--radio-pill);
+    }
+
+    /* Rango de precio */
+    .precio-rango {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .precio-inputs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+    }
+
+    .precio-input-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .precio-input-wrap label {
+      font-size: 0.72rem;
+      color: var(--marron-claro);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .precio-input-wrap input {
+      padding: 0.5rem 0.7rem;
+      border: 2px solid rgba(139,115,85,0.2);
+      border-radius: var(--radio-md);
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      color: var(--texto-oscuro);
+      background: var(--crema);
+      outline: none;
+      transition: border-color var(--trans-normal);
+    }
+
+    .precio-input-wrap input:focus {
+      border-color: var(--verde-oliva);
+    }
+
+    .precio-slider {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(to right, var(--verde-oliva) 0%, var(--verde-oliva) var(--val, 70%), rgba(139,115,85,0.2) var(--val, 70%));
+      border-radius: 2px;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .precio-slider::-webkit-slider-thumb {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      background: var(--blanco);
+      border: 2.5px solid var(--verde-oliva);
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: var(--sombra-sm);
+      transition: transform var(--trans-rapida);
+    }
+
+    .precio-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.2);
+    }
+
+    /* Botón limpiar filtros */
+    .limpiar-filtros {
+      width: 100%;
+      padding: 0.7rem;
+      background: var(--naranja-palido);
+      border: 1.5px dashed var(--naranja-claro);
+      border-radius: var(--radio-md);
+      font-family: var(--font-body);
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--naranja-oscuro);
+      cursor: pointer;
+      transition: all var(--trans-normal);
+      text-align: center;
+    }
+
+    .limpiar-filtros:hover {
+      background: var(--naranja);
+      border-color: var(--naranja);
+      color: var(--blanco);
+    }
+
+    /* Banner promo sidebar */
+    .sidebar-promo {
+      background: linear-gradient(135deg, var(--verde-oscuro), var(--verde-oliva));
+      border-radius: var(--radio-lg);
+      padding: 1.6rem;
+      color: var(--blanco);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sidebar-promo::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      right: -30px;
+      width: 100px;
+      height: 100px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+    }
+
+    .sidebar-promo__icono {
+      font-size: 2.2rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .sidebar-promo__titulo {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--blanco);
+      margin-bottom: 0.4rem;
+    }
+
+    .sidebar-promo__texto {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.55;
+      margin-bottom: 1rem;
+    }
+
+    .sidebar-promo__btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.55rem 1.2rem;
+      background: var(--naranja);
+      color: var(--blanco);
+      border-radius: var(--radio-pill);
+      font-size: 0.82rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all var(--trans-normal);
+    }
+
+    .sidebar-promo__btn:hover {
+      background: var(--naranja-oscuro);
+      transform: translateY(-2px);
+    }
+
+    /* ============================================================
+       9. GRID DE PRODUCTOS
+       ============================================================ */
+    .productos-area { }
+
+    /* Cabecera del área de productos */
+    .productos-cabecera {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .productos-cabecera__titulo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--texto-oscuro);
+    }
+
+    /* Área vacía cuando no hay resultados */
+    .sin-resultados {
+      text-align: center;
+      padding: 4rem 2rem;
+      display: none;
+    }
+
+    .sin-resultados.is-visible { display: block; }
+
+    .sin-resultados__icono { font-size: 3rem; margin-bottom: 1rem; }
+
+    .sin-resultados__titulo {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--texto-oscuro);
+      margin-bottom: 0.5rem;
+    }
+
+    /* Grid principal */
+    .productos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.6rem;
+      transition: opacity var(--trans-normal);
+    }
+
+    .productos-grid.is-loading {
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    /* Vista lista */
+    .productos-grid.vista-lista {
+      grid-template-columns: 1fr;
+    }
+
+    /* ============================================================
+       10. TARJETA DE PRODUCTO
+       ============================================================ */
+    .producto-card {
+      background: var(--blanco);
+      border-radius: var(--radio-lg);
+      overflow: hidden;
+      border: 1px solid rgba(139,115,85,0.10);
+      box-shadow: var(--sombra-sm);
+      transition: all var(--trans-lenta);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .producto-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--sombra-lg);
+      border-color: rgba(139,115,85,0.2);
+    }
+
+    /* Tarjeta modo lista */
+    .vista-lista .producto-card {
+      flex-direction: row;
+      height: 180px;
+    }
+
+    .vista-lista .producto-card__imagen-wrap {
+      width: 200px;
+      min-width: 200px;
+      height: 180px;
+      flex-shrink: 0;
+    }
+
+    .vista-lista .producto-card__cuerpo {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex: 1;
+      padding: 1.5rem 2rem;
+    }
+
+    .vista-lista .producto-card__info { flex: 1; }
+
+    .vista-lista .producto-card__acciones {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.8rem;
+      flex-shrink: 0;
+    }
+
+    /* Imagen del producto */
+    .producto-card__imagen-wrap {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+      background: var(--gris-suave);
+    }
+
+    .producto-card__imagen {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--trans-lenta);
+    }
+
+    .producto-card:hover .producto-card__imagen {
+      transform: scale(1.07);
+    }
+
+    /* Badges sobre la imagen */
+    .producto-card__badges {
+      position: absolute;
+      top: 0.85rem;
+      left: 0.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      z-index: 2;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radio-pill);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .badge--verde {
+      background: var(--verde-oliva);
+      color: var(--blanco);
+    }
+
+    .badge--naranja {
+      background: var(--naranja);
+      color: var(--blanco);
+    }
+
+    .badge--marron {
+      background: var(--marron);
+      color: var(--blanco);
+    }
+
+    .badge--oferta {
+      background: #c0392b;
+      color: var(--blanco);
+    }
+
+    .badge--nuevo {
+      background: linear-gradient(90deg, var(--verde-oliva), var(--verde-claro));
+      color: var(--blanco);
+    }
+
+    /* Botón de favorito (wishlist) */
+    .btn-favorito {
+      position: absolute;
+      top: 0.85rem;
+      right: 0.85rem;
+      width: 34px;
+      height: 34px;
+      background: rgba(255,255,255,0.88);
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all var(--trans-normal);
+      z-index: 2;
+      backdrop-filter: blur(4px);
+      opacity: 0;
+    }
+
+    .producto-card:hover .btn-favorito { opacity: 1; }
+
+    .btn-favorito.is-activo {
+      opacity: 1;
+      background: var(--naranja-palido);
+      color: var(--naranja);
+    }
+
+    .btn-favorito:hover {
+      background: var(--naranja);
+      color: var(--blanco);
+      transform: scale(1.1);
+    }
+
+    /* Vista rápida */
+    .btn-vista-rapida {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 0.7rem;
+      background: rgba(44,36,22,0.85);
+      color: var(--blanco);
+      border: none;
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transform: translateY(100%);
+      transition: transform var(--trans-normal);
+      text-align: center;
+      z-index: 2;
+      backdrop-filter: blur(4px);
+      letter-spacing: 0.05em;
+    }
+
+    .producto-card:hover .btn-vista-rapida {
+      transform: translateY(0);
+    }
+
+    /* Cuerpo del producto */
+    .producto-card__cuerpo {
+      padding: 1.3rem 1.4rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 0;
+    }
+
+    .producto-card__categoria {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--naranja);
+      margin-bottom: 0.35rem;
+    }
+
+    .producto-card__nombre {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--texto-oscuro);
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
+    }
+
+    .producto-card__descripcion {
+      font-size: 0.87rem;
+      color: var(--gris-texto);
+      line-height: 1.6;
+      margin-bottom: 0.85rem;
+      flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* Atributos (peso, unidad, etc.) */
+    .producto-card__atributos {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.85rem;
+    }
+
+    .atributo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      background: var(--verde-palido);
+      color: var(--verde-oscuro);
+      padding: 0.2rem 0.55rem;
+      border-radius: var(--radio-pill);
+      font-size: 0.72rem;
+      font-weight: 600;
+    }
+
+    /* Rating */
+    .producto-card__rating {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .estrellas-mini {
+      display: flex;
+      gap: 1px;
+    }
+
+    .estrella-mini {
+      font-size: 0.72rem;
+      color: #f5c842;
+    }
+
+    .estrella-mini--vacia { color: rgba(139,115,85,0.25); }
+
+    .rating-numero {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--texto-oscuro);
+    }
+
+    .rating-cuenta {
+      font-size: 0.77rem;
+      color: var(--marron-claro);
+    }
+
+    /* Footer del producto: precio + botón */
+    .producto-card__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+      margin-top: auto;
+      padding-top: 0.85rem;
+      border-top: 1px solid rgba(139,115,85,0.1);
+    }
+
+    .producto-card__precios {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .producto-card__precio-original {
+      font-size: 0.78rem;
+      color: var(--marron-claro);
+      text-decoration: line-through;
+      line-height: 1;
+    }
+
+    .producto-card__precio {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--verde-oliva);
+      line-height: 1.1;
+    }
+
+    .producto-card__precio-unit {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--gris-texto);
+      font-family: var(--font-body);
+    }
+
+    /* Botón agregar al carrito */
+    .btn-agregar {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.65rem 1.1rem;
+      background: var(--naranja);
+      color: var(--blanco);
+      border: 2px solid var(--naranja);
+      border-radius: var(--radio-pill);
+      font-family: var(--font-body);
+      font-size: 0.84rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--trans-normal);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .btn-agregar:hover {
+      background: var(--naranja-oscuro);
+      border-color: var(--naranja-oscuro);
+      transform: translateY(-2px);
+      box-shadow: var(--sombra-naranja);
+    }
+
+    .btn-agregar:active { transform: scale(0.97); }
+
+    /* Estado: agregado */
+    .btn-agregar.is-agregado {
+      background: var(--verde-oliva);
+      border-color: var(--verde-oliva);
+    }
+
+    /* Selector de cantidad integrado en tarjeta */
+    .cantidad-control {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      border: 2px solid rgba(139,115,85,0.2);
+      border-radius: var(--radio-pill);
+      overflow: hidden;
+      background: var(--blanco);
+    }
+
+    .cantidad-btn {
+      width: 30px;
+      height: 30px;
+      border: none;
+      background: transparent;
+      color: var(--marron);
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background var(--trans-rapida);
+      flex-shrink: 0;
+    }
+
+    .cantidad-btn:hover { background: var(--gris-suave); }
+
+    .cantidad-num {
+      min-width: 28px;
+      text-align: center;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--texto-oscuro);
+      padding: 0 0.2rem;
+    }
+
+    /* ============================================================
+       11. TARJETA ESPECIAL — PACK DESTACADO (full width)
+       ============================================================ */
+    .pack-destacado {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, var(--marron-oscuro) 0%, var(--marron) 55%, #c47a45 100%);
+      border-radius: var(--radio-lg);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border: none;
+      box-shadow: var(--sombra-md);
+      transition: all var(--trans-lenta);
+      min-height: 260px;
+    }
+
+    .pack-destacado:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 24px 64px rgba(44,36,22,0.25);
+    }
+
+    .pack-destacado__texto {
+      padding: 2.5rem 2.8rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .pack-destacado__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: var(--radio-pill);
+      padding: 0.28rem 0.7rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+      width: fit-content;
+      margin-bottom: 0.9rem;
+    }
+
+    .pack-destacado__nombre {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--blanco);
+      line-height: 1.1;
+      margin-bottom: 0.6rem;
+    }
+
+    .pack-destacado__nombre em {
+      font-style: italic;
+      color: var(--naranja-claro);
+    }
+
+    .pack-destacado__descripcion {
+      color: rgba(255,255,255,0.78);
+      font-size: 0.92rem;
+      line-height: 1.65;
+      margin-bottom: 1.4rem;
+      max-width: 380px;
+    }
+
+    .pack-destacado__contenido {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.4rem;
+    }
+
+    .pack-item {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: rgba(255,255,255,0.12);
+      border-radius: var(--radio-pill);
+      padding: 0.25rem 0.7rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .pack-destacado__footer {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .pack-destacado__precio {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pack-destacado__precio-original {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.5);
+      text-decoration: line-through;
+    }
+
+    .pack-destacado__precio-actual {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--blanco);
+      line-height: 1;
+    }
+
+    .pack-destacado__precio-actual small {
+      font-size: 1rem;
+      font-family: var(--font-body);
+      color: rgba(255,255,255,0.7);
+      font-weight: 400;
+    }
+
+    .pack-destacado__btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.8rem;
+      background: var(--blanco);
+      color: var(--marron-oscuro);
+      border: none;
+      border-radius: var(--radio-pill);
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all var(--trans-normal);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+
+    .pack-destacado__btn:hover {
+      background: var(--naranja);
+      color: var(--blanco);
+      transform: translateY(-2px);
+      box-shadow: var(--sombra-naranja);
+    }
+
+    .pack-destacado__imagen {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pack-destacado__imagen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--trans-lenta);
+    }
+
+    .pack-destacado:hover .pack-destacado__imagen img {
+      transform: scale(1.06);
+    }
+
+    .pack-destacado__ahorro {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      background: #c0392b;
+      color: var(--blanco);
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1;
+      box-shadow: 0 4px 16px rgba(192,57,43,0.4);
+    }
+
+    .pack-destacado__ahorro small {
+      font-size: 0.6rem;
+      font-family: var(--font-body);
+      font-weight: 600;
+      opacity: 0.9;
+      letter-spacing: 0.05em;
+    }
+
+    /* ============================================================
+       12. PAGINACIÓN
+       ============================================================ */
+    .paginacion {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      margin-top: 3.5rem;
+      flex-wrap: wrap;
+    }
+
+    .pag-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radio-md);
+      border: 2px solid rgba(139,115,85,0.2);
+      background: var(--blanco);
+      color: var(--gris-texto);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--trans-normal);
+    }
+
+    .pag-btn:hover {
+      border-color: var(--verde-oliva);
+      color: var(--verde-oliva);
+      background: var(--verde-palido);
+    }
+
+    .pag-btn.is-activo {
+      background: var(--verde-oliva);
+      border-color: var(--verde-oliva);
+      color: var(--blanco);
+      font-weight: 700;
+    }
+
+    .pag-btn--nav {
+      width: auto;
+      padding: 0 1rem;
+      gap: 0.3rem;
+      font-size: 0.85rem;
+    }
+
+    .pag-sep {
+      color: var(--marron-claro);
+      font-size: 0.85rem;
+      padding: 0 0.2rem;
+    }
+
+    /* ============================================================
+       13. TOAST DE NOTIFICACIÓN — carrito
+       ============================================================ */
+    .toast-container {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: var(--z-toast);
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      pointer-events: none;
+    }
+
+    .toast {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: var(--verde-oscuro);
+      color: var(--blanco);
+      padding: 0.85rem 1.2rem;
+      border-radius: var(--radio-md);
+      box-shadow: var(--sombra-lg);
+      max-width: 320px;
+      transform: translateX(120%);
+      transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      pointer-events: all;
+    }
+
+    .toast.is-visible { transform: translateX(0); }
+
+    .toast__icono {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .toast__texto {
+      font-size: 0.88rem;
+      line-height: 1.4;
+      flex: 1;
+    }
+
+    .toast__nombre {
+      font-weight: 600;
+      display: block;
+    }
+
+    .toast__sub {
+      font-size: 0.78rem;
+      opacity: 0.8;
+    }
+
+    .toast__cerrar {
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.6);
+      cursor: pointer;
+      font-size: 0.9rem;
+      padding: 2px;
+      flex-shrink: 0;
+      transition: color var(--trans-rapida);
+    }
+
+    .toast__cerrar:hover { color: var(--blanco); }
+
+    /* ============================================================
+       14. PANEL LATERAL DEL CARRITO (drawer)
+       ============================================================ */
+    .carrito-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(44,36,22,0.55);
+      z-index: calc(var(--z-modal) + 10);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--trans-normal);
+      backdrop-filter: blur(3px);
+    }
+
+    .carrito-overlay.is-open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .carrito-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 400px;
+      max-width: 95vw;
+      background: var(--blanco);
+      z-index: calc(var(--z-modal) + 11);
+      box-shadow: -8px 0 40px rgba(44,36,22,0.15);
+      transform: translateX(100%);
+      transition: transform var(--trans-lenta);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .carrito-drawer.is-open {
+      transform: translateX(0);
+    }
+
+    .carrito-drawer__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 1.6rem;
+      border-bottom: 1px solid rgba(139,115,85,0.12);
+    }
+
+    .carrito-drawer__titulo {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--texto-oscuro);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .carrito-drawer__cerrar {
+      width: 36px;
+      height: 36px;
+      background: var(--gris-suave);
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--gris-texto);
+      font-size: 1rem;
+      transition: background var(--trans-rapida);
+    }
+
+    .carrito-drawer__cerrar:hover { background: var(--crema-oscura); }
+
+    .carrito-drawer__body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1.2rem 1.6rem;
+    }
+
+    /* Item en el carrito */
+    .carrito-item {
+      display: flex;
+      gap: 0.9rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(139,115,85,0.08);
+      position: relative;
+    }
+
+    .carrito-item:last-child { border-bottom: none; }
+
+    .carrito-item__img {
+      width: 68px;
+      height: 68px;
+      border-radius: var(--radio-md);
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .carrito-item__info { flex: 1; min-width: 0; }
+
+    .carrito-item__nombre {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--texto-oscuro);
+      margin-bottom: 0.2rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .carrito-item__precio {
+      font-size: 0.85rem;
+      color: var(--gris-texto);
+      margin-bottom: 0.5rem;
+    }
+
+    .carrito-item__precio strong {
+      color: var(--verde-oliva);
+      font-family: var(--font-display);
+      font-size: 1rem;
+    }
+
+    .carrito-item__cantidad {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      border: 1.5px solid rgba(139,115,85,0.2);
+      border-radius: var(--radio-pill);
+      width: fit-content;
+      overflow: hidden;
+    }
+
+    .carrito-item__qty-btn {
+      width: 26px;
+      height: 26px;
+      border: none;
+      background: transparent;
+      color: var(--marron);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background var(--trans-rapida);
+    }
+
+    .carrito-item__qty-btn:hover { background: var(--gris-suave); }
+
+    .carrito-item__qty-num {
+      min-width: 22px;
+      text-align: center;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--texto-oscuro);
+    }
+
+    .carrito-item__eliminar {
+      position: absolute;
+      top: 1rem;
+      right: 0;
+      background: none;
+      border: none;
+      color: var(--marron-claro);
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: color var(--trans-rapida);
+      padding: 2px;
+    }
+
+    .carrito-item__eliminar:hover { color: #c0392b; }
+
+    /* Estado vacío del carrito */
+    .carrito-vacio {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .carrito-vacio__icono { font-size: 3rem; margin-bottom: 1rem; }
+
+    .carrito-vacio__titulo {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: var(--texto-oscuro);
+      margin-bottom: 0.5rem;
+    }
+
+    .carrito-vacio__texto {
+      font-size: 0.88rem;
+      color: var(--gris-texto);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Footer del carrito */
+    .carrito-drawer__footer {
+      padding: 1.2rem 1.6rem 1.8rem;
+      border-top: 1px solid rgba(139,115,85,0.12);
+      background: var(--crema);
+    }
+
+    .carrito-subtotal {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.6rem;
+      font-size: 0.88rem;
+      color: var(--gris-texto);
+    }
+
+    .carrito-total {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.2rem;
+      padding-top: 0.7rem;
+      border-top: 1px solid rgba(139,115,85,0.15);
+    }
+
+    .carrito-total__label {
+      font-weight: 600;
+      color: var(--texto-oscuro);
+    }
+
+    .carrito-total__valor {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--verde-oliva);
+    }
+
+    .carrito-checkout {
+      width: 100%;
+      padding: 1rem;
+      background: var(--naranja);
+      color: var(--blanco);
+      border: none;
+      border-radius: var(--radio-md);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all var(--trans-normal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .carrito-checkout:hover {
+      background: var(--naranja-oscuro);
+      transform: translateY(-1px);
+      box-shadow: var(--sombra-naranja);
+    }
+
+    .carrito-seguir {
+      width: 100%;
+      padding: 0.7rem;
+      background: transparent;
+      color: var(--gris-texto);
+      border: none;
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: color var(--trans-rapida);
+    }
+
+    .carrito-seguir:hover { color: var(--verde-oliva); }
+
+    /* ============================================================
+       15. SECCIÓN CTA FINAL
+       ============================================================ */
+    .cta-final {
+      background: linear-gradient(135deg, var(--verde-oscuro) 0%, var(--verde-oliva) 100%);
+      padding: 5rem 5%;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-final::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      left: -80px;
+      width: 300px;
+      height: 300px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 50%;
+    }
+
+    .cta-final::after {
+      content: '';
+      position: absolute;
+      bottom: -60px;
+      right: -60px;
+      width: 240px;
+      height: 240px;
+      background: rgba(214,138,94,0.1);
+      border-radius: 50%;
+    }
+
+    .cta-final__inner {
+      max-width: 640px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-final__titulo {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      color: var(--blanco);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .cta-final__titulo em {
+      font-style: italic;
+      color: var(--naranja-claro);
+    }
+
+    .cta-final__texto {
+      color: rgba(255,255,255,0.72);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    .cta-final__acciones {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ============================================================
+       16. FOOTER — coherente con index.html
+       ============================================================ */
+    .footer {
+      background: var(--texto-oscuro);
+      color: rgba(255,255,255,0.75);
+      padding: 4.5rem 5% 2rem;
+    }
+
+    .footer__grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.2fr;
+      gap: 3.5rem;
+      padding-bottom: 3.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer__logo-nombre {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--blanco);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .footer__logo-tagline {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 1rem;
+    }
+
+    .footer__descripcion {
+      font-size: 0.88rem;
+      line-height: 1.72;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 1.4rem;
+    }
+
+    .footer__redes {
+      display: flex;
+      gap: 0.7rem;
+    }
+
+    .footer__red {
+      width: 36px;
+      height: 36px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.85rem;
+      transition: all var(--trans-normal);
+    }
+
+    .footer__red:hover {
+      background: var(--naranja);
+      border-color: var(--naranja);
+      color: var(--blanco);
+      transform: translateY(-2px);
+    }
+
+    .footer__col-titulo {
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 1.3rem;
+    }
+
+    .footer__links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .footer__link {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.6);
+      transition: color var(--trans-rapida);
+    }
+
+    .footer__link:hover { color: var(--naranja-claro); }
+
+    .footer__contacto-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .footer__contacto-icono {
+      margin-top: 1px;
+      flex-shrink: 0;
+      color: var(--naranja);
+    }
+
+    .footer__bottom {
+      max-width: 1280px;
+      margin: 1.8rem auto 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer__copy {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .footer__copy span { color: rgba(255,255,255,0.52); }
+
+    .footer__legal {
+      display: flex;
+      gap: 1.4rem;
+    }
+
+    .footer__legal-link {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+      transition: color var(--trans-rapida);
+    }
+
+    .footer__legal-link:hover { color: rgba(255,255,255,0.62); }
+
+    /* ============================================================
+       17. ANIMACIONES DE REVEAL
+       ============================================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal--delay-1 { transition-delay: 0.1s; }
+    .reveal--delay-2 { transition-delay: 0.2s; }
+    .reveal--delay-3 { transition-delay: 0.3s; }
+    .reveal--delay-4 { transition-delay: 0.4s; }
+
+    /* ============================================================
+       18. RESPONSIVE — BREAKPOINTS
+       ============================================================ */
+    @media (max-width: 1100px) {
+      .catalogo-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: static;
+        display: none; /* Se muestra con toggle en mobile */
+      }
+
+      .sidebar.is-visible-mobile { display: flex; }
+
+      .productos-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .nav { display: none; }
+      .nav-toggle { display: flex; }
+
+      .page-hero__inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .filtros-bar__inner {
+        gap: 0.8rem;
+      }
+
+      .buscador { max-width: 100%; }
+
+      .pack-destacado {
+        grid-template-columns: 1fr;
+      }
+
+      .pack-destacado__imagen { display: none; }
+
+      .vista-lista .producto-card {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .vista-lista .producto-card__imagen-wrap {
+        width: 100%;
+        height: 200px;
+      }
+
+      .vista-lista .producto-card__cuerpo {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      .vista-lista .producto-card__acciones {
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .productos-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .filtros-tabs { display: none; }
+
+      .page-hero__stats { gap: 0.8rem; }
+
+      .page-hero__stat { padding: 0.7rem 1rem; }
+
+      .footer__grid { grid-template-columns: 1fr; gap: 2rem; }
+
+      .footer__bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .carrito-drawer { width: 100%; max-width: 100%; }
+
+      .cta-final__acciones { flex-direction: column; }
+
+      .cta-final__acciones .btn { justify-content: center; }
+
+      .resultados-count { display: none; }
+    }
+    /* --- ESTILO SENSORIAL AVICOR --- */
+button, .nav__carrito, .btn {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 50px;
+}
+button:hover, .nav__carrito:hover, .btn:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <header class="header" id="header" role="banner">
+    <div class="header__inner">
+
+      <a href="/" class="logo" aria-label="Origen Avicor — Inicio">
+        <span class="logo__nombre">Origen Avicor</span>
+        <span class="logo__tagline">Coroico · Bolivia</span>
+      </a>
+
+      <nav class="nav" role="navigation" aria-label="Menú principal">
+    <a href="/" class="nav__link">Inicio</a>
+    <a href="/productos" class="nav__link">Productos</a>
+    <a href="/nosotros" class="nav__link">Nosotros</a>
+    <a href="/chatbot" class="nav__link">💬 Asistente</a>
+    <button class="nav__carrito" id="nav-carrito-btn" onclick="abrirCarrito()">🛒 <span class="nav__carrito-badge" id="nav-carrito-badge">0</span></button>
+</nav>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-mobile">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+
+    </div>
+
+    <nav class="nav-mobile" id="nav-mobile" aria-label="Menú móvil">
+    <a href="/" class="nav-mobile__link">Inicio</a>
+    <a href="/productos" class="nav-mobile__link">Productos</a>
+    <a href="/nosotros" class="nav-mobile__link">Nosotros</a>
+    <a href="/chatbot" class="nav-mobile__link">💬 Asistente</a>
+    <button class="nav-mobile__link" style="border:none; background:none; cursor:pointer;" onclick="abrirCarrito()">🛒 Ver carrito</button>
+</nav>
+  </header>
+
+  <!-- ============================================================
+       HERO DE PÁGINA
+       ============================================================ -->
+  <section class="page-hero" aria-label="Catálogo de productos Origen Avicor">
+    <div class="page-hero__inner">
+      <div>
+        <nav class="breadcrumb" aria-label="Ruta de navegación">
+          <a href="/" class="breadcrumb__link">Inicio</a>
+          <span class="breadcrumb__sep" aria-hidden="true">›</span>
+          <span class="breadcrumb__actual">Productos</span>
+        </nav>
+        <h1 class="page-hero__titulo">
+          Nuestros <em>cortes</em><br />artesanales
+        </h1>
+        <p class="page-hero__subtitulo">
+          Pollo criollo de Coroico, procesado el mismo día.
+          Elige el corte perfecto para tu mesa.
+        </p>
+      </div>
+
+      <div class="page-hero__stats" aria-label="Estadísticas del catálogo">
+        <div class="page-hero__stat">
+          <div class="page-hero__stat-num">12</div>
+          <div class="page-hero__stat-label">Productos disponibles</div>
+        </div>
+        <div class="page-hero__stat">
+          <div class="page-hero__stat-num">4.9★</div>
+          <div class="page-hero__stat-label">Calificación promedio</div>
+        </div>
+        <div class="page-hero__stat">
+          <div class="page-hero__stat-num">24h</div>
+          <div class="page-hero__stat-label">Entrega en La Paz</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BARRA DE FILTROS
+       ============================================================ -->
+  <div class="filtros-bar" role="search" aria-label="Filtros y búsqueda de productos">
+    <div class="filtros-bar__inner">
+
+      <!-- Buscador -->
+      <div class="buscador" role="search">
+        <span class="buscador__icono" aria-hidden="true">🔍</span>
+        <input
+          type="search"
+          class="buscador__input"
+          id="buscador-input"
+          placeholder="Buscar producto..."
+          aria-label="Buscar productos"
+          autocomplete="off"
+        />
+      </div>
+
+      <!-- Tabs de categoría -->
+      <div class="filtros-tabs" role="tablist" aria-label="Filtrar por categoría">
+        <button class="filtro-tab is-activo" data-categoria="todos"       role="tab" aria-selected="true">Todos</button>
+        <button class="filtro-tab"           data-categoria="entero"      role="tab" aria-selected="false">Pollo entero</button>
+        <button class="filtro-tab"           data-categoria="pechuga"     role="tab" aria-selected="false">Pechugas</button>
+        <button class="filtro-tab"           data-categoria="muslos"      role="tab" aria-selected="false">Muslos y piernas</button>
+        <button class="filtro-tab"           data-categoria="pack"        role="tab" aria-selected="false">Packs</button>
+        <button class="filtro-tab"           data-categoria="menudencias" role="tab" aria-selected="false">Menudencias</button>
+      </div>
+
+      <!-- Orden -->
+      <select class="orden-select" id="orden-select" aria-label="Ordenar productos por">
+        <option value="relevancia">Relevancia</option>
+        <option value="precio-asc">Precio: menor a mayor</option>
+        <option value="precio-desc">Precio: mayor a menor</option>
+        <option value="nombre">Nombre A–Z</option>
+        <option value="rating">Mejor valorados</option>
+      </select>
+
+      <!-- Conteo de resultados -->
+      <span class="resultados-count" id="resultados-count" aria-live="polite">
+        <strong>12</strong> productos
+      </span>
+
+      <!-- Toggle de vista -->
+      <div class="vista-toggle" role="group" aria-label="Cambiar vista">
+        <button class="vista-btn is-activo" id="btn-vista-grid"  aria-label="Vista cuadrícula" title="Vista cuadrícula">⊞</button>
+        <button class="vista-btn"           id="btn-vista-lista" aria-label="Vista lista"      title="Vista lista">☰</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================================
+       LAYOUT PRINCIPAL
+       ============================================================ -->
+  <div class="catalogo-layout">
+
+    <!-- ===========================================================
+         SIDEBAR
+         =========================================================== -->
+    <aside class="sidebar" id="sidebar" aria-label="Filtros de productos">
+
+      <!-- Widget: Categorías -->
+      <div class="sidebar-widget" id="widget-cat">
+        <div class="sidebar-widget__header" onclick="toggleWidget('widget-cat')" aria-expanded="true">
+          <span class="sidebar-widget__titulo">Categorías</span>
+          <span class="sidebar-widget__chevron" aria-hidden="true">▼</span>
+        </div>
+        <div class="sidebar-widget__body">
+          <label class="filtro-opcion">
+            <input type="checkbox" checked onchange="filtrarSidebar()" data-cat="todos" /> Todos los productos
+            <span class="filtro-opcion__count">12</span>
+          </label>
+          <label class="filtro-opcion">
+            <input type="checkbox" onchange="filtrarSidebar()" data-cat="entero" /> Pollo entero
+            <span class="filtro-opcion__count">3</span>
+          </label>
+          <label class="filtro-opcion">
+            <input type="checkbox" onchange="filtrarSidebar()" data-cat="pechuga" /> Pechugas
+            <span class="filtro-opcion__count">2</span>
+          </label>
+          <label class="filtro-opcion">
+            <input type="checkbox" onchange="filtrarSidebar()" data-cat="muslos" /> Muslos y piernas
+            <span class="filtro-opcion__count">2</span>
+          </label>
+          <label class="filtro-opcion">
+            <input type="checkbox" onchange="filtrarSidebar()" data-cat="pack" /> Packs y combos
+            <span class="filtro-opcion__count">3</span>
+          </label>
+          <label class="filtro-opcion">
+            <input type="checkbox" onchange="filtrarSidebar()" data-cat="menudencias" /> Menudencias
+            <span class="filtro-opcion__count">2</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Widget: Rango de precio -->
+      <div class="sidebar-widget" id="widget-precio">
+        <div class="sidebar-widget__header" onclick="toggleWidget('widget-precio')" aria-expanded="true">
+          <span class="sidebar-widget__titulo">Precio (Bs.)</span>
+          <span class="sidebar-widget__chevron" aria-hidden="true">▼</span>
+        </div>
+        <div class="sidebar-widget__body">
+          <div class="precio-rango">
+            <div class="precio-inputs">
+              <div class="precio-input-wrap">
+                <label for="precio-min">Desde</label>
+                <input type="number" id="precio-min" value="0"   min="0"   max="300" placeholder="Bs. 0"   aria-label="Precio mínimo" />
+              </div>
+              <div class="precio-input-wrap">
+                <label for="precio-max">Hasta</label>
+                <input type="number" id="precio-max" value="300" min="0"   max="300" placeholder="Bs. 300" aria-label="Precio máximo" />
+              </div>
+            </div>
+            <input
+              type="range"
+              class="precio-slider"
+              id="precio-slider"
+              min="0"
+              max="300"
+              value="300"
+              step="5"
+              aria-label="Ajustar precio máximo"
+              oninput="actualizarPrecioSlider(this)"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Widget: Características -->
+      <div class="sidebar-widget" id="widget-caract">
+        <div class="sidebar-widget__header" onclick="toggleWidget('widget-caract')" aria-expanded="true">
+          <span class="sidebar-widget__titulo">Características</span>
+          <span class="sidebar-widget__chevron" aria-hidden="true">▼</span>
+        </div>
+        <div class="sidebar-widget__body">
+          <label class="filtro-opcion">
+            <input type="checkbox" onchange="filtrarSidebar()" /> Sin hormonas
+          </label>
+          <label class="filtro-opcion">
+            <input type="checkbox" onchange="filtrarSidebar()" /> Crianza libre
+          </label>
+          <label class="filtro-opcion">
+            <input type="checkbox" onchange="filtrarSidebar()" /> Congelado
+          </label>
+          <label class="filtro-opcion">
+            <input type="checkbox" onchange="filtrarSidebar()" /> Fresco (no congelado)
+          </label>
+          <label class="filtro-opcion">
+            <input type="checkbox" onchange="filtrarSidebar()" /> En oferta
+          </label>
+          <label class="filtro-opcion">
+            <input type="checkbox" onchange="filtrarSidebar()" /> Nuevo
+          </label>
+        </div>
+      </div>
+
+      <!-- Widget: Rating mínimo -->
+      <div class="sidebar-widget" id="widget-rating">
+        <div class="sidebar-widget__header" onclick="toggleWidget('widget-rating')" aria-expanded="true">
+          <span class="sidebar-widget__titulo">Valoración</span>
+          <span class="sidebar-widget__chevron" aria-hidden="true">▼</span>
+        </div>
+        <div class="sidebar-widget__body">
+          <label class="filtro-opcion">
+            <input type="radio" name="rating-filter" value="5" onchange="filtrarSidebar()" />
+            ★★★★★ (5 estrellas)
+          </label>
+          <label class="filtro-opcion">
+            <input type="radio" name="rating-filter" value="4" onchange="filtrarSidebar()" />
+            ★★★★☆ (4+ estrellas)
+          </label>
+          <label class="filtro-opcion">
+            <input type="radio" name="rating-filter" value="3" onchange="filtrarSidebar()" />
+            ★★★☆☆ (3+ estrellas)
+          </label>
+          <label class="filtro-opcion">
+            <input type="radio" name="rating-filter" value="todos" checked onchange="filtrarSidebar()" />
+            Todas las valoraciones
+          </label>
+        </div>
+      </div>
+
+      <!-- Botón limpiar -->
+      <button class="limpiar-filtros" onclick="limpiarFiltros()" aria-label="Limpiar todos los filtros">
+        ✕ Limpiar filtros
+      </button>
+
+      <!-- Banner promo sidebar -->
+      <div class="sidebar-promo" role="complementary" aria-label="Promoción del día">
+        <div class="sidebar-promo__icono" aria-hidden="true">🎁</div>
+        <div class="sidebar-promo__titulo">Envío gratis hoy</div>
+        <p class="sidebar-promo__texto">
+          En pedidos mayores a Bs. 120.
+          Solo por hoy en La Paz.
+        </p>
+        <button class="sidebar-promo__btn" onclick="mostrarToast('¡Descuento aplicado!', 'Envío gratis en tu próximo pedido.')">
+          Aprovechar oferta 🚚
+        </button>
+      </div>
+
+    </aside>
+
+    <!-- ===========================================================
+         ÁREA DE PRODUCTOS
+         =========================================================== -->
+    <div class="productos-area">
+
+      <div class="productos-cabecera">
+        <h2 class="productos-cabecera__titulo">Todos los productos</h2>
+        <!-- Botón filtros mobile -->
+        <button
+          class="btn btn-ghost"
+          style="display:none;"
+          id="toggle-sidebar-mobile"
+          onclick="toggleSidebarMobile()"
+          aria-label="Mostrar filtros"
+        >
+          ⚙️ Filtros
+        </button>
+      </div>
+
+      <!-- Sin resultados (hidden por defecto) -->
+      <div class="sin-resultados" id="sin-resultados" role="status">
+        <div class="sin-resultados__icono" aria-hidden="true">🔍</div>
+        <h3 class="sin-resultados__titulo">Sin resultados</h3>
+        <p>No encontramos productos que coincidan con tu búsqueda.</p>
+        <button class="btn btn-secundario" style="margin-top:1rem;" onclick="limpiarFiltros()">
+          Limpiar filtros
+        </button>
+      </div>
+
+      <!-- GRID PRINCIPAL DE PRODUCTOS -->
+      <div class="productos-grid" id="productos-grid" role="list" aria-label="Lista de productos">
+
+        <!-- =====================================================
+             PACK DESTACADO — Full width
+             ===================================================== -->
+        <article
+          class="pack-destacado reveal"
+          role="listitem"
+          data-categoria="pack"
+          data-precio="145"
+          data-nombre="Pack Familiar Completo"
+          aria-label="Pack Familiar Completo — Bs. 145"
+        >
+          <div class="pack-destacado__texto">
+            <span class="pack-destacado__badge">⭐ Más vendido · Ahorrás 15%</span>
+            <h2 class="pack-destacado__nombre">Pack Familiar<br /><em>Completo</em></h2>
+            <p class="pack-destacado__descripcion">
+              La solución perfecta para la semana: un pollo entero,
+              pechuga fileteada y muslos sazonados. Todo fresco y natural de Coroico.
+            </p>
+            <div class="pack-destacado__contenido">
+              <span class="pack-item">🐔 1 pollo entero</span>
+              <span class="pack-item">🍗 1 kg pechugas</span>
+              <span class="pack-item">🦵 ½ kg muslos</span>
+              <span class="pack-item">🎁 Empaque premium</span>
+            </div>
+            <div class="pack-destacado__footer">
+              <div class="pack-destacado__precio">
+                <span class="pack-destacado__precio-original">Bs. 170</span>
+                <span class="pack-destacado__precio-actual">Bs. 145 <small>/ pack</small></span>
+              </div>
+              <button
+                class="pack-destacado__btn"
+                onclick="agregarAlCarrito('Pack Familiar Completo', 145, 'https://images.unsplash.com/photo-1621852004158-f3bc188ace2d?w=100&q=60')"
+                aria-label="Agregar Pack Familiar Completo al carrito"
+              >
+                🛒 Agregar al carrito
+              </button>
+            </div>
+          </div>
+          <div class="pack-destacado__imagen">
+            <img
+              src="https://images.unsplash.com/photo-1621852004158-f3bc188ace2d?w=700&q=80"
+              alt="Pack familiar completo Origen Avicor"
+              loading="eager"
+            />
+            <div class="pack-destacado__ahorro">
+              -15%<small>OFF</small>
+            </div>
+          </div>
+        </article>
+
+        <!-- =====================================================
+             PRODUCTO 1 — Pollo entero Avicor
+             ===================================================== -->
+        <article
+          class="producto-card reveal reveal--delay-1"
+          role="listitem"
+          data-categoria="entero"
+          data-precio="65"
+          data-nombre="Pollo entero Avicor"
+          aria-label="Pollo entero Avicor — Bs. 65"
+        >
+          <div class="producto-card__imagen-wrap">
+            <img
+              class="producto-card__imagen"
+              src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=500&q=75"
+              alt="Pollo entero fresco de Origen Avicor"
+              loading="lazy"
+            />
+            <div class="producto-card__badges">
+              <span class="badge badge--verde">Natural</span>
+              <span class="badge badge--naranja">Más popular</span>
+            </div>
+            <button
+              class="btn-favorito"
+              onclick="toggleFavorito(this)"
+              aria-label="Agregar a favoritos"
+              title="Favorito"
+            >♡</button>
+            <button
+              class="btn-vista-rapida"
+              onclick="vistaRapida('Pollo entero Avicor')"
+              aria-label="Vista rápida del producto"
+            >
+              👁 Vista rápida
+            </button>
+          </div>
+
+          <div class="producto-card__cuerpo">
+            <span class="producto-card__categoria">Pollo entero</span>
+            <h3 class="producto-card__nombre">Pollo entero Avicor</h3>
+            <p class="producto-card__descripcion">
+              Pollo criollo completo, criado en libertad. Peso promedio 2.2 kg.
+              Ideal para el horno, la parrilla o el caldo.
+            </p>
+            <div class="producto-card__atributos">
+              <span class="atributo">🌿 Sin hormonas</span>
+              <span class="atributo">⚖️ ~2.2 kg</span>
+              <span class="atributo">❄️ Fresco</span>
+            </div>
+            <div class="producto-card__rating" aria-label="4.9 de 5 estrellas">
+              <div class="estrellas-mini">
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+              </div>
+              <span class="rating-numero">4.9</span>
+              <span class="rating-cuenta">(148 reseñas)</span>
+            </div>
+            <div class="producto-card__footer">
+              <div class="producto-card__precios">
+                <div class="producto-card__precio">Bs. 65 <span class="producto-card__precio-unit">/ unidad</span></div>
+              </div>
+              <button
+                class="btn-agregar"
+                onclick="agregarAlCarrito('Pollo entero Avicor', 65, 'https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=100&q=60')"
+                aria-label="Agregar Pollo entero Avicor al carrito"
+              >
+                🛒 Agregar
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- =====================================================
+             PRODUCTO 2 — Pechuga fileteada
+             ===================================================== -->
+        <article
+          class="producto-card reveal reveal--delay-2"
+          role="listitem"
+          data-categoria="pechuga"
+          data-precio="48"
+          data-nombre="Pechuga fileteada"
+          aria-label="Pechuga fileteada — Bs. 48"
+        >
+          <div class="producto-card__imagen-wrap">
+            <img
+              class="producto-card__imagen"
+              src="https://images.unsplash.com/photo-1587593810167-a84920ea0781?w=500&q=75"
+              alt="Pechuga de pollo fresca fileteada"
+              loading="lazy"
+            />
+            <div class="producto-card__badges">
+              <span class="badge badge--naranja">Premium</span>
+            </div>
+            <button class="btn-favorito" onclick="toggleFavorito(this)" aria-label="Agregar a favoritos">♡</button>
+            <button class="btn-vista-rapida" onclick="vistaRapida('Pechuga fileteada')" aria-label="Vista rápida">👁 Vista rápida</button>
+          </div>
+
+          <div class="producto-card__cuerpo">
+            <span class="producto-card__categoria">Pechugas</span>
+            <h3 class="producto-card__nombre">Pechuga fileteada</h3>
+            <p class="producto-card__descripcion">
+              Filetes de pechuga sin hueso y sin piel. Proteína pura y natural.
+              Presentación de 500 g en empaque al vacío.
+            </p>
+            <div class="producto-card__atributos">
+              <span class="atributo">💪 Alta proteína</span>
+              <span class="atributo">⚖️ 500 g</span>
+              <span class="atributo">🫙 Al vacío</span>
+            </div>
+            <div class="producto-card__rating" aria-label="4.8 de 5 estrellas">
+              <div class="estrellas-mini">
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini estrella-mini--vacia" aria-hidden="true">★</span>
+              </div>
+              <span class="rating-numero">4.8</span>
+              <span class="rating-cuenta">(93 reseñas)</span>
+            </div>
+            <div class="producto-card__footer">
+              <div class="producto-card__precios">
+                <div class="producto-card__precio">Bs. 48 <span class="producto-card__precio-unit">/ 500 g</span></div>
+              </div>
+              <button
+                class="btn-agregar"
+                onclick="agregarAlCarrito('Pechuga fileteada', 48, 'https://images.unsplash.com/photo-1587593810167-a84920ea0781?w=100&q=60')"
+                aria-label="Agregar Pechuga fileteada al carrito"
+              >
+                🛒 Agregar
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- =====================================================
+             PRODUCTO 3 — Muslos sazonados
+             ===================================================== -->
+        <article
+          class="producto-card reveal reveal--delay-3"
+          role="listitem"
+          data-categoria="muslos"
+          data-precio="38"
+          data-nombre="Muslos sazonados"
+          aria-label="Muslos sazonados — Bs. 38"
+        >
+          <div class="producto-card__imagen-wrap">
+            <img
+              class="producto-card__imagen"
+              src="https://images.unsplash.com/photo-1567620832903-9fc6debc209f?w=500&q=75"
+              alt="Muslos de pollo frescos"
+              loading="lazy"
+            />
+            <div class="producto-card__badges">
+              <span class="badge badge--nuevo">Nuevo</span>
+            </div>
+            <button class="btn-favorito" onclick="toggleFavorito(this)" aria-label="Agregar a favoritos">♡</button>
+            <button class="btn-vista-rapida" onclick="vistaRapida('Muslos sazonados')" aria-label="Vista rápida">👁 Vista rápida</button>
+          </div>
+
+          <div class="producto-card__cuerpo">
+            <span class="producto-card__categoria">Muslos y piernas</span>
+            <h3 class="producto-card__nombre">Muslos sazonados</h3>
+            <p class="producto-card__descripcion">
+              Muslos tiernos con marinado natural de hierbas del campo.
+              Listos para el horno o la sartén. Pack de 4 unidades.
+            </p>
+            <div class="producto-card__atributos">
+              <span class="atributo">🌿 Marinado natural</span>
+              <span class="atributo">🍗 4 unidades</span>
+            </div>
+            <div class="producto-card__rating" aria-label="4.7 de 5 estrellas">
+              <div class="estrellas-mini">
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini estrella-mini--vacia" aria-hidden="true">★</span>
+              </div>
+              <span class="rating-numero">4.7</span>
+              <span class="rating-cuenta">(57 reseñas)</span>
+            </div>
+            <div class="producto-card__footer">
+              <div class="producto-card__precios">
+                <div class="producto-card__precio">Bs. 38 <span class="producto-card__precio-unit">/ pack x4</span></div>
+              </div>
+              <button
+                class="btn-agregar"
+                onclick="agregarAlCarrito('Muslos sazonados', 38, 'https://images.unsplash.com/photo-1567620832903-9fc6debc209f?w=100&q=60')"
+                aria-label="Agregar Muslos sazonados al carrito"
+              >
+                🛒 Agregar
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- =====================================================
+             PRODUCTO 4 — Piernas con hueso
+             ===================================================== -->
+        <article
+          class="producto-card reveal reveal--delay-1"
+          role="listitem"
+          data-categoria="muslos"
+          data-precio="32"
+          data-nombre="Piernas con hueso"
+          aria-label="Piernas con hueso — Bs. 32"
+        >
+          <div class="producto-card__imagen-wrap">
+            <img
+              class="producto-card__imagen"
+              src="https://images.unsplash.com/photo-1598103442097-8b74394b95c3?w=500&q=75"
+              alt="Piernas de pollo frescas con hueso"
+              loading="lazy"
+            />
+            <div class="producto-card__badges">
+              <span class="badge badge--verde">Natural</span>
+            </div>
+            <button class="btn-favorito" onclick="toggleFavorito(this)" aria-label="Agregar a favoritos">♡</button>
+            <button class="btn-vista-rapida" onclick="vistaRapida('Piernas con hueso')" aria-label="Vista rápida">👁 Vista rápida</button>
+          </div>
+
+          <div class="producto-card__cuerpo">
+            <span class="producto-card__categoria">Muslos y piernas</span>
+            <h3 class="producto-card__nombre">Piernas con hueso</h3>
+            <p class="producto-card__descripcion">
+              Piernas de pollo criollo con hueso. Ideales para sopas,
+              caldos o al horno con verduras. Pack de 500 g.
+            </p>
+            <div class="producto-card__atributos">
+              <span class="atributo">🍲 Para caldo</span>
+              <span class="atributo">⚖️ 500 g</span>
+            </div>
+            <div class="producto-card__rating" aria-label="4.6 de 5 estrellas">
+              <div class="estrellas-mini">
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini estrella-mini--vacia" aria-hidden="true">★</span>
+              </div>
+              <span class="rating-numero">4.6</span>
+              <span class="rating-cuenta">(44 reseñas)</span>
+            </div>
+            <div class="producto-card__footer">
+              <div class="producto-card__precios">
+                <span class="producto-card__precio-original">Bs. 38</span>
+                <div class="producto-card__precio">Bs. 32 <span class="producto-card__precio-unit">/ 500 g</span></div>
+              </div>
+              <button
+                class="btn-agregar"
+                onclick="agregarAlCarrito('Piernas con hueso', 32, 'https://images.unsplash.com/photo-1598103442097-8b74394b95c3?w=100&q=60')"
+                aria-label="Agregar Piernas con hueso al carrito"
+              >
+                🛒 Agregar
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- =====================================================
+             PRODUCTO 5 — Pechuga entera sin filetear
+             ===================================================== -->
+        <article
+          class="producto-card reveal reveal--delay-2"
+          role="listitem"
+          data-categoria="pechuga"
+          data-precio="55"
+          data-nombre="Pechuga entera 1 kg"
+          aria-label="Pechuga entera 1 kg — Bs. 55"
+        >
+          <div class="producto-card__imagen-wrap">
+            <img
+              class="producto-card__imagen"
+              src="https://images.unsplash.com/photo-1614390082327-0b0c8d96b0b1?w=500&q=75"
+              alt="Pechuga entera de pollo 1 kg"
+              loading="lazy"
+            />
+            <div class="producto-card__badges">
+              <span class="badge badge--naranja">Premium</span>
+            </div>
+            <button class="btn-favorito" onclick="toggleFavorito(this)" aria-label="Agregar a favoritos">♡</button>
+            <button class="btn-vista-rapida" onclick="vistaRapida('Pechuga entera 1 kg')" aria-label="Vista rápida">👁 Vista rápida</button>
+          </div>
+
+          <div class="producto-card__cuerpo">
+            <span class="producto-card__categoria">Pechugas</span>
+            <h3 class="producto-card__nombre">Pechuga entera 1 kg</h3>
+            <p class="producto-card__descripcion">
+              Pechuga entera sin filetear con hueso incluido. Perfecta para
+              preparaciones largas al horno o en olla de barro. 1 kg.
+            </p>
+            <div class="producto-card__atributos">
+              <span class="atributo">🦴 Con hueso</span>
+              <span class="atributo">⚖️ 1 kg</span>
+              <span class="atributo">🥩 Jugosa</span>
+            </div>
+            <div class="producto-card__rating" aria-label="5 de 5 estrellas">
+              <div class="estrellas-mini">
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+              </div>
+              <span class="rating-numero">5.0</span>
+              <span class="rating-cuenta">(29 reseñas)</span>
+            </div>
+            <div class="producto-card__footer">
+              <div class="producto-card__precios">
+                <div class="producto-card__precio">Bs. 55 <span class="producto-card__precio-unit">/ 1 kg</span></div>
+              </div>
+              <button
+                class="btn-agregar"
+                onclick="agregarAlCarrito('Pechuga entera 1 kg', 55, 'https://images.unsplash.com/photo-1614390082327-0b0c8d96b0b1?w=100&q=60')"
+                aria-label="Agregar Pechuga entera 1 kg al carrito"
+              >
+                🛒 Agregar
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- =====================================================
+             PRODUCTO 6 — Pollo entero orgánico
+             ===================================================== -->
+        <article
+          class="producto-card reveal reveal--delay-3"
+          role="listitem"
+          data-categoria="entero"
+          data-precio="80"
+          data-nombre="Pollo orgánico certificado"
+          aria-label="Pollo orgánico certificado — Bs. 80"
+        >
+          <div class="producto-card__imagen-wrap">
+            <img
+              class="producto-card__imagen"
+              src="https://images.unsplash.com/photo-1501200291289-c5a76c232e5f?w=500&q=75"
+              alt="Pollo orgánico certificado Origen Avicor"
+              loading="lazy"
+            />
+            <div class="producto-card__badges">
+              <span class="badge badge--verde">Orgánico</span>
+            </div>
+            <button class="btn-favorito" onclick="toggleFavorito(this)" aria-label="Agregar a favoritos">♡</button>
+            <button class="btn-vista-rapida" onclick="vistaRapida('Pollo orgánico certificado')" aria-label="Vista rápida">👁 Vista rápida</button>
+          </div>
+
+          <div class="producto-card__cuerpo">
+            <span class="producto-card__categoria">Pollo entero</span>
+            <h3 class="producto-card__nombre">Pollo orgánico certificado</h3>
+            <p class="producto-card__descripcion">
+              Nuestro producto bandera: crianza orgánica certificada,
+              con sello de trazabilidad QR incluido. Peso 2.5 kg aprox.
+            </p>
+            <div class="producto-card__atributos">
+              <span class="atributo">📋 Certificado</span>
+              <span class="atributo">🔍 QR trazable</span>
+              <span class="atributo">⚖️ ~2.5 kg</span>
+            </div>
+            <div class="producto-card__rating" aria-label="5 de 5 estrellas">
+              <div class="estrellas-mini">
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+              </div>
+              <span class="rating-numero">5.0</span>
+              <span class="rating-cuenta">(72 reseñas)</span>
+            </div>
+            <div class="producto-card__footer">
+              <div class="producto-card__precios">
+                <div class="producto-card__precio">Bs. 80 <span class="producto-card__precio-unit">/ unidad</span></div>
+              </div>
+              <button
+                class="btn-agregar"
+                onclick="agregarAlCarrito('Pollo orgánico certificado', 80, 'https://images.unsplash.com/photo-1501200291289-c5a76c232e5f?w=100&q=60')"
+                aria-label="Agregar Pollo orgánico certificado al carrito"
+              >
+                🛒 Agregar
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- =====================================================
+             PRODUCTO 7 — Menudencias mix
+             ===================================================== -->
+        <article
+          class="producto-card reveal reveal--delay-1"
+          role="listitem"
+          data-categoria="menudencias"
+          data-precio="18"
+          data-nombre="Menudencias mix"
+          aria-label="Menudencias mix — Bs. 18"
+        >
+          <div class="producto-card__imagen-wrap">
+            <img
+              class="producto-card__imagen"
+              src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=500&q=75"
+              alt="Menudencias de pollo frescas"
+              loading="lazy"
+            />
+            <div class="producto-card__badges">
+              <span class="badge badge--oferta">Oferta</span>
+            </div>
+            <button class="btn-favorito" onclick="toggleFavorito(this)" aria-label="Agregar a favoritos">♡</button>
+            <button class="btn-vista-rapida" onclick="vistaRapida('Menudencias mix')" aria-label="Vista rápida">👁 Vista rápida</button>
+          </div>
+
+          <div class="producto-card__cuerpo">
+            <span class="producto-card__categoria">Menudencias</span>
+            <h3 class="producto-card__nombre">Menudencias mix</h3>
+            <p class="producto-card__descripcion">
+              Combinado de mollejas, corazones e hígados frescos.
+              Ideal para caldo concentrado o frituras. 300 g.
+            </p>
+            <div class="producto-card__atributos">
+              <span class="atributo">🍲 Para caldo</span>
+              <span class="atributo">⚖️ 300 g</span>
+            </div>
+            <div class="producto-card__rating" aria-label="4.5 de 5 estrellas">
+              <div class="estrellas-mini">
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini estrella-mini--vacia" aria-hidden="true">★</span>
+              </div>
+              <span class="rating-numero">4.5</span>
+              <span class="rating-cuenta">(31 reseñas)</span>
+            </div>
+            <div class="producto-card__footer">
+              <div class="producto-card__precios">
+                <span class="producto-card__precio-original">Bs. 24</span>
+                <div class="producto-card__precio">Bs. 18 <span class="producto-card__precio-unit">/ 300 g</span></div>
+              </div>
+              <button
+                class="btn-agregar"
+                onclick="agregarAlCarrito('Menudencias mix', 18, 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=100&q=60')"
+                aria-label="Agregar Menudencias mix al carrito"
+              >
+                🛒 Agregar
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- =====================================================
+             PRODUCTO 8 — Hígado de pollo fresco
+             ===================================================== -->
+        <article
+          class="producto-card reveal reveal--delay-2"
+          role="listitem"
+          data-categoria="menudencias"
+          data-precio="15"
+          data-nombre="Hígado de pollo fresco"
+          aria-label="Hígado de pollo fresco — Bs. 15"
+        >
+          <div class="producto-card__imagen-wrap">
+            <img
+              class="producto-card__imagen"
+              src="https://images.unsplash.com/photo-1529042410759-befb1204b468?w=500&q=75"
+              alt="Hígado de pollo fresco Origen Avicor"
+              loading="lazy"
+            />
+            <div class="producto-card__badges">
+              <span class="badge badge--verde">Natural</span>
+            </div>
+            <button class="btn-favorito" onclick="toggleFavorito(this)" aria-label="Agregar a favoritos">♡</button>
+            <button class="btn-vista-rapida" onclick="vistaRapida('Hígado de pollo fresco')" aria-label="Vista rápida">👁 Vista rápida</button>
+          </div>
+
+          <div class="producto-card__cuerpo">
+            <span class="producto-card__categoria">Menudencias</span>
+            <h3 class="producto-card__nombre">Hígado de pollo fresco</h3>
+            <p class="producto-card__descripcion">
+              Hígados frescos, suaves y ricos en hierro. Ideales para
+              encebollado, paté o incorporar en caldos reconstituyentes. 250 g.
+            </p>
+            <div class="producto-card__atributos">
+              <span class="atributo">🩸 Rico en hierro</span>
+              <span class="atributo">⚖️ 250 g</span>
+            </div>
+            <div class="producto-card__rating" aria-label="4.4 de 5 estrellas">
+              <div class="estrellas-mini">
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini estrella-mini--vacia" aria-hidden="true">★</span>
+              </div>
+              <span class="rating-numero">4.4</span>
+              <span class="rating-cuenta">(18 reseñas)</span>
+            </div>
+            <div class="producto-card__footer">
+              <div class="producto-card__precios">
+                <div class="producto-card__precio">Bs. 15 <span class="producto-card__precio-unit">/ 250 g</span></div>
+              </div>
+              <button
+                class="btn-agregar"
+                onclick="agregarAlCarrito('Hígado de pollo fresco', 15, 'https://images.unsplash.com/photo-1529042410759-befb1204b468?w=100&q=60')"
+                aria-label="Agregar Hígado de pollo fresco al carrito"
+              >
+                🛒 Agregar
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- =====================================================
+             PRODUCTO 9 — Pack Parrillero
+             ===================================================== -->
+        <article
+          class="producto-card reveal reveal--delay-3"
+          role="listitem"
+          data-categoria="pack"
+          data-precio="115"
+          data-nombre="Pack Parrillero"
+          aria-label="Pack Parrillero — Bs. 115"
+        >
+          <div class="producto-card__imagen-wrap">
+            <img
+              class="producto-card__imagen"
+              src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500&q=75"
+              alt="Pack parrillero Origen Avicor"
+              loading="lazy"
+            />
+            <div class="producto-card__badges">
+              <span class="badge badge--marron">Pack especial</span>
+            </div>
+            <button class="btn-favorito" onclick="toggleFavorito(this)" aria-label="Agregar a favoritos">♡</button>
+            <button class="btn-vista-rapida" onclick="vistaRapida('Pack Parrillero')" aria-label="Vista rápida">👁 Vista rápida</button>
+          </div>
+
+          <div class="producto-card__cuerpo">
+            <span class="producto-card__categoria">Packs y combos</span>
+            <h3 class="producto-card__nombre">Pack Parrillero</h3>
+            <p class="producto-card__descripcion">
+              Todo para tu asado: muslos, piernas y alitas marinadas
+              con hierbas del campo. Para 4 a 6 personas. Sin compromiso industrial.
+            </p>
+            <div class="producto-card__atributos">
+              <span class="atributo">🔥 Para parrilla</span>
+              <span class="atributo">👨‍👩‍👧‍👦 4-6 pers.</span>
+              <span class="atributo">🌿 Marinado</span>
+            </div>
+            <div class="producto-card__rating" aria-label="4.9 de 5 estrellas">
+              <div class="estrellas-mini">
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+              </div>
+              <span class="rating-numero">4.9</span>
+              <span class="rating-cuenta">(61 reseñas)</span>
+            </div>
+            <div class="producto-card__footer">
+              <div class="producto-card__precios">
+                <span class="producto-card__precio-original">Bs. 135</span>
+                <div class="producto-card__precio">Bs. 115 <span class="producto-card__precio-unit">/ pack</span></div>
+              </div>
+              <button
+                class="btn-agregar"
+                onclick="agregarAlCarrito('Pack Parrillero', 115, 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=100&q=60')"
+                aria-label="Agregar Pack Parrillero al carrito"
+              >
+                🛒 Agregar
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- =====================================================
+             PRODUCTO 10 — Pollo entero pequeño
+             ===================================================== -->
+        <article
+          class="producto-card reveal reveal--delay-1"
+          role="listitem"
+          data-categoria="entero"
+          data-precio="52"
+          data-nombre="Pollo entero pequeño"
+          aria-label="Pollo entero pequeño — Bs. 52"
+        >
+          <div class="producto-card__imagen-wrap">
+            <img
+              class="producto-card__imagen"
+              src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=500&q=75"
+              alt="Pollo entero pequeño fresco Avicor"
+              loading="lazy"
+            />
+            <div class="producto-card__badges">
+              <span class="badge badge--verde">Natural</span>
+            </div>
+            <button class="btn-favorito" onclick="toggleFavorito(this)" aria-label="Agregar a favoritos">♡</button>
+            <button class="btn-vista-rapida" onclick="vistaRapida('Pollo entero pequeño')" aria-label="Vista rápida">👁 Vista rápida</button>
+          </div>
+
+          <div class="producto-card__cuerpo">
+            <span class="producto-card__categoria">Pollo entero</span>
+            <h3 class="producto-card__nombre">Pollo entero pequeño</h3>
+            <p class="producto-card__descripcion">
+              Pollos más jóvenes, de 1.4 a 1.6 kg. Ideales para parejas
+              o familias pequeñas. Carne más tierna y delicada.
+            </p>
+            <div class="producto-card__atributos">
+              <span class="atributo">🐣 Pollo joven</span>
+              <span class="atributo">⚖️ ~1.5 kg</span>
+              <span class="atributo">❄️ Fresco</span>
+            </div>
+            <div class="producto-card__rating" aria-label="4.8 de 5 estrellas">
+              <div class="estrellas-mini">
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini estrella-mini--vacia" aria-hidden="true">★</span>
+              </div>
+              <span class="rating-numero">4.8</span>
+              <span class="rating-cuenta">(38 reseñas)</span>
+            </div>
+            <div class="producto-card__footer">
+              <div class="producto-card__precios">
+                <div class="producto-card__precio">Bs. 52 <span class="producto-card__precio-unit">/ unidad</span></div>
+              </div>
+              <button
+                class="btn-agregar"
+                onclick="agregarAlCarrito('Pollo entero pequeño', 52, 'https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=100&q=60')"
+                aria-label="Agregar Pollo entero pequeño al carrito"
+              >
+                🛒 Agregar
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- =====================================================
+             PRODUCTO 11 — Pack Semanal Económico
+             ===================================================== -->
+        <article
+          class="producto-card reveal reveal--delay-2"
+          role="listitem"
+          data-categoria="pack"
+          data-precio="95"
+          data-nombre="Pack Semanal Económico"
+          aria-label="Pack Semanal Económico — Bs. 95"
+        >
+          <div class="producto-card__imagen-wrap">
+            <img
+              class="producto-card__imagen"
+              src="https://images.unsplash.com/photo-1607248053710-d68c03da804c?w=500&q=75"
+              alt="Pack semanal económico Origen Avicor"
+              loading="lazy"
+            />
+            <div class="producto-card__badges">
+              <span class="badge badge--oferta">-12% OFF</span>
+            </div>
+            <button class="btn-favorito" onclick="toggleFavorito(this)" aria-label="Agregar a favoritos">♡</button>
+            <button class="btn-vista-rapida" onclick="vistaRapida('Pack Semanal Económico')" aria-label="Vista rápida">👁 Vista rápida</button>
+          </div>
+
+          <div class="producto-card__cuerpo">
+            <span class="producto-card__categoria">Packs y combos</span>
+            <h3 class="producto-card__nombre">Pack Semanal Económico</h3>
+            <p class="producto-card__descripcion">
+              Diseñado para familias con presupuesto fijo: pechuga + muslos.
+              Proteína natural para toda la semana al mejor precio posible.
+            </p>
+            <div class="producto-card__atributos">
+              <span class="atributo">💰 Mejor precio</span>
+              <span class="atributo">📅 Semanal</span>
+            </div>
+            <div class="producto-card__rating" aria-label="4.7 de 5 estrellas">
+              <div class="estrellas-mini">
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini" aria-hidden="true">★</span>
+                <span class="estrella-mini estrella-mini--vacia" aria-hidden="true">★</span>
+              </div>
+              <span class="rating-numero">4.7</span>
+              <span class="rating-cuenta">(52 reseñas)</span>
+            </div>
+            <div class="producto-card__footer">
+              <div class="producto-card__precios">
+                <span class="producto-card__precio-original">Bs. 108</span>
+                <div class="producto-card__precio">Bs. 95 <span class="producto-card__precio-unit">/ pack</span></div>
+              </div>
+              <button
+                class="btn-agregar"
+                onclick="agregarAlCarrito('Pack Semanal Económico', 95, 'https://images.unsplash.com/photo-1607248053710-d68c03da804c?w=100&q=60')"
+                aria-label="Agregar Pack Semanal Económico al carrito"
+              >
+                🛒 Agregar
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /productos-grid -->
+
+      <!-- PAGINACIÓN -->
+      <nav class="paginacion" aria-label="Paginación de productos">
+        <button class="pag-btn pag-btn--nav" aria-label="Página anterior" disabled>← Anterior</button>
+        <button class="pag-btn is-activo" aria-label="Página 1, actual" aria-current="page">1</button>
+        <button class="pag-btn" aria-label="Página 2" onclick="cambiarPagina(this, 2)">2</button>
+        <button class="pag-btn" aria-label="Página 3" onclick="cambiarPagina(this, 3)">3</button>
+        <span class="pag-sep">…</span>
+        <button class="pag-btn" aria-label="Última página" onclick="cambiarPagina(this, 5)">5</button>
+        <button class="pag-btn pag-btn--nav" aria-label="Página siguiente" onclick="cambiarPagina(this, 2)">Siguiente →</button>
+      </nav>
+
+    </div><!-- /productos-area -->
+
+  </div><!-- /catalogo-layout -->
+
+  <!-- ============================================================
+       CTA FINAL
+       ============================================================ -->
+  <section class="cta-final" aria-labelledby="cta-final-titulo">
+    <div class="cta-final__inner">
+      <span class="section-tag" style="color:var(--naranja-claro); justify-content:center;">
+        ¿Dudas antes de comprar?
+      </span>
+      <h2 class="cta-final__titulo reveal" id="cta-final-titulo">
+        Hablá con nosotros<br />
+        <em>antes de decidir</em>
+      </h2>
+      <p class="cta-final__texto reveal reveal--delay-1">
+        Nuestro equipo está disponible para ayudarte a elegir el corte ideal
+        y responder cualquier consulta sobre origen, proceso y entrega.
+      </p>
+      <div class="cta-final__acciones reveal reveal--delay-2">
+        <a
+          href="https://wa.me/59179000000"
+          class="btn btn-primario btn-lg"
+          target="_blank"
+          rel="noopener"
+          aria-label="Contactar por WhatsApp"
+        >
+          💬 WhatsApp directo
+        </a>
+        <a href="/" class="btn btn-blanco btn-lg" aria-label="Volver al inicio">
+          ← Volver al inicio
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__grid">
+      <div>
+        <span class="footer__logo-nombre">Origen Avicor</span>
+        <div class="footer__logo-tagline">Crecimiento natural, sabor de verdad</div>
+        <p class="footer__descripcion">
+          Productores artesanales de pollo criollo desde Coroico, Yungas de La Paz.
+          Comprometidos con la calidad, el bienestar animal y el desarrollo local.
+        </p>
+        <div class="footer__redes" aria-label="Redes sociales">
+          <a href="#" class="footer__red" aria-label="Facebook">f</a>
+          <a href="#" class="footer__red" aria-label="Instagram">ig</a>
+          <a href="#" class="footer__red" aria-label="WhatsApp">wa</a>
+          <a href="#" class="footer__red" aria-label="TikTok">tt</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer__col-titulo">Páginas</h4>
+        <ul class="footer__links">
+          <li><a href="/"          class="footer__link">Inicio</a></li>
+          <li><a href="/productos" class="footer__link">Catálogo de productos</a></li>
+          <li><a href="/nosotros"  class="footer__link">Nuestra historia</a></li>
+          <li><a href="/chatbot"   class="footer__link">Asistente virtual Avi</a></li>
+          <li><a href="/productos" class="footer__link">Packs y combos</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer__col-titulo">Empresa</h4>
+        <ul class="footer__links">
+          <li><a href="/nosotros#historia"  class="footer__link">Nuestra historia</a></li>
+          <li><a href="/nosotros#coroico"   class="footer__link">Origen en Coroico</a></li>
+          <li><a href="/nosotros#mision"    class="footer__link">Misión y visión</a></li>
+          <li><a href="/nosotros#valores"   class="footer__link">Valores</a></li>
+          <li><a href="#"                  class="footer__link">Trabaja con nosotros</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer__col-titulo">Contacto</h4>
+        <address style="font-style:normal;">
+          <div class="footer__contacto-item">
+            <span class="footer__contacto-icono" aria-hidden="true">📍</span>
+            <span>Av. Arce 2345, Sopocachi<br />La Paz, Bolivia</span>
+          </div>
+          <div class="footer__contacto-item">
+            <span class="footer__contacto-icono" aria-hidden="true">📞</span>
+            <span>+591 79 000 000</span>
+          </div>
+          <div class="footer__contacto-item">
+            <span class="footer__contacto-icono" aria-hidden="true">✉️</span>
+            <span>hola@origenavicor.bo</span>
+          </div>
+          <div class="footer__contacto-item">
+            <span class="footer__contacto-icono" aria-hidden="true">🕐</span>
+            <span>Lun–Sáb: 7 am – 6 pm<br />Dom: 8 am – 2 pm</span>
+          </div>
+        </address>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2024 <span>Origen Avicor</span>. Todos los derechos reservados.</p>
+      <nav class="footer__legal" aria-label="Legal">
+        <a href="#" class="footer__legal-link">Política de privacidad</a>
+        <a href="#" class="footer__legal-link">Términos de servicio</a>
+        <a href="#" class="footer__legal-link">Devoluciones</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       CARRITO DRAWER
+       ============================================================ -->
+  <div class="carrito-overlay" id="carrito-overlay" aria-hidden="true" onclick="cerrarCarrito()"></div>
+  <div class="carrito-drawer" id="carrito-drawer" role="dialog" aria-modal="true" aria-labelledby="carrito-titulo" aria-hidden="true">
+    <div class="carrito-drawer__header">
+      <div class="carrito-drawer__titulo" id="carrito-titulo">
+        🛒 Mi carrito <span id="carrito-count-titulo" style="font-size:1rem; color:var(--gris-texto); font-family:var(--font-body); font-weight:400;"></span>
+      </div>
+      <button class="carrito-drawer__cerrar" onclick="cerrarCarrito()" aria-label="Cerrar carrito">✕</button>
+    </div>
+
+    <div class="carrito-drawer__body" id="carrito-body">
+      <!-- Items del carrito se generan aquí por JS -->
+      <div class="carrito-vacio" id="carrito-vacio">
+        <div class="carrito-vacio__icono" aria-hidden="true">🛒</div>
+        <h3 class="carrito-vacio__titulo">Tu carrito está vacío</h3>
+        <p class="carrito-vacio__texto">Agrega productos para comenzar tu pedido.</p>
+        <button class="btn btn-secundario" onclick="cerrarCarrito()">Ver productos</button>
+      </div>
+    </div>
+
+    <div class="carrito-drawer__footer" id="carrito-footer" style="display:none;">
+      <div class="carrito-subtotal">
+        <span>Subtotal</span>
+        <span id="carrito-subtotal-val">Bs. 0</span>
+      </div>
+      <div class="carrito-subtotal">
+        <span>Envío</span>
+        <span id="carrito-envio-val" style="color:var(--verde-oliva); font-weight:600;">Calculado al confirmar</span>
+      </div>
+      <div class="carrito-total">
+        <span class="carrito-total__label">Total estimado</span>
+        <span class="carrito-total__valor" id="carrito-total-val">Bs. 0</span>
+      </div>
+      <button class="carrito-checkout" aria-label="Proceder al pago">
+        ✅ Confirmar pedido →
+      </button>
+      <button class="carrito-seguir" onclick="cerrarCarrito()" aria-label="Seguir comprando">
+        ← Seguir comprando
+      </button>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       TOAST NOTIFICATIONS
+       ============================================================ -->
+  <div class="toast-container" id="toast-container" aria-live="polite" aria-label="Notificaciones"></div>
+
+  <!-- ============================================================
+       JAVASCRIPT
+       ============================================================ -->
+  <script>
+    // ============================================================
+    // 0. ESTADO GLOBAL
+    // ============================================================
+    var carritoItems  = [];   // [{nombre, precio, img, cantidad}]
+    var categoriaActiva = 'todos';
+
+    // ============================================================
+    // 1. NAV TOGGLE — Mobile
+    // ============================================================
+    (function () {
+      var toggle = document.getElementById('nav-toggle');
+      var navMob = document.getElementById('nav-mobile');
+      var open   = false;
+
+      toggle.addEventListener('click', function () {
+        open = !open;
+        navMob.classList.toggle('is-open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+
+      // Mostrar botón filtros mobile en pantallas pequeñas
+      var btnSidebar = document.getElementById('toggle-sidebar-mobile');
+      function checkMobile () {
+        if (window.innerWidth <= 1100) {
+          if (btnSidebar) btnSidebar.style.display = 'inline-flex';
+        } else {
+          if (btnSidebar) btnSidebar.style.display = 'none';
+          var sidebar = document.getElementById('sidebar');
+          if (sidebar) sidebar.classList.remove('is-visible-mobile');
+        }
+      }
+
+      window.addEventListener('resize', checkMobile);
+      checkMobile();
+    })();
+
+    // ============================================================
+    // 2. SIDEBAR WIDGET — Toggle colapsar
+    // ============================================================
+    function toggleWidget (id) {
+      var widget = document.getElementById(id);
+      if (!widget) return;
+      widget.classList.toggle('is-collapsed');
+      var header = widget.querySelector('.sidebar-widget__header');
+      var collapsed = widget.classList.contains('is-collapsed');
+      if (header) header.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+    }
+
+    // ============================================================
+    // 3. TOGGLE SIDEBAR EN MOBILE
+    // ============================================================
+    function toggleSidebarMobile () {
+      var sidebar = document.getElementById('sidebar');
+      if (!sidebar) return;
+      sidebar.classList.toggle('is-visible-mobile');
+    }
+
+    // ============================================================
+    // 4. FILTROS — Por categoría (tabs)
+    // ============================================================
+    (function () {
+      var tabs = document.querySelectorAll('.filtro-tab');
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          tabs.forEach(function (t) {
+            t.classList.remove('is-activo');
+            t.setAttribute('aria-selected', 'false');
+          });
+          this.classList.add('is-activo');
+          this.setAttribute('aria-selected', 'true');
+          categoriaActiva = this.getAttribute('data-categoria');
+          aplicarFiltros();
+        });
+      });
+    })();
+
+    // ============================================================
+    // 5. BUSCADOR — En tiempo real
+    // ============================================================
+    (function () {
+      var input = document.getElementById('buscador-input');
+      if (!input) return;
+      input.addEventListener('input', function () {
+        aplicarFiltros();
+      });
+    })();
+
+    // ============================================================
+    // 6. ORDEN — Select
+    // ============================================================
+    (function () {
+      var select = document.getElementById('orden-select');
+      if (!select) return;
+      select.addEventListener('change', function () {
+        aplicarFiltros();
+      });
+    })();
+
+    // ============================================================
+    // 7. FILTROS SIDEBAR
+    // ============================================================
+    function filtrarSidebar () {
+      aplicarFiltros();
+    }
+
+    // ============================================================
+    // 8. APLICAR FILTROS — Función maestra
+    // ============================================================
+    function aplicarFiltros () {
+      var cards      = document.querySelectorAll('.productos-grid [data-categoria]');
+      var query      = (document.getElementById('buscador-input').value || '').toLowerCase();
+      var precioMax  = parseInt(document.getElementById('precio-max').value) || 300;
+      var precioMin  = parseInt(document.getElementById('precio-min').value) || 0;
+      var orden      = document.getElementById('orden-select').value;
+      var visibles   = 0;
+
+      // Filtrar
+      cards.forEach(function (card) {
+        var cat    = card.getAttribute('data-categoria');
+        var precio = parseInt(card.getAttribute('data-precio')) || 0;
+        var nombre = (card.getAttribute('data-nombre') || '').toLowerCase();
+
+        var pasaCategoria = (categoriaActiva === 'todos' || cat === categoriaActiva);
+        var pasaQuery     = !query || nombre.indexOf(query) !== -1;
+        var pasaPrecio    = precio >= precioMin && precio <= precioMax;
+
+        if (pasaCategoria && pasaQuery && pasaPrecio) {
+          card.style.display = '';
+          visibles++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Ordenar (solo visual, re-append en DOM)
+      var grid = document.getElementById('productos-grid');
+      if (grid && orden !== 'relevancia') {
+        var visiblesArr = Array.from(cards).filter(function (c) {
+          return c.style.display !== 'none';
+        });
+
+        visiblesArr.sort(function (a, b) {
+          var pa = parseInt(a.getAttribute('data-precio')) || 0;
+          var pb = parseInt(b.getAttribute('data-precio')) || 0;
+          var na = (a.getAttribute('data-nombre') || '').toLowerCase();
+          var nb = (b.getAttribute('data-nombre') || '').toLowerCase();
+
+          if (orden === 'precio-asc')  return pa - pb;
+          if (orden === 'precio-desc') return pb - pa;
+          if (orden === 'nombre')      return na.localeCompare(nb);
+          return 0;
+        });
+
+        visiblesArr.forEach(function (card) {
+          grid.appendChild(card);
+        });
+      }
+
+      // Mostrar/ocultar "sin resultados"
+      var sinRes = document.getElementById('sin-resultados');
+      if (sinRes) sinRes.classList.toggle('is-visible', visibles === 0);
+
+      // Actualizar conteo
+      var countEl = document.getElementById('resultados-count');
+      if (countEl) {
+        countEl.innerHTML = '<strong>' + visibles + '</strong> producto' + (visibles !== 1 ? 's' : '');
+      }
+    }
+
+    // ============================================================
+    // 9. PRECIO SLIDER
+    // ============================================================
+    function actualizarPrecioSlider (slider) {
+      var val = slider.value;
+      var pct = (val / slider.max) * 100;
+      slider.style.setProperty('--val', pct + '%');
+      var maxInput = document.getElementById('precio-max');
+      if (maxInput) maxInput.value = val;
+      aplicarFiltros();
+    }
+
+    // Sincronizar inputs de precio con slider
+    (function () {
+      var minInput = document.getElementById('precio-min');
+      var maxInput = document.getElementById('precio-max');
+      var slider   = document.getElementById('precio-slider');
+
+      if (minInput) minInput.addEventListener('input', function () { aplicarFiltros(); });
+      if (maxInput && slider) {
+        maxInput.addEventListener('input', function () {
+          slider.value = this.value;
+          var pct = (this.value / slider.max) * 100;
+          slider.style.setProperty('--val', pct + '%');
+          aplicarFiltros();
+        });
+      }
+    })();
+
+    // ============================================================
+    // 10. LIMPIAR FILTROS
+    // ============================================================
+    function limpiarFiltros () {
+      // Resetear tabs
+      var tabs = document.querySelectorAll('.filtro-tab');
+      tabs.forEach(function (t, i) {
+        t.classList.toggle('is-activo', i === 0);
+        t.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+      });
+      categoriaActiva = 'todos';
+
+      // Resetear checkboxes / radios
+      document.querySelectorAll('.filtro-opcion input[type="checkbox"]').forEach(function (cb) {
+        cb.checked = false;
+      });
+
+      var radios = document.querySelectorAll('.filtro-opcion input[type="radio"]');
+      radios.forEach(function (r) {
+        r.checked = (r.value === 'todos');
+      });
+
+      // Resetear precio
+      var minI = document.getElementById('precio-min');
+      var maxI = document.getElementById('precio-max');
+      var sldr = document.getElementById('precio-slider');
+      if (minI) minI.value = 0;
+      if (maxI) maxI.value = 300;
+      if (sldr) { sldr.value = 300; sldr.style.setProperty('--val', '100%'); }
+
+      // Resetear buscador
+      var bus = document.getElementById('buscador-input');
+      if (bus) bus.value = '';
+
+      // Resetear orden
+      var ord = document.getElementById('orden-select');
+      if (ord) ord.value = 'relevancia';
+
+      aplicarFiltros();
+    }
+
+    // ============================================================
+    // 11. VISTA GRID / LISTA
+    // ============================================================
+    (function () {
+      var btnGrid  = document.getElementById('btn-vista-grid');
+      var btnLista = document.getElementById('btn-vista-lista');
+      var grid     = document.getElementById('productos-grid');
+
+      if (!btnGrid || !btnLista || !grid) return;
+
+      btnGrid.addEventListener('click', function () {
+        grid.classList.remove('vista-lista');
+        btnGrid.classList.add('is-activo');
+        btnLista.classList.remove('is-activo');
+      });
+
+      btnLista.addEventListener('click', function () {
+        grid.classList.add('vista-lista');
+        btnLista.classList.add('is-activo');
+        btnGrid.classList.remove('is-activo');
+      });
+    })();
+
+    // ============================================================
+    // 12. CARRITO — Lógica completa
+    // ============================================================
+
+    function abrirCarrito () {
+      var overlay = document.getElementById('carrito-overlay');
+      var drawer  = document.getElementById('carrito-drawer');
+      overlay.classList.add('is-open');
+      overlay.setAttribute('aria-hidden', 'false');
+      drawer.classList.add('is-open');
+      drawer.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      renderCarrito();
+    }
+
+    function cerrarCarrito () {
+      var overlay = document.getElementById('carrito-overlay');
+      var drawer  = document.getElementById('carrito-drawer');
+      overlay.classList.remove('is-open');
+      overlay.setAttribute('aria-hidden', 'true');
+      drawer.classList.remove('is-open');
+      drawer.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    // Agregar al carrito
+    function agregarAlCarrito (nombre, precio, img) {
+      var idx = carritoItems.findIndex(function (i) { return i.nombre === nombre; });
+
+      if (idx > -1) {
+        carritoItems[idx].cantidad += 1;
+      } else {
+        carritoItems.push({ nombre: nombre, precio: precio, img: img, cantidad: 1 });
+      }
+
+      actualizarBadge();
+      mostrarToast(nombre, 'Agregado al carrito — Bs. ' + precio);
+      animarBtnAgregarPorNombre(nombre);
+    }
+
+    // Eliminar ítem del carrito
+    function eliminarDeCarrito (nombre) {
+      carritoItems = carritoItems.filter(function (i) { return i.nombre !== nombre; });
+      actualizarBadge();
+      renderCarrito();
+    }
+
+    // Cambiar cantidad en carrito
+    function cambiarCantidadCarrito (nombre, delta) {
+      var idx = carritoItems.findIndex(function (i) { return i.nombre === nombre; });
+      if (idx === -1) return;
+
+      carritoItems[idx].cantidad += delta;
+
+      if (carritoItems[idx].cantidad <= 0) {
+        carritoItems.splice(idx, 1);
+      }
+
+      actualizarBadge();
+      renderCarrito();
+    }
+
+    // Actualizar badge del carrito
+    function actualizarBadge () {
+      var total = carritoItems.reduce(function (acc, i) { return acc + i.cantidad; }, 0);
+      var badge = document.getElementById('nav-carrito-badge');
+      if (badge) {
+        badge.textContent = total;
+        badge.classList.toggle('is-visible', total > 0);
+      }
+    }
+
+    // Renderizar items en el drawer
+    function renderCarrito () {
+      var body   = document.getElementById('carrito-body');
+      var vacio  = document.getElementById('carrito-vacio');
+      var footer = document.getElementById('carrito-footer');
+      var titulo = document.getElementById('carrito-count-titulo');
+
+      if (!body) return;
+
+      var totalItems = carritoItems.reduce(function (a, i) { return a + i.cantidad; }, 0);
+
+      if (titulo) {
+        titulo.textContent = totalItems > 0 ? '(' + totalItems + ' ítem' + (totalItems !== 1 ? 's' : '') + ')' : '';
+      }
+
+      if (carritoItems.length === 0) {
+        if (vacio)  vacio.style.display  = '';
+        if (footer) footer.style.display = 'none';
+
+        // Limpiar items previos
+        var prevItems = body.querySelectorAll('.carrito-item');
+        prevItems.forEach(function (el) { el.remove(); });
+        return;
+      }
+
+      if (vacio)  vacio.style.display  = 'none';
+      if (footer) footer.style.display = '';
+
+      // Limpiar items previos
+      var prevItems = body.querySelectorAll('.carrito-item');
+      prevItems.forEach(function (el) { el.remove(); });
+
+      // Renderizar nuevos
+      var subtotal = 0;
+      carritoItems.forEach(function (item) {
+        subtotal += item.precio * item.cantidad;
+
+        var div = document.createElement('div');
+        div.className = 'carrito-item';
+        div.innerHTML =
+          '<img class="carrito-item__img" src="' + item.img + '" alt="' + item.nombre + '" loading="lazy" />' +
+          '<div class="carrito-item__info">' +
+            '<div class="carrito-item__nombre">' + item.nombre + '</div>' +
+            '<div class="carrito-item__precio">Bs. ' + item.precio + ' c/u &nbsp;·&nbsp; <strong>Bs. ' + (item.precio * item.cantidad) + '</strong></div>' +
+            '<div class="carrito-item__cantidad">' +
+              '<button class="carrito-item__qty-btn" onclick="cambiarCantidadCarrito(\'' + item.nombre.replace(/'/g, "\\'") + '\', -1)" aria-label="Quitar uno">−</button>' +
+              '<span class="carrito-item__qty-num">' + item.cantidad + '</span>' +
+              '<button class="carrito-item__qty-btn" onclick="cambiarCantidadCarrito(\'' + item.nombre.replace(/'/g, "\\'") + '\', 1)"  aria-label="Agregar uno">+</button>' +
+            '</div>' +
+          '</div>' +
+          '<button class="carrito-item__eliminar" onclick="eliminarDeCarrito(\'' + item.nombre.replace(/'/g, "\\'") + '\')" aria-label="Eliminar ' + item.nombre + '">✕</button>';
+
+        body.appendChild(div);
+      });
+
+      // Actualizar totales
+      var subtotalEl = document.getElementById('carrito-subtotal-val');
+      var totalEl    = document.getElementById('carrito-total-val');
+      var envioEl    = document.getElementById('carrito-envio-val');
+
+      if (subtotalEl) subtotalEl.textContent = 'Bs. ' + subtotal;
+      if (totalEl)    totalEl.textContent    = 'Bs. ' + subtotal;
+      if (envioEl) {
+        if (subtotal >= 120) {
+          envioEl.textContent = '¡Gratis!';
+          envioEl.style.color = 'var(--verde-oliva)';
+        } else {
+          var faltante = 120 - subtotal;
+          envioEl.textContent = 'Agrega Bs. ' + faltante + ' para envío gratis';
+          envioEl.style.color = 'var(--naranja)';
+        }
+      }
+    }
+
+    // ============================================================
+    // 13. TOAST — Notificaciones
+    // ============================================================
+    var toastIdCounter = 0;
+
+    function mostrarToast (nombre, subtexto) {
+      var container = document.getElementById('toast-container');
+      if (!container) return;
+
+      var id   = 'toast-' + (++toastIdCounter);
+      var div  = document.createElement('div');
+      div.className = 'toast';
+      div.id = id;
+      div.innerHTML =
+        '<span class="toast__icono" aria-hidden="true">✅</span>' +
+        '<div class="toast__texto">' +
+          '<span class="toast__nombre">' + nombre + '</span>' +
+          '<span class="toast__sub">' + subtexto + '</span>' +
+        '</div>' +
+        '<button class="toast__cerrar" onclick="cerrarToast(\'' + id + '\')" aria-label="Cerrar notificación">✕</button>';
+
+      container.appendChild(div);
+
+      // Animación de entrada
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          div.classList.add('is-visible');
+        });
+      });
+
+      // Auto-cerrar en 3.5 segundos
+      setTimeout(function () {
+        cerrarToast(id);
+      }, 3500);
+    }
+
+    function cerrarToast (id) {
+      var toast = document.getElementById(id);
+      if (!toast) return;
+      toast.classList.remove('is-visible');
+      setTimeout(function () {
+        if (toast.parentNode) toast.parentNode.removeChild(toast);
+      }, 450);
+    }
+
+    // ============================================================
+    // 14. ANIMACIÓN BOTÓN AGREGAR
+    // ============================================================
+    function animarBtnAgregarPorNombre (nombre) {
+      var btns = document.querySelectorAll('.btn-agregar');
+      btns.forEach(function (btn) {
+        var card = btn.closest('[data-nombre]');
+        if (card && card.getAttribute('data-nombre') === nombre) {
+          btn.classList.add('is-agregado');
+          btn.textContent = '✅ Agregado';
+          setTimeout(function () {
+            btn.classList.remove('is-agregado');
+            btn.textContent = '🛒 Agregar';
+          }, 1800);
+        }
+      });
+    }
+
+    // ============================================================
+    // 15. TOGGLE FAVORITO
+    // ============================================================
+    function toggleFavorito (btn) {
+      btn.classList.toggle('is-activo');
+      var nombre = btn.closest('[data-nombre]');
+      var prod   = nombre ? nombre.getAttribute('data-nombre') : 'Producto';
+      if (btn.classList.contains('is-activo')) {
+        btn.textContent = '♥';
+        btn.style.color = 'var(--naranja)';
+        mostrarToast(prod, '¡Guardado en favoritos!');
+      } else {
+        btn.textContent = '♡';
+        btn.style.color = '';
+      }
+    }
+
+    // ============================================================
+    // 16. VISTA RÁPIDA — Placeholder
+    // ============================================================
+    function vistaRapida (nombre) {
+      mostrarToast('Vista rápida', 'Próximamente: ' + nombre);
+    }
+
+    // ============================================================
+    // 17. PAGINACIÓN — Simulada
+    // ============================================================
+    function cambiarPagina (btn, pagina) {
+      var btns = document.querySelectorAll('.pag-btn:not(.pag-btn--nav)');
+      btns.forEach(function (b) {
+        b.classList.remove('is-activo');
+        b.removeAttribute('aria-current');
+      });
+
+      if (!btn.classList.contains('pag-btn--nav')) {
+        btn.classList.add('is-activo');
+        btn.setAttribute('aria-current', 'page');
+      }
+
+      // Scroll a productos
+      var grid = document.querySelector('.catalogo-layout');
+      if (grid) {
+        var top = grid.getBoundingClientRect().top + window.scrollY - 160;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+
+      mostrarToast('Página ' + pagina, 'Cargando más productos...');
+    }
+
+    // ============================================================
+    // 18. REVEAL ON SCROLL
+    // ============================================================
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+
+      if ('IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+        els.forEach(function (el) { obs.observe(el); });
+      } else {
+        els.forEach(function (el) { el.classList.add('is-visible'); });
+      }
+    })();
+
+    // ============================================================
+    // 19. INIT
+    // ============================================================
+    document.addEventListener('DOMContentLoaded', function () {
+      // Hacer visibles los elementos del hero de página inmediatamente
+      var heroEls = document.querySelectorAll('.page-hero .reveal');
+      heroEls.forEach(function (el) { el.classList.add('is-visible'); });
+
+      console.log('%c🐔 Origen Avicor — Productos', 'color: #556B2F; font-size:16px; font-weight:bold;');
+      console.log('%cCatálogo artesanal v1.0.0', 'color: #D68A5E;');
+    });
+
+  </script>
+
+</body>
+</html>

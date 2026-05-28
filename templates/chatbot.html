@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Origen Avicor – Crecimiento natural, sabor de verdad</title>
+
+  <!-- Google Fonts — coherentes con index.html -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ═══════════════════════════════════════════════
+       VARIABLES DE MARCA — Origen Avicor
+       ═══════════════════════════════════════════════ */
+    :root {
+      /* Paleta principal */
+      --verde:         #556B2F;
+      --verde-oscuro:  #3d4f21;
+      --verde-claro:   #7a9640;
+      --verde-palido:  #e8eedb;
+      --naranja:       #D68A5E;
+      --naranja-oscuro:#b96d3e;
+      --naranja-claro: #f0b08a;
+      --naranja-palido:#fdf0e6;
+      --marron:        #8B7355;
+      --marron-oscuro: #5c4a33;
+      --marron-claro:  #b09a7a;
+      --marron-palido: #f5f0e8;
+
+      /* Neutros */
+      --crema:         #FAF7F2;
+      --crema-oscura:  #f0ebe0;
+      --blanco:        #ffffff;
+      --gris-suave:    #f4f1ec;
+      --gris-texto:    #6b6055;
+      --texto-oscuro:  #2c2416;
+
+      /* Tipografías */
+      --font-display:  'Playfair Display', Georgia, serif;
+      --font-body:     'DM Sans', system-ui, sans-serif;
+
+      /* Efectos */
+      --radio:         12px;
+      --radio-pill:    999px;
+      --sombra:        0 4px 20px rgba(44,36,22,.10);
+      --sombra-hover:  0 8px 32px rgba(85,107,47,.18);
+      --sombra-chat:   0 12px 48px rgba(44,36,22,.16);
+      --trans:         all 0.28s ease;
+    }
+
+    /* ═══════════════════════════════════════════════
+       RESET & BASE
+       ═══════════════════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--crema);
+      color: var(--gris-texto);
+      line-height: 1.7;
+    }
+
+    h1, h2, h3, h4 { font-family: var(--font-display); color: var(--texto-oscuro); }
+
+    /* ═══════════════════════════════════════════════
+       HEADER / NAVBAR — Unificado con el resto de páginas
+       ═══════════════════════════════════════════════ */
+    .header {
+      background: rgba(250,247,242,.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 0 5%;
+      display: flex;
+      flex-direction: column;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 20px rgba(44,36,22,.08);
+      border-bottom: 1px solid rgba(139,115,85,.12);
+    }
+
+    .header__inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+      gap: 1px;
+      text-decoration: none;
+    }
+
+    .logo__nombre {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--texto-oscuro);
+      letter-spacing: -0.02em;
+    }
+
+    .logo__tagline {
+      font-size: 0.62rem;
+      font-weight: 400;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gris-texto);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+
+    .nav__link {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--gris-texto);
+      position: relative;
+      padding-bottom: 2px;
+      text-decoration: none;
+      transition: color .3s ease;
+    }
+
+    .nav__link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1.5px;
+      background: var(--naranja);
+      border-radius: 2px;
+      transition: width .3s ease;
+    }
+
+    .nav__link:hover { color: var(--verde-oliva); }
+    .nav__link:hover::after { width: 100%; }
+
+    .nav__link--activo {
+      color: var(--verde-oliva);
+      font-weight: 600;
+    }
+
+    .nav__link--activo::after { width: 100%; }
+
+    .nav__cta {
+      background: var(--naranja);
+      color: var(--blanco);
+      padding: .6rem 1.4rem;
+      border-radius: var(--radio-pill);
+      font-size: .88rem;
+      font-weight: 600;
+      border: 2px solid var(--naranja);
+      text-decoration: none;
+      transition: all .3s ease;
+    }
+
+    .nav__cta:hover {
+      background: var(--naranja-oscuro);
+      border-color: var(--naranja-oscuro);
+      transform: translateY(-1px);
+    }
+
+    /* Hamburger mobile */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      padding: 4px;
+      cursor: pointer;
+    }
+
+    .nav-toggle__bar {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--texto-oscuro);
+      border-radius: 2px;
+      transition: all .3s ease;
+    }
+
+    .nav-mobile {
+      display: none;
+      flex-direction: column;
+      padding: 1rem 0 1.5rem;
+      border-top: 1px solid rgba(139,115,85,.15);
+      background: rgba(250,247,242,.98);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-mobile.is-open { display: flex; }
+
+    .nav-mobile__link {
+      padding: .85rem 1.5rem;
+      font-size: .95rem;
+      font-weight: 500;
+      color: var(--gris-texto);
+      border-bottom: 1px solid rgba(139,115,85,.08);
+      text-decoration: none;
+      transition: color .15s;
+    }
+
+    .nav-mobile__link:hover { color: var(--verde-oliva); }
+
+    /* ═══════════════════════════════════════════════
+       HERO
+       ═══════════════════════════════════════════════ */
+    .hero {
+      position: relative;
+      height: 520px;
+      background: url('https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=1400&q=80') center 40%/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(155deg, rgba(30,42,14,.84) 0%, rgba(44,36,22,.65) 55%, rgba(85,107,47,.30) 100%);
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+      padding: 0 24px;
+    }
+
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(214,138,94,.22);
+      border: 1px solid rgba(214,138,94,.40);
+      color: var(--naranja-claro);
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: var(--radio-pill);
+      margin-bottom: 18px;
+      backdrop-filter: blur(4px);
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--blanco);
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--naranja-claro);
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,.82);
+      margin-bottom: 30px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--naranja);
+      color: var(--blanco);
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.92rem;
+      padding: 13px 30px;
+      border-radius: var(--radio-pill);
+      border: 2px solid var(--naranja);
+      cursor: pointer;
+      transition: var(--trans);
+      text-decoration: none;
+      box-shadow: 0 4px 18px rgba(214,138,94,.40);
+    }
+
+    .btn-primary:hover {
+      background: var(--naranja-oscuro);
+      border-color: var(--naranja-oscuro);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(214,138,94,.45);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+      color: var(--blanco);
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.92rem;
+      padding: 12px 28px;
+      border-radius: var(--radio-pill);
+      border: 2px solid rgba(255,255,255,.50);
+      cursor: pointer;
+      transition: var(--trans);
+      text-decoration: none;
+      margin-left: 12px;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--naranja-claro);
+      color: var(--naranja-claro);
+    }
+
+    /* ═══════════════════════════════════════════════
+       BENEFICIOS
+       ═══════════════════════════════════════════════ */
+    .beneficios {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 22px;
+      padding: 54px 6%;
+      background: var(--crema-oscura);
+    }
+
+    .card-beneficio {
+      background: var(--blanco);
+      border-radius: var(--radio);
+      padding: 26px 22px;
+      box-shadow: var(--sombra);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border-top: 3px solid var(--verde);
+      transition: var(--trans);
+    }
+
+    .card-beneficio:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--sombra-hover);
+      border-top-color: var(--naranja);
+    }
+
+    .card-beneficio__icon { font-size: 1.9rem; }
+
+    .card-beneficio h3 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--verde-oscuro);
+    }
+
+    .card-beneficio p {
+      font-size: 0.88rem;
+      color: var(--gris-texto);
+    }
+
+    /* ═══════════════════════════════════════════════
+       SECTION HEADER
+       ═══════════════════════════════════════════════ */
+    .section-header {
+      text-align: center;
+      padding: 54px 6% 18px;
+    }
+
+    .section-header__tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(85,107,47,.1);
+      color: var(--verde);
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: var(--radio-pill);
+      margin-bottom: 12px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 700;
+      color: var(--verde-oscuro);
+    }
+
+    .section-header p {
+      color: var(--gris-texto);
+      font-size: 0.97rem;
+      margin-top: 8px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ═══════════════════════════════════════════════
+       PRODUCTOS
+       ═══════════════════════════════════════════════ */
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 24px;
+      padding: 28px 6% 60px;
+    }
+
+    .card-producto {
+      background: var(--blanco);
+      border-radius: var(--radio);
+      overflow: hidden;
+      box-shadow: var(--sombra);
+      transition: var(--trans);
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(139,115,85,.1);
+    }
+
+    .card-producto:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--sombra-hover);
+      border-color: rgba(85,107,47,.15);
+    }
+
+    .card-producto__img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      background: var(--verde-palido);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.2rem;
+    }
+
+    .card-producto__body {
+      padding: 20px 18px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-producto__badge {
+      align-self: flex-start;
+      background: var(--verde-palido);
+      color: var(--verde-oscuro);
+      font-family: var(--font-body);
+      font-size: 0.67rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: var(--radio-pill);
+      margin-bottom: 8px;
+    }
+
+    .card-producto h3 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--verde-oscuro);
+      margin-bottom: 5px;
+    }
+
+    .card-producto p {
+      font-size: 0.86rem;
+      color: var(--gris-texto);
+      flex: 1;
+      line-height: 1.6;
+    }
+
+    .card-producto__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(139,115,85,.1);
+    }
+
+    .precio {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--verde-oscuro);
+    }
+
+    .precio span {
+      font-family: var(--font-body);
+      font-size: 0.76rem;
+      font-weight: 400;
+      color: var(--marron-claro);
+    }
+
+    .btn-pedido {
+      background: var(--naranja);
+      color: var(--blanco);
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 7px 16px;
+      border-radius: var(--radio-pill);
+      border: none;
+      cursor: pointer;
+      transition: var(--trans);
+    }
+
+    .btn-pedido:hover {
+      background: var(--naranja-oscuro);
+      transform: translateY(-1px);
+    }
+
+    /* ═══════════════════════════════════════════════
+       CHATBOT SECTION
+       ═══════════════════════════════════════════════ */
+    .chatbot-section {
+      background: var(--marron-palido);
+      padding: 20px 6% 70px;
+    }
+
+    /* Wrapper con ancho mayor para mayor comodidad */
+    .chatbot-wrapper {
+      max-width: 560px;
+      margin: 0 auto;
+      border-radius: var(--radio);
+      overflow: hidden;
+      box-shadow: var(--sombra-chat);
+      font-family: var(--font-body);
+      border: 1px solid rgba(139,115,85,.12);
+    }
+
+    /* ── Header del chat ── */
+    .chatbot__header {
+      background: linear-gradient(135deg, var(--verde-oscuro) 0%, var(--verde) 100%);
+      color: var(--blanco);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .chatbot__avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--naranja);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+      border: 2px solid rgba(255,255,255,.25);
+    }
+
+    .chatbot__header-info h3 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--blanco);
+    }
+
+    .chatbot__header-info p {
+      font-size: 0.73rem;
+      color: rgba(255,255,255,.72);
+      margin-top: 1px;
+    }
+
+    /* Indicador online */
+    .chatbot__status {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,.72);
+    }
+
+    .chatbot__online-dot {
+      width: 8px;
+      height: 8px;
+      background: #5edb7a;
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px rgba(94,219,122,.25);
+      animation: pulse-online 2.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse-online {
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 2px rgba(94,219,122,.25); }
+      50%       { opacity: .8; box-shadow: 0 0 0 5px rgba(94,219,122,.10); }
+    }
+
+    /* Botón limpiar en el header */
+    .chatbot__btn-limpiar {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.2);
+      color: rgba(255,255,255,.75);
+      border-radius: var(--radio-pill);
+      padding: 4px 10px;
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      cursor: pointer;
+      transition: var(--trans);
+      margin-left: 8px;
+    }
+
+    .chatbot__btn-limpiar:hover {
+      background: rgba(255,255,255,.2);
+      color: var(--blanco);
+    }
+
+    /* ── Área de mensajes ── */
+    .chatbot__body {
+      background: var(--crema);
+      height: 340px;
+      overflow-y: auto;
+      padding: 18px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      scroll-behavior: smooth;
+    }
+
+    .chatbot__body::-webkit-scrollbar { width: 4px; }
+    .chatbot__body::-webkit-scrollbar-track { background: transparent; }
+    .chatbot__body::-webkit-scrollbar-thumb { background: var(--marron-claro); border-radius: 4px; }
+
+    /* ── Burbujas de mensaje ── */
+    .msg {
+      max-width: 80%;
+      padding: 11px 15px;
+      border-radius: 18px;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      word-wrap: break-word;
+    }
+
+    /* Bot — izquierda, blanco con borde suave */
+    .msg--bot {
+      background: var(--blanco);
+      color: var(--texto-oscuro);
+      border: 1px solid rgba(139,115,85,.13);
+      align-self: flex-start;
+      border-bottom-left-radius: 4px;
+      box-shadow: 0 1px 6px rgba(44,36,22,.07);
+      position: relative;
+    }
+
+    /* Usuario — derecha, verde oliva */
+    .msg--user {
+      background: var(--verde);
+      color: var(--blanco);
+      align-self: flex-end;
+      border-bottom-right-radius: 4px;
+      box-shadow: 0 2px 8px rgba(85,107,47,.22);
+    }
+
+    /* ── Indicador "escribiendo..." ── */
+    .msg--typing {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 12px 16px;
+      min-width: 56px;
+    }
+
+    .typing-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--marron-claro);
+      border-radius: 50%;
+      animation: typing-bounce 1.2s ease-in-out infinite;
+    }
+
+    .typing-dot:nth-child(2) { animation-delay: .2s; }
+    .typing-dot:nth-child(3) { animation-delay: .4s; }
+
+    @keyframes typing-bounce {
+      0%, 60%, 100% { transform: translateY(0);    opacity: .6; }
+      30%            { transform: translateY(-5px); opacity: 1;  }
+    }
+
+    /* ── Chip de sugerencias rápidas ── */
+    .chatbot__sugerencias {
+      padding: 10px 16px 8px;
+      background: var(--crema-oscura);
+      border-top: 1px solid rgba(139,115,85,.1);
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .chatbot__sugerencias::-webkit-scrollbar { display: none; }
+
+    .chip {
+      background: var(--blanco);
+      border: 1.5px solid rgba(85,107,47,.25);
+      color: var(--verde-oscuro);
+      border-radius: var(--radio-pill);
+      padding: 5px 12px;
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: var(--trans);
+      flex-shrink: 0;
+    }
+
+    .chip:hover {
+      background: var(--verde-palido);
+      border-color: var(--verde);
+      color: var(--verde-oscuro);
+      transform: translateY(-1px);
+    }
+
+    /* ── Área de input ── */
+    .chatbot__input-area {
+      background: var(--blanco);
+      padding: 13px 14px;
+      display: flex;
+      gap: 9px;
+      align-items: center;
+      border-top: 1px solid rgba(139,115,85,.12);
+    }
+
+    .chatbot__input-area input {
+      flex: 1;
+      padding: 10px 15px;
+      border: 1.5px solid rgba(139,115,85,.25);
+      border-radius: var(--radio-pill);
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      color: var(--texto-oscuro);
+      background: var(--crema);
+      outline: none;
+      transition: var(--trans);
+    }
+
+    .chatbot__input-area input::placeholder {
+      color: var(--marron-claro);
+    }
+
+    .chatbot__input-area input:focus {
+      border-color: var(--verde);
+      background: var(--blanco);
+      box-shadow: 0 0 0 3px rgba(85,107,47,.1);
+    }
+
+    .chatbot__input-area input:disabled {
+      opacity: .6;
+      cursor: not-allowed;
+    }
+
+    .chatbot__send {
+      background: var(--naranja);
+      color: var(--blanco);
+      border: none;
+      border-radius: var(--radio-pill);
+      padding: 10px 20px;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: var(--trans);
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      flex-shrink: 0;
+    }
+
+    .chatbot__send:hover {
+      background: var(--naranja-oscuro);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(214,138,94,.40);
+    }
+
+    .chatbot__send:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* Ícono de enviar */
+    .send-icon {
+      width: 15px;
+      height: 15px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ── Footer del chat: motor activo ── */
+    .chatbot__footer-info {
+      background: var(--verde-palido);
+      padding: 6px 14px;
+      font-size: 0.68rem;
+      color: var(--verde-oscuro);
+      text-align: center;
+      border-top: 1px solid rgba(85,107,47,.1);
+    }
+
+    /* ═══════════════════════════════════════════════
+       CONTACTO
+       ═══════════════════════════════════════════════ */
+    .contacto {
+      background: var(--verde-oscuro);
+      color: var(--blanco);
+      text-align: center;
+      padding: 52px 6%;
+    }
+
+    .contacto h2 {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .contacto > p {
+      color: rgba(255,255,255,.70);
+      font-size: 0.95rem;
+    }
+
+    .contacto__datos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 28px;
+    }
+
+    .contacto__dato {
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radio);
+      padding: 18px 26px;
+      min-width: 155px;
+      transition: var(--trans);
+    }
+
+    .contacto__dato:hover {
+      background: rgba(255,255,255,.12);
+      transform: translateY(-2px);
+    }
+
+    .contacto__dato .icon { font-size: 1.35rem; margin-bottom: 5px; }
+
+    .contacto__dato strong {
+      display: block;
+      font-family: var(--font-body);
+      font-weight: 700;
+      color: var(--naranja-claro);
+      font-size: 0.82rem;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .contacto__dato span {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,.80);
+    }
+
+    /* ═══════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════ */
+    .footer {
+      background: var(--texto-oscuro);
+      color: rgba(255,255,255,.40);
+      text-align: center;
+      padding: 16px;
+      font-size: 0.80rem;
+    }
+
+    .footer span { color: var(--naranja-claro); }
+
+    /* ═══════════════════════════════════════════════
+       RESPONSIVE
+       ═══════════════════════════════════════════════ */
+    @media (max-width: 768px) {
+      .navbar__links { gap: 16px; }
+      .navbar__links a { font-size: 0.80rem; }
+      .hero { height: 440px; }
+      .btn-secondary { margin-left: 0; margin-top: 10px; }
+      .hero__content { display: flex; flex-direction: column; align-items: center; }
+      .chatbot__body { height: 300px; }
+    }
+
+    @media (max-width: 540px) {
+      .navbar__links { display: none; }
+      .hero { height: 370px; }
+      .hero h1 { font-size: 1.85rem; }
+      .chatbot-wrapper { border-radius: 0; }
+      .chatbot__sugerencias { padding: 8px 12px; }
+      .msg { max-width: 88%; font-size: 0.86rem; }
+      .chatbot__send span { display: none; } /* solo icono en mobile */
+    }
+    /* --- ESTILO SENSORIAL AVICOR --- */
+button, .nav__carrito, .btn {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 50px;
+}
+button:hover, .nav__carrito:hover, .btn:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+  
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══ NAVBAR ═══ -->
+<nav class="navbar" role="navigation" aria-label="Navegación principal" style="display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+   
+   <a class="navbar__logo" href="/" aria-label="Origen Avicor — Inicio" style="display: flex; align-items: center; text-decoration: none; color: #3d2b1f;">
+     <div class="navbar__logo-icon" style="font-size: 2rem; margin-right: 10px;" aria-hidden="true">🐔</div>
+     <div>
+       <h2 style="margin: 0; font-size: 1.2rem; line-height: 1;">Origen Avicor</h2>
+       <span style="font-size: 0.8rem; color: #888;">Coroico · Bolivia</span>
+     </div>
+   </a>
+
+   <ul class="navbar__links" style="display: flex; list-style: none; gap: 20px; margin: 0; padding: 0;">
+     <li><a href="/" style="text-decoration: none; color: #3d2b1f; font-weight: 500;">Inicio</a></li>
+     <li><a href="/productos" style="text-decoration: none; color: #3d2b1f; font-weight: 500;">Productos</a></li>
+     <li><a href="/chatbot" style="text-decoration: none; color: #d38b5d; font-weight: bold;">Asistente</a></li>
+     <li><a href="#contacto" style="text-decoration: none; color: #3d2b1f; font-weight: 500;">Contacto</a></li>
+   </ul>
+
+ </nav>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero" aria-label="Bienvenidos a Origen Avicor">
+    <div class="hero__content">
+      <div class="hero__badge">🌿 Del campo boliviano a tu mesa</div>
+      <h1>Pollo Natural de<br><em>Origen Rural</em></h1>
+      <p>
+        Conectamos a los avicultores de Coroico directamente con tu hogar.
+        Sin intermediarios, con la frescura y el sabor del campo boliviano.
+      </p>
+      <div>
+        <a href="/productos" class="btn-primary">🛒 Ver productos</a>
+        <a href="#chatbot" class="btn-secondary">💬 Hablar con Avi</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ BENEFICIOS ═══ -->
+  <section class="beneficios" aria-label="Beneficios de Origen Avicor">
+    <div class="card-beneficio">
+      <div class="card-beneficio__icon" aria-hidden="true">🌱</div>
+      <h3>Producción Natural</h3>
+      <p>Sin hormonas ni antibióticos. Alimentación con maíz criollo y hierbas silvestres de los Yungas.</p>
+    </div>
+    <div class="card-beneficio">
+      <div class="card-beneficio__icon" aria-hidden="true">🚚</div>
+      <h3>Entrega en La Paz</h3>
+      <p>Cadena de frío ininterrumpida desde Coroico hasta tu puerta. Fresco, siempre.</p>
+    </div>
+    <div class="card-beneficio">
+      <div class="card-beneficio__icon" aria-hidden="true">🔍</div>
+      <h3>Trazabilidad QR</h3>
+      <p>Escaneá el código QR y conocé la granja, la fecha y el protocolo de crianza de tu pollo.</p>
+    </div>
+    <div class="card-beneficio">
+      <div class="card-beneficio__icon" aria-hidden="true">🤝</div>
+      <h3>Comercio Justo</h3>
+      <p>Apoyamos a 12 familias productoras de Coroico con precios +40% sobre el mercado.</p>
+    </div>
+  </section>
+
+<section style="text-align: center; padding: 60px 20px; background: #fdfaf7; border-radius: 20px; margin: 30px auto; max-width: 900px; border: 2px dashed #d38b5d;">
+   <div style="font-size: 3rem; margin-bottom: 15px;">🛒</div>
+   <h2 style="color: #3d2b1f; font-family: serif; font-size: 2rem;">¿Quieres ver todo nuestro catálogo?</h2>
+   <p style="color: #555; font-size: 1.1rem; max-width: 600px; margin: 0 auto 25px;">
+     En nuestra tienda principal encontrarás el <b>Pack Familiar</b>, cortes especiales y precios actualizados de <b>Origen Avicor</b>.
+   </p>
+   <a href="/productos" style="display: inline-block; background: #d38b5d; color: white; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.2rem; transition: transform 0.2s; box-shadow: 0 5px 15px rgba(211, 139, 93, 0.4);">
+     Ver todos los productos ahora
+   </a>
+ </section>
+
+  <!-- ═══ CHATBOT ═══ -->
+  <section class="chatbot-section" id="chatbot" aria-labelledby="chatbot-titulo">
+    <div class="section-header">
+      <div class="section-header__tag">💬 Atención inmediata</div>
+      <h2 id="chatbot-titulo">Asistente Virtual Avi</h2>
+      <p>Preguntanos sobre precios, pedidos, beneficios y nuestro origen en Coroico.</p>
+    </div>
+
+    <div class="chatbot-wrapper" role="complementary" aria-label="Chat de atención al cliente">
+
+      <!-- Header -->
+      <div class="chatbot__header">
+        <div class="chatbot__avatar" aria-hidden="true">🐔</div>
+        <div class="chatbot__header-info">
+          <h3>Avi · Origen Avicor</h3>
+          <p>Asistente virtual · Pollo natural de Coroico</p>
+        </div>
+        <div class="chatbot__status" aria-label="Asistente en línea">
+          <div class="chatbot__online-dot" aria-hidden="true"></div>
+          <span>En línea</span>
+        </div>
+        <button
+          class="chatbot__btn-limpiar"
+          id="btn-limpiar"
+          aria-label="Limpiar historial del chat"
+          title="Limpiar chat"
+        >🗑️ Limpiar</button>
+      </div>
+
+      <!-- Área de mensajes -->
+      <div class="chatbot__body" id="chat" aria-live="polite" aria-label="Mensajes del chat">
+        <!-- Mensajes iniciales del bot -->
+        <div class="msg msg--bot">
+          👋 ¡Hola! Soy <strong>Avi</strong>, el asistente de <strong>Origen Avicor</strong>.
+          ¿En qué te puedo ayudar hoy?
+        </div>
+        <div class="msg msg--bot">
+          Puedo ayudarte con precios, pedidos, los beneficios de nuestro pollo natural
+          y nuestro origen en Coroico. 🌿
+        </div>
+      </div>
+
+      <!-- Sugerencias rápidas -->
+      <div class="chatbot__sugerencias" aria-label="Preguntas frecuentes sugeridas">
+        <button class="chip" onclick="enviarChip('¿Cuáles son los precios?')">💰 Precios</button>
+        <button class="chip" onclick="enviarChip('Quiero hacer un pedido')">🛒 Hacer pedido</button>
+        <button class="chip" onclick="enviarChip('¿Cómo crían los pollos?')">🌿 Crianza natural</button>
+        <button class="chip" onclick="enviarChip('¿De dónde es el pollo?')">📍 Origen</button>
+        <button class="chip" onclick="enviarChip('¿Cómo es la entrega?')">🚚 Entrega</button>
+        <button class="chip" onclick="enviarChip('¿Qué packs tienen?')">📦 Packs</button>
+      </div>
+
+      <!-- Input de mensaje -->
+      <div class="chatbot__input-area">
+        <input
+          type="text"
+          id="mensaje"
+          placeholder="Escribí tu consulta..."
+          maxlength="800"
+          autocomplete="off"
+          aria-label="Escribir mensaje"
+        />
+        <button
+          class="chatbot__send"
+          id="btn-enviar"
+          onclick="enviar()"
+          aria-label="Enviar mensaje"
+        >
+          <svg class="send-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+          <span>Enviar</span>
+        </button>
+      </div>
+
+      <!-- Indicador de motor -->
+      <div class="chatbot__footer-info" id="motor-info" aria-live="polite">
+        🟢 Avi activo · Motor IA via Ollama (phi3) con respaldo local
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ CONTACTO ═══ -->
+  <section class="contacto" id="contacto" aria-labelledby="contacto-titulo">
+    <h2 id="contacto-titulo">¿Necesitás atención directa?</h2>
+    <p>Productores de Coroico con entrega en La Paz y alrededores</p>
+    <div class="contacto__datos">
+      <div class="contacto__dato">
+        <div class="icon" aria-hidden="true">📍</div>
+        <strong>Ubicación</strong>
+        <span>Coroico – Yungas de La Paz</span>
+      </div>
+      <div class="contacto__dato">
+        <div class="icon" aria-hidden="true">📞</div>
+        <strong>WhatsApp / Tel</strong>
+        <span>+591 79 000 000</span>
+      </div>
+      <div class="contacto__dato">
+        <div class="icon" aria-hidden="true">🕗</div>
+        <strong>Horario</strong>
+        <span>Lun–Sáb 7:00–18:00<br>Dom 8:00–14:00</span>
+      </div>
+      <div class="contacto__dato">
+        <div class="icon" aria-hidden="true">✉️</div>
+        <strong>Email</strong>
+        <span>hola@origenavicor.bo</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer" role="contentinfo">
+    © 2026 <span>Origen Avicor</span> · Hecho con 🌿 en los Yungas bolivianos
+  </footer>
+
+
+  <!-- ═══ SCRIPTS ═══ -->
+
+  <!--
+    chatbot.js cargado como archivo externo.
+    Contiene: base de conocimiento, flujo de pedido,
+    fetch a /chat, indicador de escritura y UI.
+  -->
+ <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+  <!-- Funciones auxiliares exclusivas de esta página HTML -->
+  <script>
+    // ─────────────────────────────────────────
+    //  Enviar mensaje desde un chip de sugerencia
+    // ─────────────────────────────────────────
+    function enviarChip(texto) {
+      const input = document.getElementById("mensaje");
+      if (input) {
+        input.value = texto;
+        enviar();
+      }
+    }
+
+    // ─────────────────────────────────────────
+    //  Iniciar pedido desde botón de producto
+    // ─────────────────────────────────────────
+    function iniciarPedidoChat(producto) {
+      // Scroll al chat
+      const chatSection = document.getElementById("chatbot");
+      if (chatSection) {
+        chatSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      // Enviar el mensaje después de un pequeño delay (scroll primero)
+      setTimeout(() => {
+        const input = document.getElementById("mensaje");
+        if (input) {
+          input.value = `Quiero pedir ${producto}`;
+          enviar();
+        }
+      }, 600);
+    }
+
+    // ─────────────────────────────────────────
+    //  Actualizar indicador de motor en el footer del chat
+    //  (se llama desde chatbot.js en cada respuesta del servidor)
+    // ─────────────────────────────────────────
+    function actualizarMotorInfo(motor) {
+      const el = document.getElementById("motor-info");
+      if (!el) return;
+      if (motor === "ollama") {
+        el.textContent = "🟢 Respondido por Ollama · Modelo mistral";
+      } else {
+        el.textContent = "🟡 Motor de respuestas local activo (Ollama sin conexión)";
+      }
+    }
+
+    // ─────────────────────────────────────────
+    //  Parche: interceptar respuestas del servidor para
+    //  actualizar el indicador de motor.
+    //  (sobreescribe obtenerRespuesta definida en chatbot.js)
+    // ─────────────────────────────────────────
+    const _obtenerRespuestaOriginal = obtenerRespuesta;
+
+    async function obtenerRespuesta(mensaje) {
+      // Si el servidor no está disponible chatbot.js maneja el fallback
+      if (!CONFIG.usarServidor) {
+        actualizarMotorInfo("local");
+        return _obtenerRespuestaOriginal(mensaje);
+      }
+
+      try {
+        const controller = new AbortController();
+        const tid = setTimeout(() => controller.abort(), CONFIG.timeoutMs);
+
+        const resp = await fetch(CONFIG.endpoint, {
+          method:  "POST",
+          headers: { "Content-Type": "application/json" },
+          body:    JSON.stringify({ mensaje }),
+          signal:  controller.signal,
+        });
+
+        clearTimeout(tid);
+
+        if (!resp.ok) {
+          actualizarMotorInfo("local");
+          return responderLocal(mensaje);
+        }
+
+        const datos = await resp.json();
+
+        if (!datos.ok || !datos.respuesta) {
+          actualizarMotorInfo("local");
+          return responderLocal(mensaje);
+        }
+
+        actualizarMotorInfo(datos.motor || "local");
+        return datos.respuesta;
+
+      } catch (err) {
+        actualizarMotorInfo("local");
+        return responderLocal(mensaje);
+      }
+    }
+  </script>
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/51403338.js"></script>
+<!-- End of HubSpot Embed Code -->
+</body>
+</html>
