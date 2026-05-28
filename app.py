@@ -912,13 +912,6 @@ entrada_asistente = {
 }
 historial.append(entrada_asistente)
 
-    # - Limitar historial y guardar en sesión ----------------------------
-max_hist = app.config["CHATBOT_MAX_HISTORY"]
-    if len(historial) > max_hist:
-        historial = historial[-max_hist:]
-
-    session["chat_historial"] = historial
-    session.modified = True  # forzar guardado aunque sea mutable anidado
 
     logger.debug(
         "Chatbot — mensaje recibido (%d chars)  historial_total=%d",
